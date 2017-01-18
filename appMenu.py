@@ -227,7 +227,7 @@ def runQpv():
 
 # Games
 def runQ3a():
-  app = "/home/paperjam/bin/ioq3"
+  app = "~/bin/ioq3"
   print app
   runCommand(app)
 def runQ3ta():
