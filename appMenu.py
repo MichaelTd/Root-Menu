@@ -48,7 +48,7 @@ def on_accel_runEditor(widget):
 
 # Menu
 def runEdt():
-  app = __editor__ + " " + "/home/paperjam/bin/appMenu.py"
+  app = __editor__ + " " + "~/bin/appMenu.py"
   print app
   runCommand(app)
 def runRfs():
@@ -103,7 +103,7 @@ def runSub():
   print app
   runCommand(app)
 def runZed():
-  app = __terminal__ + " -e /bin/env /bin/bash /home/paperjam/opt/zed/zed"
+  app = __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"
   print app
   runCommand(app)
 def runLighttable():
@@ -205,7 +205,7 @@ def runScrib():
   print app
   runCommand(app)
 def runFrd():
-  app = "/home/paperjam/bin/FoxitReader"
+  app = "~/bin/FoxitReader"
   print app
   runCommand(app)
 def runEvc():
@@ -231,15 +231,15 @@ def runQ3a():
   print app
   runCommand(app)
 def runQ3ta():
-  app = "/home/paperjam/bin/ioq3-ta"
+  app = "~/bin/ioq3-ta"
   print app
   runCommand(app)
 def runUt():
-  app = "/home/paperjam/bin/ut42u"
+  app = "~/bin/ut42u"
   print app
   runCommand(app)
 def runWar():
-  app = "/home/paperjam/warsow_21/warsow"
+  app = "~/warsow_21/warsow"
   print app
   runCommand(app)
 
@@ -303,7 +303,7 @@ def runSbg():
   print app
   runCommand(app)
 def runTks():
-  app = "/home/paperjam/bin/imss.sh 2"
+  app = "~/bin/imss.sh 2"
   print app
   runCommand(app)
 def runCalc():
