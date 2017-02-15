@@ -9,11 +9,15 @@ from Tkinter import *
 
 __terminal__ = "terminology"
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
-__editor__ = "atom"
+#__editor__ = "sublime"
+#__editor__ = "light"
+#__editor__ = "atom"
+#__editor__ = "emacs"
+__editor__ = "gvim"
 __file_manager__ = "gentoo"
 __browser__ = "firefox"
-#__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
-__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
+#__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
+__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
 
 def runCommand(app):
   os.system(app + " &")
@@ -68,6 +72,10 @@ def runNetbeans():
   runCommand(app)
 def runKdev():
   app = "kdevelop"
+  print app
+  runCommand(app)
+def runQtc():
+  app = "qtcreator.sh"
   print app
   runCommand(app)
 def runQtd():
@@ -336,6 +344,10 @@ def runMc():
   app = __terminal__ + " -e mc"
   print app
   runCommand(app)
+def runRng():
+  app = __terminal__ + " -e ranger.py"
+  print app
+  runCommand(app)
 def runThu():
   app = "thunar"
   print app
@@ -465,6 +477,7 @@ appsmenu=Menu(menubar)
 devmenu.add_command(label="Eclipse", command=runEclipse)
 devmenu.add_command(label="Netbeans", command=runNetbeans)
 devmenu.add_command(label="KDevelop", command=runKdev)
+devmenu.add_command(label="QtCreator", command=runQtc)
 devmenu.add_command(label="QtDesigner",command=runQtd)
 devmenu.add_command(label="Glade", command=runGld)
 devmenu.add_command(label="GVim", command=runGvim)
@@ -534,6 +547,7 @@ toolsmenu.add_command(label="Terminology", command=runTerminology)
 toolsmenu.add_command(label="Xfce4 Terminal", command=runXfce4t)
 toolsmenu.add_command(label="URXVT", command=runRxvt)
 toolsmenu.add_command(label="Midnight Commander", command=runMc)
+#toolsmenu.add_command(label="Ranger", command=runRng)
 toolsmenu.add_command(label="Gentoo", command=runGentoo)
 toolsmenu.add_command(label="Xfe", command=runXfe)
 toolsmenu.add_command(label="Thunar", command=runThu)
@@ -552,7 +566,7 @@ menubar.add_cascade(label="Root Menu", menu=appsmenu)
 
 appsmenu.add_command(label="Terminal", command=runTerminal, accelerator="Ctrl+T")
 appsmenu.add_command(label="Editor", command=runEditor, accelerator="Ctrl+E")
-appsmenu.add_command(label="File Browser", command=runFileManager, accelerator="Ctrl+F")
+appsmenu.add_command(label="File Manager", command=runFileManager, accelerator="Ctrl+F")
 appsmenu.add_command(label="Browser", command=runBrowser, accelerator="Ctrl+B")
 appsmenu.add_separator()
 appsmenu.add_cascade(label="Development", menu=devmenu)
@@ -562,7 +576,7 @@ appsmenu.add_cascade(label="MultiMedia", menu=mmmenu)
 appsmenu.add_cascade(label="Games", menu=gammenu)
 appsmenu.add_cascade(label="Config", menu=configmenu)
 appsmenu.add_cascade(label="Utilities", menu=utilmenu)
-appsmenu.add_cascade(label="File Tools", menu=toolsmenu)
+appsmenu.add_cascade(label="File Managers", menu=toolsmenu)
 appsmenu.add_cascade(label="Admin Tools", menu=adminmenu)
 #appsmenu.add_separator()
 #appsmenu.add_command(label="Compiz Flipper", command=runCfl)
