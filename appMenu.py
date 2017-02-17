@@ -204,6 +204,10 @@ def runOoff():
   app = "ooffice"
   print app
   runCommand(app)
+def runLoff():
+  app = "/opt/libreOffice"
+  print app
+  runCommand(app)
 def runLcd():
   app = "librecad"
   print app
@@ -507,7 +511,8 @@ mmmenu.add_command(label="Audacious", command=runAudacious)
 #mmmenu.add_command(label="SmPlayer", command=runSmplay)
 #mmmenu.add_command(label="Xine", command=runXine)
 mmmenu.add_command(label="VLC", command=runVLC)
-mmmenu.add_command(label="OOffice", command=runOoff)
+mmmenu.add_command(label="Open Office", command=runOoff)
+mmmenu.add_command(label="Libre Office", command=runLoff)
 #mmmenu.add_command(label="LibreCAD", command=runLcd)
 #mmmenu.add_command(label="Scribus", command=runScrib)
 mmmenu.add_command(label="Foxit Reader", command=runFrd)
