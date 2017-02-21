@@ -275,7 +275,7 @@ def runEfb():
   print app
   runCommand(app)
 def runVlg():
-  app = __editor__ + " /var/log/update.perl.log /var/log/rsync.data.log /var/log/portage.emerge.log"
+  app = __editor__ + " /var/log/update.perl.log /var/log/rsync.data.log /var/log/portage.emerge.log /var/log/backup-paperjam.log"
   print app
   runCommand(app)
 def runXss():
@@ -329,7 +329,7 @@ def runJCalc():
   print app
   runCommand(app)
 def runJsCalc():
-  app= __browser__ + " ~/git/fcc-app/front-end-cert/Javascript-Calculator/jsCalc.html"
+  app= __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"
   print app
   runCommand(app)
 
