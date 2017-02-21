@@ -9,12 +9,14 @@ from Tkinter import *
 
 __terminal__ = "terminology"
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
+#__editor__ = "vscode"
 #__editor__ = "sublime"
-__editor__ = "light"
-#__editor__ = "atom"
+#__editor__ = "light"
+__editor__ = "atom"
 #__editor__ = "emacs"
 #__editor__ = "gvim"
-__file_manager__ = "gentoo"
+#__file_manager__ = "gentoo"
+__file_manager__ = "xfe"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
@@ -52,11 +54,11 @@ def on_accel_runEditor(widget):
 
 # Menu
 def runEdt():
-  app = __editor__ + " " + "~/bin/appMenu.py"
+  app = __editor__ + " " + "/usr/local/bin/tkRootMenu.py"
   print app
   runCommand(app)
 def runRfs():
-  app = "/usr/local/bin/appMenu.py"
+  app = "/usr/local/bin/tkRootMenu.sh"
   print app
   runCommand(app)
   root.quit()
