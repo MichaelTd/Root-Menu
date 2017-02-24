@@ -15,7 +15,19 @@ __browser__ = "firefox"
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
 
 def runCommand(app):
+  print app
   os.system(app + " &")
+
+# Menu
+def runRfs():
+  app = "/usr/local/bin/tkRootMenu.sh"
+  runCommand(app)
+  root.quit()
+
+# Volume
+def setVlm(widget):
+    app = "amixer cset numid=3 " + str(v.get()) + "%"
+    runCommand(app)
 
 # Default Apps
 def on_accel_runTerminal(widget):
@@ -26,19 +38,6 @@ def on_accel_runFileManager(widget):
   runCommand(__file_manager__)
 def on_accel_runBrowser(widget):
   runCommand(__browser__)
-
-# Menu
-def runRfs():
-  app = "/usr/local/bin/tkRootMenu.sh"
-  print app
-  runCommand(app)
-  root.quit()
-
-# Volume
-def setVlm(widget):
-    app = "amixer cset numid=3 " + str(v.get()) + "%"
-    print app
-    runCommand(app)
 
 root = Tk()
 root.title("Root Menu")
@@ -77,20 +76,20 @@ appsmenu = Menu(menubar)
 
 # Dev menu
 for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
-    ("Netbeans", "netbeans"),
-    ("KDevelop", "kdevelop"),
-    ("QtCreator", "qtcreator.sh"),
-    ("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
-    ("Glade", "glade"),
-    ("GVim", "gvim"),
-    ("Vim", __terminal__ + " -e vim"),
-    ("Diakonos", __terminal__ + " -e diakonos"),
-    ("Xemacs", __terminal__ + " -e xemacs"),
-    ("Emacs", "emacs"),
-    ("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
-    ("Sublime Text", "sublime"),
-    ("LightTable", "light"),
-    ("Atom", "atom")):
+  ("Netbeans", "netbeans"),
+  ("KDevelop", "kdevelop"),
+  ("QtCreator", "qtcreator.sh"),
+  ("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
+  ("Glade", "glade"),
+  ("GVim", "gvim"),
+  ("Vim", __terminal__ + " -e vim"),
+  ("Diakonos", __terminal__ + " -e diakonos"),
+  ("Xemacs", __terminal__ + " -e xemacs"),
+  ("Emacs", "emacs"),
+  ("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
+  ("Sublime Text", "sublime"),
+  ("LightTable", "light"),
+  ("Atom", "atom")):
   devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
 
 # Internet
