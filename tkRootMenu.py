@@ -124,7 +124,7 @@ for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
   ("Emerald themes manager", "emerald-theme-manager"),
   ("Conky config", __editor__ + " ~/.conky.conf/"),
   ("Edit backup files", __editor__ + " ~/.backup.*"),
-  ("View Log files", __editor__ + " /var/log/portage.emerge.log"),
+  ("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/rsync.mirror.log /var/log/paperjam.backup.log"),
   ("X Screen Saver", "xscreensaver-demo"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
   configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
