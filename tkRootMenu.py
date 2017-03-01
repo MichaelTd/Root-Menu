@@ -65,14 +65,6 @@ root.bind_all("<Control-e>", on_accel_runEditor)
 menubar = Menu(root)
 
 devmenu = Menu(menubar)
-netmenu = Menu(menubar)
-mmmenu = Menu(menubar)
-gammenu = Menu(menubar)
-configmenu = Menu(menubar)
-utilmenu = Menu(menubar)
-toolsmenu = Menu(menubar)
-adminmenu = Menu(menubar)
-appsmenu = Menu(menubar)
 
 # Dev menu
 for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
@@ -93,6 +85,8 @@ for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   ("Atom", "atom")):
   devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
 
+netmenu = Menu(menubar)
+
 # Internet
 for lbl, cmmnd in (("Firefox", "firefox"),
   ("Firefox DE", "firefox-de"),
@@ -100,6 +94,8 @@ for lbl, cmmnd in (("Firefox", "firefox"),
   ("FileZilla", "filezilla"),
   ("HexChat", "hexchat")):
   netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+mmmenu = Menu(menubar)
 
 # Multimedia
 for lbl, cmmnd in (("Gimp", "gimp"),
@@ -113,12 +109,16 @@ for lbl, cmmnd in (("Gimp", "gimp"),
   ("Ghost View", "gv")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+gammenu = Menu(menubar)
+
 # Games menu
 for lbl, cmmnd in (("Quake 3", "~/bin/ioq3"),
   ("Quake 3 TA", "~/bin/ioq3-ta"),
   ("Urban Terror", "~/bin/ut42u"),
   ("Warsow", "~/warsow_21/warsow")):
   gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+configmenu = Menu(menubar)
 
 # Config Menu
 for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
@@ -129,6 +129,8 @@ for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
   ("X Screen Saver", "xscreensaver-demo"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
   configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+utilmenu = Menu(menubar)
 
 # Util Menu
 for lbl, cmmnd in (("App Runner", "runcmd.sh"),
@@ -143,6 +145,8 @@ for lbl, cmmnd in (("App Runner", "runcmd.sh"),
   ("Javascript Calculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html")):
   utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+toolsmenu = Menu(menubar)
+
 # File system tools
 for lbl, cmmnd in (("Terminology", "terminology"),
   ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
@@ -152,6 +156,8 @@ for lbl, cmmnd in (("Terminology", "terminology"),
   ("Xfe", "xfe"),
   ("Thunar", "thunar")):
   toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+adminmenu = Menu(menubar)
 
 # Admin tools
 for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
@@ -164,6 +170,8 @@ for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
   ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
   ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top")):
   adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+appsmenu = Menu(menubar)
 
 menubar.add_cascade(label="Root Menu", menu=appsmenu)
 
