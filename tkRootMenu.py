@@ -64,9 +64,9 @@ root.bind_all("<Control-e>", on_accel_runEditor)
 
 menubar = Menu(root)
 
+# Dev menu
 devmenu = Menu(menubar)
 
-# Dev menu
 for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   ("Netbeans", "netbeans"),
   ("KDevelop", "kdevelop"),
@@ -85,9 +85,9 @@ for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   ("Atom", "atom")):
   devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
 
+# Internet
 netmenu = Menu(menubar)
 
-# Internet
 for lbl, cmmnd in (("Firefox", "firefox"),
   ("Firefox DE", "firefox-de"),
   ("Mozilla", "mozilla"),
@@ -95,9 +95,9 @@ for lbl, cmmnd in (("Firefox", "firefox"),
   ("HexChat", "hexchat")):
   netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+# Multimedia
 mmmenu = Menu(menubar)
 
-# Multimedia
 for lbl, cmmnd in (("Gimp", "gimp"),
   ("Open Shot", "openshot"),
   ("Audacious", "audacious"),
@@ -109,18 +109,18 @@ for lbl, cmmnd in (("Gimp", "gimp"),
   ("Ghost View", "gv")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+# Games menu
 gammenu = Menu(menubar)
 
-# Games menu
 for lbl, cmmnd in (("Quake 3", "~/bin/ioq3"),
   ("Quake 3 TA", "~/bin/ioq3-ta"),
   ("Urban Terror", "~/bin/ut42u"),
   ("Warsow", "~/warsow_21/warsow")):
   gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+# Config Menu
 configmenu = Menu(menubar)
 
-# Config Menu
 for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
   ("Emerald themes manager", "emerald-theme-manager"),
   ("Conky config", __editor__ + " ~/.conky.conf/"),
@@ -130,9 +130,9 @@ for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
   configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+# Util Menu
 utilmenu = Menu(menubar)
 
-# Util Menu
 for lbl, cmmnd in (("App Runner", "runcmd.sh"),
   ("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
   ("Xarchiver", "xarchiver"),
@@ -145,9 +145,9 @@ for lbl, cmmnd in (("App Runner", "runcmd.sh"),
   ("Javascript Calculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html")):
   utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+# File system tools
 toolsmenu = Menu(menubar)
 
-# File system tools
 for lbl, cmmnd in (("Terminology", "terminology"),
   ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
@@ -157,9 +157,9 @@ for lbl, cmmnd in (("Terminology", "terminology"),
   ("Thunar", "thunar")):
   toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+# Admin tools
 adminmenu = Menu(menubar)
 
-# Admin tools
 for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
   ("Text Editor", __sudo_cmd__ + " " + __editor__),
   ("File manager", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
