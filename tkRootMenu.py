@@ -64,6 +64,44 @@ root.bind_all("<Control-e>", on_accel_runEditor)
 
 menubar = Menu(root)
 
+# File system tools
+toolsmenu = Menu(menubar)
+
+for lbl, cmmnd in (("Terminology", "terminology"),
+  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
+  ("URXVT", "urxvt"),
+  ("Midnight Commander", __terminal__ + " -e mc"),
+  ("Gentoo", "gentoo"),
+  ("Xfe", "xfe"),
+  ("Thunar", "thunar")):
+  toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+# Admin tools
+adminmenu = Menu(menubar)
+
+for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
+  ("Text Editor", __sudo_cmd__ + " " + __editor__),
+  ("File manager", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
+  ("Porthole", __sudo_cmd__ + " porthole"),
+  ("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
+  ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
+  ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
+  ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
+  ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top")):
+  adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+# Config Menu
+configmenu = Menu(menubar)
+
+for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
+  ("Emerald themes manager", "emerald-theme-manager"),
+  ("Conky config", __editor__ + " ~/.conky.conf/"),
+  ("Edit backup files", __editor__ + " ~/.backup.*"),
+  ("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/data.mirror.log /var/log/paperjam.backup.log"),
+  ("X Screen Saver", "xscreensaver-demo"),
+  ("Alsamixer", __terminal__ + " -e alsamixer")):
+  configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
 # Dev menu
 devmenu = Menu(menubar)
 
@@ -118,18 +156,6 @@ for lbl, cmmnd in (("Quake 3", "~/bin/ioq3"),
   ("Warsow", "~/warsow_21/warsow")):
   gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
-# Config Menu
-configmenu = Menu(menubar)
-
-for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
-  ("Emerald themes manager", "emerald-theme-manager"),
-  ("Conky config", __editor__ + " ~/.conky.conf/"),
-  ("Edit backup files", __editor__ + " ~/.backup.*"),
-  ("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/data.mirror.log /var/log/paperjam.backup.log"),
-  ("X Screen Saver", "xscreensaver-demo"),
-  ("Alsamixer", __terminal__ + " -e alsamixer")):
-  configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
-
 # Util Menu
 utilmenu = Menu(menubar)
 
@@ -145,32 +171,6 @@ for lbl, cmmnd in (("App Runner", "runcmd.sh"),
   ("Javascript Calculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html")):
   utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
-# File system tools
-toolsmenu = Menu(menubar)
-
-for lbl, cmmnd in (("Terminology", "terminology"),
-  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
-  ("URXVT", "urxvt"),
-  ("Midnight Commander", __terminal__ + " -e mc"),
-  ("Gentoo", "gentoo"),
-  ("Xfe", "xfe"),
-  ("Thunar", "thunar")):
-  toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
-
-# Admin tools
-adminmenu = Menu(menubar)
-
-for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
-  ("Text Editor", __sudo_cmd__ + " " + __editor__),
-  ("File manager", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
-  ("Porthole", __sudo_cmd__ + " porthole"),
-  ("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
-  ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
-  ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
-  ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
-  ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top")):
-  adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
-
 appsmenu = Menu(menubar)
 
 menubar.add_cascade(label="Root Menu", menu=appsmenu)
@@ -185,14 +185,14 @@ for lbl, cmmnd, k in (("Terminal", __terminal__, "ctl+t"),
 appsmenu.add_separator()
 
 # Groups
-for lbl, mnGrp in (("Development", devmenu),
+for lbl, mnGrp in (("FS Tools", toolsmenu),
+  ("Admin Tools", adminmenu),
+  ("Config", configmenu),
+  ("Development", devmenu),
   ("Internet", netmenu),
   ("MultiMedia", mmmenu),
   ("Games", gammenu),
-  ("Utilities", utilmenu),
-  ("Config", configmenu),
-  ("File Managers", toolsmenu),
-  ("Admin Tools", adminmenu)):
+  ("Utilities", utilmenu)):
   appsmenu.add_cascade(label=lbl,menu=mnGrp)
 
 appsmenu.add_separator()
