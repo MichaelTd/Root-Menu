@@ -4,7 +4,13 @@
 
 import os
 from Tkinter import *
+import subprocess
 #print os.name
+
+__app__ = ""
+__prm__ = ""
+__out__ = ""
+__err__ = ""
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
@@ -16,7 +22,11 @@ __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
 
 def runCommand(app):
   print app
-  os.system(app + " &")
+  #os.system(app + " &")
+  proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
+  (__out__, __err__) = proc.communicate()
+  print "program: " , app, " output: ", __out__, " error: ", __err__
+
 
 # Menu
 def runRfs():
