@@ -4,7 +4,7 @@
 
 import os
 from Tkinter import *
-import subprocess
+#import subprocess
 #print os.name
 
 __app__ = ""
@@ -20,12 +20,12 @@ __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
 
-def runCommand(app):
+def runCommand(app, prm=""):
   print app
-  #os.system(app + " &")
-  proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
-  (__out__, __err__) = proc.communicate()
-  print "program: " , app, " output: ", __out__, " error: ", __err__
+  os.system(app + " &")
+  #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
+  #(__out__, __err__) = proc.communicate()
+  #print "program: " , app, " output: ", __out__, " error: ", __err__
 
 
 # Menu
