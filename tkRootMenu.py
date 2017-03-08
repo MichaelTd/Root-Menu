@@ -107,6 +107,7 @@ for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
   ("Emerald themes manager", "emerald-theme-manager"),
   ("Conky config", __editor__ + " ~/.conky.conf/"),
   ("Edit backup files", __editor__ + " ~/.backup.*"),
+  ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
   ("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/data.mirror.log /var/log/paperjam.backup.log"),
   ("X Screen Saver", "xscreensaver-demo"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
