@@ -7,11 +7,6 @@ from Tkinter import *
 #import subprocess
 #print os.name
 
-__app__ = ""
-__prm__ = ""
-__out__ = ""
-__err__ = ""
-
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
 __editor__ = "atom"
@@ -119,16 +114,16 @@ devmenu = Menu(menubar)
 for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   ("Netbeans", "netbeans"),
   ("KDevelop", "kdevelop"),
-  #("QtCreator", "qtcreator.sh"),
-  #("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
+  ("QtCreator", "qtcreator.sh"),
+  ("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
   ("Glade", "glade"),
   ("GVim", "gvim"),
-  #("Vim", __terminal__ + " -e vim"),
-  #("Diakonos", __terminal__ + " -e diakonos"),
-  #("Xemacs", __terminal__ + " -e xemacs"),
+  ("Vim", __terminal__ + " -e vim"),
+  ("Diakonos", __terminal__ + " -e diakonos"),
+  ("Xemacs", __terminal__ + " -e xemacs"),
   ("Emacs", "emacs"),
   ("JuPyter", "jupyter notebook"),
-  #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
+  ("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
   ("Sublime Text", "sublime"),
   ("LightTable", "light"),
   ("Atom", "atom")):
