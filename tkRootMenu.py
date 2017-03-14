@@ -7,8 +7,8 @@ from Tkinter import *
 #import subprocess
 #print os.name
 
-__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
-#__terminal__ = "urxvt"
+#__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
+__terminal__ = "terminology"
 __editor__ = "cudatext"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
@@ -21,7 +21,6 @@ def runCommand(app, prm=""):
   #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
-
 
 # Menu
 def runRfs():
