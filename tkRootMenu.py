@@ -7,9 +7,9 @@ from Tkinter import *
 #import subprocess
 #print os.name
 
-#__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
-__terminal__ = "terminology"
-__editor__ = "atom"
+__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
+#__terminal__ = "urxvt"
+__editor__ = "cudatext"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
@@ -72,7 +72,7 @@ menubar = Menu(root)
 # File system tools
 toolsmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Terminology", "terminology"),
+for lbl, cmmnd in (#("Terminology", "terminology"),
   ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
   ("Midnight Commander", __terminal__ + " -e mc"),
@@ -124,6 +124,7 @@ for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   ("Emacs", "emacs"),
   ("JuPyter", "jupyter notebook"),
   ("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
+  ("Cuda Text", "cudatext"),
   ("Sublime Text", "sublime"),
   ("LightTable", "light"),
   ("Atom", "atom")):
@@ -165,16 +166,16 @@ for lbl, cmmnd in (("Quake 3", "~/bin/ioq3"),
 # Util Menu
 utilmenu = Menu(menubar)
 
-for lbl, cmmnd in (("App Runner", "runcmd.sh"),
+for lbl, cmmnd in (#("App Runner", "runcmd.sh"),
   ("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
   ("Xarchiver", "xarchiver"),
-  ("PeaZip", "peazip"),
+  #("PeaZip", "peazip"),
   ("Viewnior", "viewnior"),
   ("Xfce4 Screenshot", "xfce4-screenshooter"),
-  ("Take a shot now", "~/bin/imss.sh 2"),
-  ("Calculator", "calculator"),
-  ("jCalculator", "jCalculator.sh"),
-  ("Javascript Calculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html")):
+  #("Take a shot now", "~/bin/imss.sh 2"),
+  #("jCalculator", "jCalculator.sh"),
+  #("jsCalculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"),
+  ("Calculator", "calculator")):
   utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 appsmenu = Menu(menubar)
