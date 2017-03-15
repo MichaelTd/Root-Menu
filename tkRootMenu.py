@@ -121,6 +121,7 @@ for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   #("Diakonos", __terminal__ + " -e diakonos"),
   #("Xemacs", __terminal__ + " -e xemacs"),
   ("Emacs", "emacs"),
+  ("Yudit", "yudit"),
   ("JuPyter", __terminal__ + " -e jupyter notebook"),
   #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
   ("Cuda Text", "cudatext"),
@@ -220,4 +221,3 @@ root.config(menu=menubar)
 
 if __name__ == "__main__":
   root.mainloop()
-  
