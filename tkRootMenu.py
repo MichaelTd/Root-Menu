@@ -9,8 +9,8 @@ from Tkinter import *
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
-__editor__ = "cudatext"
-__file_manager__ = "xfe"
+__editor__ = "atom"
+__file_manager__ = "gentoo"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
@@ -71,9 +71,10 @@ menubar = Menu(root)
 # File system tools
 toolsmenu = Menu(menubar)
 
-for lbl, cmmnd in (#("Terminology", "terminology"),
+for lbl, cmmnd in (("Terminology", "terminology"),
   ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
+  ("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
   ("Gentoo", "gentoo"),
   ("Xfe", "xfe"),
@@ -122,6 +123,7 @@ for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   #("Xemacs", __terminal__ + " -e xemacs"),
   ("Emacs", "emacs"),
   ("Yudit", "yudit"),
+  ("Idle", "idle"),
   ("JuPyter", __terminal__ + " -e jupyter notebook"),
   #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
   ("Cuda Text", "cudatext"),
