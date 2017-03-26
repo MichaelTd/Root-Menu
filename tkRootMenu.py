@@ -13,7 +13,7 @@ __editor__ = "atom"
 __file_manager__ = "gentoo"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
-__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass &&sudo --askpass "
+__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --askpass "
 
 def runCommand(app, prm=""):
   print app
@@ -72,13 +72,13 @@ menubar = Menu(root)
 toolsmenu = Menu(menubar)
 
 for lbl, cmmnd in (("Terminology", "terminology"),
-  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
+  #("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
-  ("Hyper", "hyper"),
+  #("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
   ("Gentoo", "gentoo"),
-  ("Xfe", "xfe"),
-  ("Thunar", "thunar")):
+  ("Xfe", "xfe")):
+  #("Thunar", "thunar")
   toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Admin tools
@@ -88,7 +88,7 @@ for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
   ("Text Editor", __sudo_cmd__ + " " + __editor__),
   ("File manager", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
   ("Porthole", __sudo_cmd__ + " porthole"),
-  ("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
+  #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
   ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
   ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
   ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
@@ -103,7 +103,8 @@ for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
   ("Conky config", __editor__ + " ~/.conky.conf/"),
   ("Edit backup files", __editor__ + " ~/.backup.*"),
   ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
-  ("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/data.mirror.log /var/log/paperjam.backup.log"),
+  #("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/data.mirror.log /var/log/paperjam.backup.log"),
+  ("View Log files", __editor__ + " /var/log/"),
   ("X Screen Saver", "xscreensaver-demo"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
   configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
@@ -111,7 +112,7 @@ for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
 # Dev menu
 devmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
+for lbl, cmmnd in (("Eclipse", "eclipse"),
   ("Netbeans", "netbeans"),
   ("KDevelop", "kdevelop"),
   #("QtCreator", "qtcreator.sh"),
@@ -122,23 +123,24 @@ for lbl, cmmnd in (("Eclipse", "runeclipse.sh"),
   #("Diakonos", __terminal__ + " -e diakonos"),
   #("Xemacs", __terminal__ + " -e xemacs"),
   ("Emacs", "emacs"),
-  ("Yudit", "yudit"),
+  #("Yudit", "yudit"),
   ("Idle", "idle"),
-  ("JuPyter", __terminal__ + " -e jupyter notebook"),
+  #("JuPyter", __terminal__ + " -e jupyter notebook"),
   #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
-  ("Cuda Text", "cudatext"),
+  ("Atom", "atom"),
+  ("VStudio Code", "code"),
   ("Sublime Text", "sublime"),
   ("LightTable", "light"),
-  ("Atom", "atom")):
+  ("Cuda Text", "cudatext")):
   devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
 
 # Internet
 netmenu = Menu(menubar)
 
 for lbl, cmmnd in (("Firefox", "firefox"),
-  ("Firefox DE", "firefox-de"),
-  ("Mozilla", "mozilla"),
-  ("FileZilla", "filezilla"),
+  #("Firefox DE", "firefox-de"),
+  ("Seamonkey", "seamonkey"),
+  #("FileZilla", "filezilla"),
   ("HexChat", "hexchat")):
   netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
@@ -146,38 +148,38 @@ for lbl, cmmnd in (("Firefox", "firefox"),
 mmmenu = Menu(menubar)
 
 for lbl, cmmnd in (("Gimp", "gimp"),
-  ("Open Shot", "openshot"),
-  ("Audacious", "audacious"),
+  #("Open Shot", "openshot"),
   ("VLC", "vlc"),
+  ("Audacious", "audacious"),
   ("Open Office", "ooffice"),
-  ("Libre Office", "/opt/libreOffice"),
-  ("Foxit Reader", "~/bin/FoxitReader"),
-  ("Qpdf Viewer", "qpdfview"),
+  #("Libre Office", "loffice"),
+  #("Foxit Reader", "~/bin/FoxitReader"),
+  #("Qpdf Viewer", "qpdfview"),
   ("Ghost View", "gv")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Games menu
-gammenu = Menu(menubar)
+#gammenu = Menu(menubar)
 
-for lbl, cmmnd in (("Quake 3", "~/bin/ioq3"),
-  ("Quake 3 TA", "~/bin/ioq3-ta"),
-  ("Urban Terror", "~/bin/ut42u"),
-  ("Warsow", "~/warsow_21/warsow")):
-  gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+#for lbl, cmmnd in (("Quake 3", "~/bin/ioq3"),
+#  ("Quake 3 TA", "~/bin/ioq3-ta"),
+#  ("Urban Terror", "~/bin/ut42u"),
+#  ("Warsow", "~/warsow_21/warsow")):
+#  gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Util Menu
 utilmenu = Menu(menubar)
 
 for lbl, cmmnd in (#("App Runner", "runcmd.sh"),
-  ("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
+  #("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
   ("Xarchiver", "xarchiver"),
   #("PeaZip", "peazip"),
-  ("Viewnior", "viewnior"),
-  ("Xfce4 Screenshot", "xfce4-screenshooter"),
+  ("Viewnior", "viewnior")):
+  #("Xfce4 Screenshot", "xfce4-screenshooter"),
   #("Take a shot now", "~/bin/imss.sh 2"),
   #("jCalculator", "jCalculator.sh"),
   #("jsCalculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"),
-  ("Calculator", "calculator")):
+  #("Calculator", "calculator")):
   utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 appsmenu = Menu(menubar)
@@ -200,7 +202,7 @@ for lbl, mnGrp in (("FS Tools", toolsmenu),
   ("Development", devmenu),
   ("Internet", netmenu),
   ("MultiMedia", mmmenu),
-  ("Games", gammenu),
+  #("Games", gammenu),
   ("Utilities", utilmenu)):
   appsmenu.add_cascade(label=lbl,menu=mnGrp)
 
