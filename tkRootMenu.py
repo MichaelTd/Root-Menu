@@ -30,7 +30,7 @@ def runRfs():
 
 # Volume
 def setVlm(widget):
-    app = "amixer cset numid=3 " + str(v.get()) + "%"
+    app = "amixer cset numid=0 " + str(v.get()) + "%"
     runCommand(app)
 
 # Default Apps
@@ -46,7 +46,7 @@ def on_accel_runBrowser(widget):
 root = Tk()
 root.title("Root Menu")
 root.option_add('*resizable', TRUE)
-root.geometry('110x75+0+0')
+root.geometry('110x80+64+64')
 
 r = Button(root, text=">>", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
 l = Button(root, text="<<", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
@@ -118,20 +118,20 @@ for lbl, cmmnd in (("Eclipse", "eclipse"),
   #("QtCreator", "qtcreator.sh"),
   #("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
   #("Glade", "glade"),
-  ("GVim", "gvim"),
-  #("Vim", __terminal__ + " -e vim"),
-  #("Diakonos", __terminal__ + " -e diakonos"),
-  #("Xemacs", __terminal__ + " -e xemacs"),
-  ("Emacs", "emacs"),
-  #("Yudit", "yudit"),
-  ("Idle", "idle"),
-  #("JuPyter", __terminal__ + " -e jupyter notebook"),
-  #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
   ("Atom", "atom"),
   ("VStudio Code", "code"),
   ("Sublime Text", "sublime"),
   ("LightTable", "light"),
-  ("Cuda Text", "cudatext")):
+  ("Cuda Text", "cudatext"),
+  ("Emacs", "emacs"),
+  ("GVim", "gvim"),
+  ("Idle", "idle")):
+  #("Vim", __terminal__ + " -e vim"),
+  #("Diakonos", __terminal__ + " -e diakonos"),
+  #("Xemacs", __terminal__ + " -e xemacs"),
+  #("Yudit", "yudit"),
+  #("JuPyter", __terminal__ + " -e jupyter notebook"),
+  #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
   devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
 
 # Internet
@@ -140,6 +140,7 @@ netmenu = Menu(menubar)
 for lbl, cmmnd in (("Firefox", "firefox"),
   #("Firefox DE", "firefox-de"),
   ("Seamonkey", "seamonkey"),
+  ("Mail", "seamonkey -mail"),
   #("FileZilla", "filezilla"),
   ("HexChat", "hexchat")):
   netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
@@ -153,8 +154,11 @@ for lbl, cmmnd in (("Gimp", "gimp"),
   ("Audacious", "audacious"),
   ("Open Office", "ooffice"),
   #("Libre Office", "loffice"),
-  #("Foxit Reader", "~/bin/FoxitReader"),
+  ("Foxit Reader", "foxitreader"),
   #("Qpdf Viewer", "qpdfview"),
+  ("Xarchiver", "xarchiver"),
+  #("PeaZip", "peazip"),
+  ("Viewnior", "viewnior"),
   ("Ghost View", "gv")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
@@ -168,19 +172,16 @@ for lbl, cmmnd in (("Gimp", "gimp"),
 #  gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Util Menu
-utilmenu = Menu(menubar)
+#utilmenu = Menu(menubar)
 
-for lbl, cmmnd in (#("App Runner", "runcmd.sh"),
+#for lbl, cmmnd in (#("App Runner", "runcmd.sh"),
   #("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
-  ("Xarchiver", "xarchiver"),
-  #("PeaZip", "peazip"),
-  ("Viewnior", "viewnior")):
   #("Xfce4 Screenshot", "xfce4-screenshooter"),
   #("Take a shot now", "~/bin/imss.sh 2"),
   #("jCalculator", "jCalculator.sh"),
   #("jsCalculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"),
   #("Calculator", "calculator")):
-  utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+#  utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 appsmenu = Menu(menubar)
 
@@ -201,9 +202,9 @@ for lbl, mnGrp in (("FS Tools", toolsmenu),
   ("Config", configmenu),
   ("Development", devmenu),
   ("Internet", netmenu),
-  ("MultiMedia", mmmenu),
+  ("Mediums", mmmenu)):
   #("Games", gammenu),
-  ("Utilities", utilmenu)):
+  #("Utilities", utilmenu)):
   appsmenu.add_cascade(label=lbl,menu=mnGrp)
 
 appsmenu.add_separator()
