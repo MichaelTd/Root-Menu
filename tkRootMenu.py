@@ -10,7 +10,7 @@ from Tkinter import *
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
 __editor__ = "atom"
-__file_manager__ = "gentoo"
+__file_manager__ = "xfe"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --askpass "
@@ -30,7 +30,7 @@ def runRfs():
 
 # Volume
 def setVlm(widget):
-    app = "amixer cset numid=0 " + str(v.get()) + "%"
+    app = "amixer cset numid=1 " + str(v.get()) + "%"
     runCommand(app)
 
 # Default Apps
@@ -116,13 +116,13 @@ for lbl, cmmnd in (("Eclipse", "eclipse"),
   ("Netbeans", "netbeans"),
   ("KDevelop", "kdevelop"),
   #("QtCreator", "qtcreator.sh"),
-  #("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
+  ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
   #("Glade", "glade"),
   ("Atom", "atom"),
   ("VStudio Code", "code"),
   ("Sublime Text", "sublime"),
   ("LightTable", "light"),
-  ("Cuda Text", "cudatext"),
+  ("Cuda Text", "${HOME}/bin/cudatext"),
   ("Emacs", "emacs"),
   ("GVim", "gvim"),
   ("Idle", "idle")):
@@ -159,7 +159,8 @@ for lbl, cmmnd in (("Gimp", "gimp"),
   ("Xarchiver", "xarchiver"),
   #("PeaZip", "peazip"),
   ("Viewnior", "viewnior"),
-  ("Ghost View", "gv")):
+  ("Ghost View", "gv"),
+  ("Screengrab","screengrab")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Games menu
@@ -197,12 +198,14 @@ for lbl, cmmnd, k in (("Terminal", __terminal__, "ctl+t"),
 appsmenu.add_separator()
 
 # Groups
-for lbl, mnGrp in (("FS Tools", toolsmenu),
-  ("Admin Tools", adminmenu),
-  ("Config", configmenu),
-  ("Development", devmenu),
+for lbl, mnGrp in (
   ("Internet", netmenu),
-  ("Mediums", mmmenu)):
+  ("Development", devmenu),
+  ("Mediums", mmmenu),
+  ("FS Tools", toolsmenu),
+  ("Config", configmenu),
+  ("Admin Tools", adminmenu)
+):
   #("Games", gammenu),
   #("Utilities", utilmenu)):
   appsmenu.add_cascade(label=lbl,menu=mnGrp)
