@@ -10,7 +10,7 @@ from Tkinter import *
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
 __editor__ = "atom"
-__file_manager__ = "xfe"
+__file_manager__ = "xfe --root-ok"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --askpass "
@@ -30,7 +30,8 @@ def runRfs():
 
 # Volume
 def setVlm(widget):
-    app = "amixer cset numid=1 " + str(v.get()) + "%"
+    #app = "amixer cset id=1 " + str(v.get()) + "%"
+    app = "amixer set 'Master' " + str(v.get())
     runCommand(app)
 
 # Default Apps
@@ -71,7 +72,8 @@ menubar = Menu(root)
 # File system tools
 toolsmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Terminology", "terminology"),
+for lbl, cmmnd in (
+  ("Terminology", "terminology"),
   #("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
   #("Hyper", "hyper"),
@@ -84,9 +86,11 @@ for lbl, cmmnd in (("Terminology", "terminology"),
 # Admin tools
 adminmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
+for lbl, cmmnd in (
+  ("Terminal", __sudo_cmd__ + " " + __terminal__),
   ("Text Editor", __sudo_cmd__ + " " + __editor__),
-  ("File manager", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
+  ("File manager", __file_manager__),
+  ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
   ("Porthole", __sudo_cmd__ + " porthole"),
   #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
   ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
@@ -98,7 +102,8 @@ for lbl, cmmnd in (("Terminal", __sudo_cmd__ + " " + __terminal__),
 # Config Menu
 configmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
+for lbl, cmmnd in (
+  ("Compiz settings manager", "ccsm"),
   ("Emerald themes manager", "emerald-theme-manager"),
   ("Conky config", __editor__ + " ~/.conky.conf/"),
   ("Edit backup files", __editor__ + " ~/.backup.*"),
@@ -112,7 +117,8 @@ for lbl, cmmnd in (("Compiz settings manager", "ccsm"),
 # Dev menu
 devmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Eclipse", "eclipse"),
+for lbl, cmmnd in (
+  ("Eclipse", "eclipse"),
   ("Netbeans", "netbeans"),
   ("KDevelop", "kdevelop"),
   #("QtCreator", "qtcreator.sh"),
@@ -137,7 +143,8 @@ for lbl, cmmnd in (("Eclipse", "eclipse"),
 # Internet
 netmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Firefox", "firefox"),
+for lbl, cmmnd in (
+  ("Firefox", "firefox"),
   #("Firefox DE", "firefox-de"),
   ("Seamonkey", "seamonkey"),
   ("Mail", "seamonkey -mail"),
@@ -148,18 +155,19 @@ for lbl, cmmnd in (("Firefox", "firefox"),
 # Multimedia
 mmmenu = Menu(menubar)
 
-for lbl, cmmnd in (("Gimp", "gimp"),
+for lbl, cmmnd in (
+  ("Open Office", "ooffice"),
+  ("Gimp", "gimp"),
   #("Open Shot", "openshot"),
   ("VLC", "vlc"),
   ("Audacious", "audacious"),
-  ("Open Office", "ooffice"),
   #("Libre Office", "loffice"),
-  ("Foxit Reader", "foxitreader"),
   #("Qpdf Viewer", "qpdfview"),
   ("Xarchiver", "xarchiver"),
   #("PeaZip", "peazip"),
-  ("Viewnior", "viewnior"),
   ("Ghost View", "gv"),
+  ("Foxit Reader", "foxitreader"),
+  ("Viewnior", "viewnior"),
   ("Screengrab","screengrab")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
@@ -175,7 +183,8 @@ for lbl, cmmnd in (("Gimp", "gimp"),
 # Util Menu
 #utilmenu = Menu(menubar)
 
-#for lbl, cmmnd in (#("App Runner", "runcmd.sh"),
+#for lbl, cmmnd in (
+  #("App Runner", "runcmd.sh"),
   #("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
   #("Xfce4 Screenshot", "xfce4-screenshooter"),
   #("Take a shot now", "~/bin/imss.sh 2"),
@@ -189,7 +198,8 @@ appsmenu = Menu(menubar)
 menubar.add_cascade(label="Root Menu", menu=appsmenu)
 
 # Basic apps
-for lbl, cmmnd, k in (("Terminal", __terminal__, "ctl+t"),
+for lbl, cmmnd, k in (
+  ("Terminal", __terminal__, "ctl+t"),
   ("Editor", __editor__, "ctl+e"),
   ("File Manager", __file_manager__, "ctl+f"),
   ("Browser", __browser__, "ctl+b")):
@@ -220,7 +230,8 @@ appsmenu.add_command(label="Close Menu", command=root.quit)
 appsmenu.add_separator()
 
 # PC
-for lbl, cmmnd in (("Logout", "kill -15 -1"),
+for lbl, cmmnd in (
+  ("Logout", "kill -15 -1"),
   ("Reboot", __sudo_cmd__ + " shutdown -r now"),
   ("Shutdown", __sudo_cmd__ + " shutdown -h now")):
   appsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
