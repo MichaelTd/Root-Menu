@@ -79,6 +79,7 @@ for lbl, cmmnd in (
   ("URXVT", "urxvt"),
   #("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
+  ("Ranger", __terminal__ + " -e ranger"),
   ("Gentoo", "gentoo"),
   ("Xfe", "xfe")):
   #("Thunar", "thunar")
@@ -92,6 +93,7 @@ for lbl, cmmnd in (
   ("Text Editor", __sudo_cmd__ + " " + __editor__),
   ("File manager", __file_manager__),
   ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
+  ("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
   ("Porthole", __sudo_cmd__ + " porthole"),
   #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
   ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
