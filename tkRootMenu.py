@@ -9,7 +9,7 @@ from Tkinter import *
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
-__editor__ = "atom"
+__editor__ = "gvim"
 __file_manager__ = "gentoo --root-ok"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
@@ -90,7 +90,7 @@ adminmenu = Menu(menubar)
 for lbl, cmmnd in (
   ("Terminal", __sudo_cmd__ + " " + __terminal__),
   ("Text Editor", __sudo_cmd__ + " " + __editor__),
-  ("File manager", __file_manager__),
+  ("File manager",  __sudo_cmd__ + " " + __file_manager__),
   ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
   ("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
   ("Porthole", __sudo_cmd__ + " porthole"),
@@ -214,8 +214,8 @@ for lbl, mnGrp in (
   ("Internet", netmenu),
   ("Development", devmenu),
   ("Mediums", mmmenu),
-  ("FS Tools", toolsmenu),
   ("Config", configmenu),
+  ("File System", toolsmenu),
   ("Admin Tools", adminmenu)
 ):
   #("Games", gammenu),
