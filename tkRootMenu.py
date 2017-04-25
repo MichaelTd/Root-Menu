@@ -9,7 +9,7 @@ from Tkinter import *
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
-__editor__ = "gvim"
+__editor__ = "emacs"
 __file_manager__ = "gentoo --root-ok"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
@@ -79,6 +79,7 @@ for lbl, cmmnd in (
   #("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
   ("Ranger", __terminal__ + " -e ranger"),
+  ("Rox filer", "rox"),
   ("Gentoo", "gentoo"),
   ("Xfe", "xfe")):
   #("Thunar", "thunar")
@@ -113,6 +114,8 @@ for lbl, cmmnd in (
   #("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/data.mirror.log /var/log/paperjam.backup.log"),
   ("View Log files", __editor__ + " /var/log/"),
   ("X Screen Saver", "xscreensaver-demo"),
+  ("Pavucontrol", "pavucontrol"),
+  ("Alsamixer Gui", "alsamixergui"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
   configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
@@ -126,6 +129,8 @@ for lbl, cmmnd in (
   #("QtCreator", "qtcreator.sh"),
   ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
   #("Glade", "glade"),
+  ("Micro", __terminal__ + " -e " + "micro"),
+  ("Diakonos", __terminal__ + " -e " + "diakonos"),
   ("Atom", "atom"),
   ("VStudio Code", "code"),
   ("Sublime Text", "sublime"),
@@ -169,18 +174,27 @@ for lbl, cmmnd in (
   #("PeaZip", "peazip"),
   ("Ghost View", "gv"),
   ("Foxit Reader", "foxitreader"),
+  ("Xv", "xv"),
   ("Viewnior", "viewnior"),
   ("Screengrab","screengrab")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Games menu
-#gammenu = Menu(menubar)
+gammenu = Menu(menubar)
 
-#for lbl, cmmnd in (("Quake 3", "~/bin/ioq3"),
-#  ("Quake 3 TA", "~/bin/ioq3-ta"),
-#  ("Urban Terror", "~/bin/ut42u"),
-#  ("Warsow", "~/warsow_21/warsow")):
-#  gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+for lbl, cmmnd in (
+  ("GTypist", __terminal__ + " -e gtypist"),
+  ("KLavaro", "klavaro"),
+  ("GNU Back Gammon", "gnubg"),
+  ("XGammon", "xgammon"),
+  ("XBoard", "xboard"),
+  ("Xmahjongg","xmahjongg"),
+  ("X Mah-jongg","xmj"),    
+  ("Quake 3", "~/bin/ioq3"),
+  ("Quake 3 TA", "~/bin/ioq3-ta"),
+  ("Urban Terror", "~/bin/ut42u"),
+  ("Warsow", "~/warsow_21/warsow")):
+  gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Util Menu
 #utilmenu = Menu(menubar)
@@ -214,11 +228,10 @@ for lbl, mnGrp in (
   ("Internet", netmenu),
   ("Development", devmenu),
   ("Mediums", mmmenu),
+  ("Games", gammenu),
   ("Config", configmenu),
   ("File System", toolsmenu),
-  ("Admin Tools", adminmenu)
-):
-  #("Games", gammenu),
+  ("Admin Tools", adminmenu)):
   #("Utilities", utilmenu)):
   appsmenu.add_cascade(label=lbl,menu=mnGrp)
 
@@ -242,3 +255,4 @@ root.config(menu=menubar)
 
 if __name__ == "__main__":
   root.mainloop()
+
