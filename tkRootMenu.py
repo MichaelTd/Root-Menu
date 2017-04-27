@@ -74,15 +74,15 @@ toolsmenu = Menu(menubar)
 
 for lbl, cmmnd in (
   ("Terminology", "terminology"),
-  #("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
+  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
   #("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
   ("Ranger", __terminal__ + " -e ranger"),
   ("Rox filer", "rox"),
   ("Gentoo", "gentoo"),
-  ("Xfe", "xfe")):
-  #("Thunar", "thunar")
+  ("Xfe", "xfe"),
+  ("Thunar", "thunar")):
   toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Admin tools
@@ -115,6 +115,7 @@ for lbl, cmmnd in (
   ("View Log files", __editor__ + " /var/log/"),
   ("X Screen Saver", "xscreensaver-demo"),
   ("Pavucontrol", "pavucontrol"),
+  ("Xfce4-alsa-control", "xfce4-alsa-control"),
   ("Alsamixer Gui", "alsamixergui"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
   configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
@@ -176,6 +177,7 @@ for lbl, cmmnd in (
   ("Foxit Reader", "foxitreader"),
   ("Xv", "xv"),
   ("Viewnior", "viewnior"),
+  ("Xfce4-screenshooter", "xfce4-screenshooter"),
   ("Screengrab","screengrab")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
@@ -197,17 +199,18 @@ for lbl, cmmnd in (
   gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Util Menu
-#utilmenu = Menu(menubar)
+utilmenu = Menu(menubar)
 
-#for lbl, cmmnd in (
-  #("App Runner", "runcmd.sh"),
-  #("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
-  #("Xfce4 Screenshot", "xfce4-screenshooter"),
-  #("Take a shot now", "~/bin/imss.sh 2"),
-  #("jCalculator", "jCalculator.sh"),
-  #("jsCalculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"),
-  #("Calculator", "calculator")):
-#  utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+for lbl, cmmnd in (
+  ("App Runner", "~/bin/runcmd.sh"),
+  ("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
+  ("Xfce4 Screenshot", "xfce4-screenshooter"),
+  ("Screengrab", "screengrab"),
+  ("Take a shot now", "~/bin/imss.sh 2"),
+  ("jCalculator", "jCalculator.sh"),
+  ("jsCalculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"),
+  ("Calculator", "calculator")):
+  utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 appsmenu = Menu(menubar)
 
@@ -231,8 +234,8 @@ for lbl, mnGrp in (
   ("Games", gammenu),
   ("Config", configmenu),
   ("File System", toolsmenu),
-  ("Admin Tools", adminmenu)):
-  #("Utilities", utilmenu)):
+  ("Admin Tools", adminmenu),
+  ("Utilities", utilmenu)):
   appsmenu.add_cascade(label=lbl,menu=mnGrp)
 
 appsmenu.add_separator()
