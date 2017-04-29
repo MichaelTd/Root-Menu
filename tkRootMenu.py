@@ -9,7 +9,7 @@ from Tkinter import *
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
-__editor__ = "emacs"
+__editor__ = "atom"
 __file_manager__ = "gentoo --root-ok"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
