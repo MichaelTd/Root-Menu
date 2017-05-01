@@ -79,7 +79,7 @@ for lbl, cmmnd in (
   #("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
   ("Ranger", __terminal__ + " -e ranger"),
-  ("Rox filer", "rox"),
+  #("Rox filer", "rox"),
   ("Gentoo", "gentoo"),
   ("Xfe", "xfe"),
   ("Thunar", "thunar")):
@@ -115,8 +115,8 @@ for lbl, cmmnd in (
   ("View Log files", __editor__ + " /var/log/"),
   ("X Screen Saver", "xscreensaver-demo"),
   ("Pavucontrol", "pavucontrol"),
-  ("Xfce4-alsa-control", "xfce4-alsa-control"),
-  ("Alsamixer Gui", "alsamixergui"),
+  #("Xfce4-alsa-control", "xfce4-alsa-control"),
+  #("Alsamixer Gui", "alsamixergui"),
   ("Alsamixer", __terminal__ + " -e alsamixer")):
   configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
@@ -129,7 +129,8 @@ for lbl, cmmnd in (
   ("KDevelop", "kdevelop"),
   #("QtCreator", "qtcreator.sh"),
   ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
-  #("Glade", "glade"),
+  ("Glade", "glade"),
+  ("Pg Admin3", "pgadmin3"),
   ("Micro", __terminal__ + " -e " + "micro"),
   ("Diakonos", __terminal__ + " -e " + "diakonos"),
   ("Atom", "atom"),
@@ -168,17 +169,7 @@ for lbl, cmmnd in (
   ("Gimp", "gimp"),
   #("Open Shot", "openshot"),
   ("VLC", "vlc"),
-  ("Audacious", "audacious"),
-  #("Libre Office", "loffice"),
-  #("Qpdf Viewer", "qpdfview"),
-  ("Xarchiver", "xarchiver"),
-  #("PeaZip", "peazip"),
-  ("Ghost View", "gv"),
-  ("Foxit Reader", "foxitreader"),
-  ("Xv", "xv"),
-  ("Viewnior", "viewnior"),
-  ("Xfce4-screenshooter", "xfce4-screenshooter"),
-  ("Screengrab","screengrab")):
+  ("Audacious", "audacious")):
   mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Games menu
@@ -191,7 +182,7 @@ for lbl, cmmnd in (
   ("XGammon", "xgammon"),
   ("XBoard", "xboard"),
   ("Xmahjongg","xmahjongg"),
-  ("X Mah-jongg","xmj"),    
+  ("X Mah-jongg","xmj"),
   ("Quake 3", "~/bin/ioq3"),
   ("Quake 3 TA", "~/bin/ioq3-ta"),
   ("Urban Terror", "~/bin/ut42u"),
@@ -203,10 +194,16 @@ utilmenu = Menu(menubar)
 
 for lbl, cmmnd in (
   ("App Runner", "~/bin/runcmd.sh"),
-  ("Xfce4 App Finder", "xfce4-appfinder -c --disable-server"),
+  ("Xfce4 App Finder", "xfce4-appfinder --collapsed --disable-server"),
   ("Xfce4 Screenshot", "xfce4-screenshooter"),
   ("Screengrab", "screengrab"),
   ("Take a shot now", "~/bin/imss.sh 2"),
+  ("Viewnior", "viewnior"),
+  #("PeaZip", "peazip"),
+  ("Xarchiver", "xarchiver"),
+  ("Ghost View", "gv"),
+  ("Foxit Reader", "foxitreader"),
+  ("Xv", "xv"),
   ("jCalculator", "jCalculator.sh"),
   ("jsCalculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"),
   ("Calculator", "calculator")):
@@ -258,4 +255,3 @@ root.config(menu=menubar)
 
 if __name__ == "__main__":
   root.mainloop()
-
