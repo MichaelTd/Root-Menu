@@ -30,9 +30,9 @@ def runRfs():
 
 # Volume
 def setVlm(widget):
-    #app = "amixer cset id=1 " + str(v.get()) + "%"
-    app = "amixer set 'Master' " + str(v.get())
-    runCommand(app)
+  #app = "amixer cset id=1 " + str(v.get()) + "%"
+  app = "amixer set 'Master' " + str(v.get())
+  runCommand(app)
 
 # Default Apps
 def on_accel_runTerminal(widget):
@@ -95,6 +95,7 @@ for lbl, cmmnd in (
   ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
   ("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
   ("Porthole", __sudo_cmd__ + " porthole"),
+  ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
   #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
   ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
   ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
@@ -238,7 +239,7 @@ for lbl, mnGrp in (
 appsmenu.add_separator()
 
 # Menu
-appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " " + "/usr/local/bin/tkRootMenu.py"))
+appsmenu.add_command(label="Edit Menu", command=lambda: runCommand("idle2.7" + " /usr/local/bin/tkRootMenu.py"))
 appsmenu.add_command(label="Refresh Menu", command=runRfs)
 appsmenu.add_command(label="Close Menu", command=root.quit)
 
