@@ -75,15 +75,15 @@ toolsmenu = Menu(menubar)
 
 for lbl, cmmnd in (
   ("Terminology", "terminology"),
-  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
+  #("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
   #("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
-  ("Ranger", __terminal__ + " -e ranger"),
+  #("Ranger", __terminal__ + " -e ranger"),
   #("Rox filer", "rox"),
   ("Gentoo", "gentoo"),
-  ("Xfe", "xfe"),
-  ("Thunar", "thunar")):
+  ("Xfe", "xfe")):
+  #("Thunar", "thunar")):
   toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Admin tools
@@ -94,12 +94,12 @@ for lbl, cmmnd in (
   ("Text Editor", __sudo_cmd__ + " " + __editor__),
   ("File manager",  __sudo_cmd__ + " " + __file_manager__),
   ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
-  ("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
+  #("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
   ("Porthole", __sudo_cmd__ + " porthole"),
-  ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
+  #("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
   #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
   ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
-  ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
+  #("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
   ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
   ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top")):
   adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
@@ -130,7 +130,7 @@ for lbl, cmmnd in (
   ("Netbeans", "netbeans"),
   ("KDevelop", "kdevelop"),
   #("QtCreator", "qtcreator.sh"),
-  ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
+  ("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
   ("Glade", "glade"),
   ("Pg Admin3", "pgadmin3"),
   ("Micro", __terminal__ + " -e " + "micro"),
@@ -139,12 +139,11 @@ for lbl, cmmnd in (
   ("VStudio Code", "code"),
   ("Sublime Text", "sublime"),
   ("LightTable", "light"),
-  ("Cuda Text", "${HOME}/bin/cudatext"),
+  #("Cuda Text", "${HOME}/bin/cudatext"),
   ("Emacs", "emacs"),
   ("GVim", "gvim"),
-  ("Idle", "idle")):
-  #("Vim", __terminal__ + " -e vim"),
-  #("Diakonos", __terminal__ + " -e diakonos"),
+  ("Idle", "idle"),
+  ("Vim", __terminal__ + " -e vim")):
   #("Xemacs", __terminal__ + " -e xemacs"),
   #("Yudit", "yudit"),
   #("JuPyter", __terminal__ + " -e jupyter notebook"),
@@ -160,6 +159,7 @@ for lbl, cmmnd in (
   ("Seamonkey", "seamonkey"),
   ("Mail", "seamonkey -mail"),
   #("FileZilla", "filezilla"),
+  ("W3m", __terminal__ + " -e w3m www.google.com"),
   ("HexChat", "hexchat")):
   netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
@@ -198,7 +198,7 @@ for lbl, cmmnd in (
   ("App Runner", "~/bin/runcmd.sh"),
   ("Xfce4 App Finder", "xfce4-appfinder --collapsed --disable-server"),
   ("Xfce4 Screenshot", "xfce4-screenshooter"),
-  ("Screengrab", "screengrab"),
+  #("Screengrab", "screengrab"),
   ("Take a shot now", "~/bin/imss.sh 2"),
   ("Viewnior", "viewnior"),
   #("PeaZip", "peazip"),
