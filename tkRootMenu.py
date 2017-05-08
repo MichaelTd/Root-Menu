@@ -75,15 +75,15 @@ toolsmenu = Menu(menubar)
 
 for lbl, cmmnd in (
   ("Terminology", "terminology"),
-  #("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
+  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
   ("URXVT", "urxvt"),
   #("Hyper", "hyper"),
   ("Midnight Commander", __terminal__ + " -e mc"),
   #("Ranger", __terminal__ + " -e ranger"),
   #("Rox filer", "rox"),
   ("Gentoo", "gentoo"),
-  ("Xfe", "xfe")):
-  #("Thunar", "thunar")):
+  ("Xfe", "xfe"),
+  ("Thunar", "thunar")):
   toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Admin tools
@@ -96,10 +96,10 @@ for lbl, cmmnd in (
   ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
   #("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
   ("Porthole", __sudo_cmd__ + " porthole"),
-  #("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
+  ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
   #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
   ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
-  #("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
+  ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
   ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
   ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top")):
   adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
@@ -113,7 +113,6 @@ for lbl, cmmnd in (
   ("Conky config", __editor__ + " ~/.conky.conf/"),
   ("Edit backup files", __editor__ + " ~/.backup.*"),
   ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
-  #("View Log files", __editor__ + " /var/log/system.update.log /var/log/perl.update.log /var/log/data.mirror.log /var/log/paperjam.backup.log"),
   ("View Log files", __editor__ + " /var/log/"),
   ("X Screen Saver", "xscreensaver-demo"),
   ("Pavucontrol", "pavucontrol"),
@@ -231,16 +230,17 @@ for lbl, mnGrp in (
   ("Development", devmenu),
   ("Mediums", mmmenu),
   ("Games", gammenu),
-  ("Config", configmenu),
   ("File System", toolsmenu),
   ("Admin Tools", adminmenu),
-  ("Utilities", utilmenu)):
+  ("Utilities", utilmenu),
+  ("Config", configmenu)):
   appsmenu.add_cascade(label=lbl,menu=mnGrp)
 
 appsmenu.add_separator()
 
 # Menu
-appsmenu.add_command(label="Edit Menu", command=lambda: runCommand("idle2.7" + " /usr/local/bin/tkRootMenu.py"))
+#appsmenu.add_command(label="Edit Menu", command=lambda: runCommand("idle2.7" + " /usr/local/bin/tkRootMenu.py"))
+appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " /usr/local/bin/tkRootMenu.py"))
 appsmenu.add_command(label="Refresh Menu", command=runRfs)
 appsmenu.add_command(label="Close Menu", command=root.quit)
 
