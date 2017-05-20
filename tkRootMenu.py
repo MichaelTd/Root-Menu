@@ -8,7 +8,7 @@ from Tkinter import *
 #print os.name
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
-__terminal__ = "terminology -g 120x45"
+__terminal__ = "terminology"
 __editor__ = "atom"
 #__file_manager__ = "gentoo --root-ok"
 __file_manager__ = "xfe"
@@ -130,6 +130,7 @@ for lbl, cmmnd in (
   ("KDevelop", "kdevelop"),
   #("QtCreator", "qtcreator.sh"),
   ("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
+  ("Code Blocks", "codeblocks"),
   ("Glade", "glade"),
   ("Pg Admin3", "pgadmin3"),
   ("Micro", __terminal__ + " -e " + "micro"),
