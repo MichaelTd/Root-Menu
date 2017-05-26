@@ -70,56 +70,34 @@ root.bind_all("<Control-e>", on_accel_runEditor)
 
 menubar = Menu(root)
 
-# File system tools
-toolsmenu = Menu(menubar)
+
+appsmenu = Menu(menubar)
+
+menubar.add_cascade(label="Root Menu", menu=appsmenu)
+
+# Basic apps
+for lbl, cmmnd, k in (
+  ("Terminal", __terminal__, "ctl+t"),
+  ("Editor", __editor__, "ctl+e"),
+  ("File Manager", __file_manager__, "ctl+f"),
+  ("Browser", __browser__, "ctl+b")):
+  appsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param), accelerator=k)
+
+appsmenu.add_separator()
+
+# Internet
+netmenu = Menu(menubar)
 
 for lbl, cmmnd in (
-  ("Terminology", "terminology"),
-  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
-  ("URXVT", "urxvt"),
-  #("Hyper", "hyper"),
-  ("Midnight Commander", __terminal__ + " -e mc"),
-  #("Ranger", __terminal__ + " -e ranger"),
-  #("Rox filer", "rox"),
-  ("Gentoo", "gentoo"),
-  ("Xfe", "xfe"),
-  ("Thunar", "thunar")):
-  toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
-
-# Admin tools
-adminmenu = Menu(menubar)
-
-for lbl, cmmnd in (
-  ("Terminal", __sudo_cmd__ + " " + __terminal__),
-  ("Text Editor", __sudo_cmd__ + " " + __editor__),
-  ("File manager",  __sudo_cmd__ + " " + __file_manager__),
-  ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
-  #("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
-  ("Porthole", __sudo_cmd__ + " porthole"),
-  ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
-  #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
-  ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
-  ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
-  ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
-  ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top")):
-  adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
-
-# Config Menu
-configmenu = Menu(menubar)
-
-for lbl, cmmnd in (
-  ("Compiz settings manager", "ccsm"),
-  ("Emerald themes manager", "emerald-theme-manager"),
-  ("Conky config", __editor__ + " ~/.conky.conf/"),
-  ("Edit backup files", __editor__ + " ~/.backup.*"),
-  ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
-  ("View Log files", __editor__ + " /var/log/"),
-  ("X Screen Saver", "xscreensaver-demo"),
-  ("Pavucontrol", "pavucontrol"),
-  #("Xfce4-alsa-control", "xfce4-alsa-control"),
-  #("Alsamixer Gui", "alsamixergui"),
-  ("Alsamixer", __terminal__ + " -e alsamixer")):
-  configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+  ("Firefox", "firefox"),
+  #("Firefox DE", "firefox-de"),
+  ("Seamonkey", "seamonkey"),
+  ("Tor Network", __terminal__ + " -e /opt/tor/start-tor-browser.desktop"),
+  ("Mail", "seamonkey -mail"),
+  #("FileZilla", "filezilla"),
+  ("W3m", __terminal__ + " -e w3m www.google.com"),
+  ("HexChat", "hexchat")):
+  netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Dev menu
 devmenu = Menu(menubar)
@@ -130,8 +108,8 @@ for lbl, cmmnd in (
   ("KDevelop", "kdevelop"),
   #("QtCreator", "qtcreator.sh"),
   #("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
-  ("QtDesigner", "/home/paperjam/opt/Qt/5.8/gcc_64/bin/designer"),
-  ("QtCreator", "/home/paperjam/opt/Qt/Tools/QtCreator/bin/qtcreator.sh"),
+  ("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer"),
+  ("QtCreator", "~/opt/qt/Tools/QtCreator/bin/qtcreator.sh"),
   ("Code Blocks", "codeblocks"),
   ("Glade", "glade"),
   ("Pg Admin3", "pgadmin3"),
@@ -151,20 +129,6 @@ for lbl, cmmnd in (
   #("JuPyter", __terminal__ + " -e jupyter notebook"),
   #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
   devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
-
-# Internet
-netmenu = Menu(menubar)
-
-for lbl, cmmnd in (
-  ("Firefox", "firefox"),
-  #("Firefox DE", "firefox-de"),
-  ("Seamonkey", "seamonkey"),
-  ("Tor Network", __terminal__ + " -e /opt/tor/Browser/start-tor-browser --detach"),
-  ("Mail", "seamonkey -mail"),
-  #("FileZilla", "filezilla"),
-  ("W3m", __terminal__ + " -e w3m www.google.com"),
-  ("HexChat", "hexchat")):
-  netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Multimedia
 mmmenu = Menu(menubar)
@@ -194,6 +158,41 @@ for lbl, cmmnd in (
   ("Warsow", "~/warsow_21/warsow")):
   gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
+# File system tools
+toolsmenu = Menu(menubar)
+
+for lbl, cmmnd in (
+  ("Terminology", "terminology"),
+  ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
+  ("URXVT", "urxvt"),
+  ("XTerm", "xterm"),
+  #("Hyper", "hyper"),
+  ("Midnight Commander", __terminal__ + " -e mc"),
+  #("Ranger", __terminal__ + " -e ranger"),
+  #("Rox filer", "rox"),
+  ("Gentoo", "gentoo"),
+  ("Xfe", "xfe"),
+  ("Thunar", "thunar")):
+  toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
+# Admin tools
+adminmenu = Menu(menubar)
+
+for lbl, cmmnd in (
+  ("Terminal", __sudo_cmd__ + " " + __terminal__),
+  ("Text Editor", __sudo_cmd__ + " " + __editor__),
+  ("File manager",  __sudo_cmd__ + " " + __file_manager__),
+  ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
+  #("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
+  ("Porthole", __sudo_cmd__ + " porthole"),
+  ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
+  #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
+  ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
+  ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
+  ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
+  ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top")):
+  adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+
 # Util Menu
 utilmenu = Menu(menubar)
 
@@ -214,19 +213,22 @@ for lbl, cmmnd in (
   ("Calculator", "calculator")):
   utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
-appsmenu = Menu(menubar)
+# Config Menu
+configmenu = Menu(menubar)
 
-menubar.add_cascade(label="Root Menu", menu=appsmenu)
-
-# Basic apps
-for lbl, cmmnd, k in (
-  ("Terminal", __terminal__, "ctl+t"),
-  ("Editor", __editor__, "ctl+e"),
-  ("File Manager", __file_manager__, "ctl+f"),
-  ("Browser", __browser__, "ctl+b")):
-  appsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param), accelerator=k)
-
-appsmenu.add_separator()
+for lbl, cmmnd in (
+  ("Compiz settings manager", "ccsm"),
+  ("Emerald themes manager", "emerald-theme-manager"),
+  ("Conky config", __editor__ + " ~/.conky.conf/"),
+  ("Edit backup files", __editor__ + " ~/.backup.*"),
+  ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
+  ("View Log files", __editor__ + " /var/log/"),
+  ("X Screen Saver", "xscreensaver-demo"),
+  ("Pavucontrol", "pavucontrol"),
+  #("Xfce4-alsa-control", "xfce4-alsa-control"),
+  #("Alsamixer Gui", "alsamixergui"),
+  ("Alsamixer", __terminal__ + " -e alsamixer")):
+  configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
 # Groups
 for lbl, mnGrp in (
