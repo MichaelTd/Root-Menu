@@ -92,7 +92,7 @@ for lbl, cmmnd in (
   ("Firefox", "firefox"),
   #("Firefox DE", "firefox-de"),
   ("Seamonkey", "seamonkey"),
-  ("Tor Network", __terminal__ + " -e /opt/tor/start-tor-browser.desktop"),
+  ("Tor Network", __terminal__ + " -e cd /opt/tor/"),
   ("Mail", "seamonkey -mail"),
   #("FileZilla", "filezilla"),
   ("W3m", __terminal__ + " -e w3m www.google.com"),
