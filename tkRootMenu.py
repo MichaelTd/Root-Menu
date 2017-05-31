@@ -1,19 +1,24 @@
-#!/usr/bin/python2
+#!/bin/env python2
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
 import sys
 import os
 #from Tkinter import *
-from Tkinter import Tk, Label, Button, Scale, Menu
+from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE
 #import subprocess
 #print os.name
+
+def runCommand(app, prm=""):
+  print app
+  os.system(app + prm + " &")
+  #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
+  #(__out__, __err__) = proc.communicate()
+  #print "program: " , app, " output: ", __out__, " error: ", __err__
 
 class TkRootMenu:
 
     def __init__(self, master):
-
-        self.master = master
 
         #self.__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
         self.__terminal__ = "terminology"
@@ -24,43 +29,14 @@ class TkRootMenu:
         #self.__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
         self.__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --askpass "
 
-        def runCommand(app, prm=""):
-            print app
-            os.system(app + " &")
-            #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
-            #(__out__, __err__) = proc.communicate()
-            #print "program: " , app, " output: ", __out__, " error: ", __err__
-
-        # Menu
-        def runRfs():
-            #app = "/usr/local/bin/tkRootMenu.sh"
-            app = sys.argv[0]
-            runCommand(app)
-            self.master.quit()
-
-        # Default Apps
-        def on_accel_runTerminal(widget):
-            runCommand(self.__terminal__)
-        def on_accel_runEditor(widget):
-            runCommand(self.__editor__)
-        def on_accel_runFileManager(widget):
-            runCommand(self.__file_manager__)
-        def on_accel_runBrowser(widget):
-            runCommand(self.__browser__)
-
-        # Volume
-        def setVlm(widget):
-            #app = "amixer cset id=1 " + str(v.get()) + "%"
-            app = "amixer set 'Master' " + str(self.v.get())
-            runCommand(app)
-
+        self.master = master
         self.master.title("Root Menu")
-        self.master.option_add('*resizable', 'TRUE')
+        self.master.option_add('*resizable', TRUE)
         self.master.geometry('110x80+64+64')
 
         self.r = Button(master, text=">>", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
         self.l = Button(master, text="<<", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
-        self.v = Scale(master, from_=0, to=100, orient='horizontal', showvalue=0, command=setVlm)
+        self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
         self.v.set(100)
 
@@ -71,10 +47,10 @@ class TkRootMenu:
         self.l.pack()
         self.v.pack()
 
-        self.master.bind_all("<Control-b>", on_accel_runBrowser)
-        self.master.bind_all("<Control-t>", on_accel_runTerminal)
-        self.master.bind_all("<Control-f>", on_accel_runFileManager)
-        self.master.bind_all("<Control-e>", on_accel_runEditor)
+        self.master.bind_all("<Control-b>", self.on_accel_runBrowser)
+        self.master.bind_all("<Control-t>", self.on_accel_runTerminal)
+        self.master.bind_all("<Control-f>", self.on_accel_runFileManager)
+        self.master.bind_all("<Control-e>", self.on_accel_runEditor)
 
         menubar = Menu(master)
 
@@ -254,7 +230,7 @@ class TkRootMenu:
         # Menu
         #appsmenu.add_command(label="Edit Menu", command=lambda: runCommand("idle2.7" + " /usr/local/bin/tkRootMenu.py"))
         appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(self.__editor__ + " " + sys.argv[0]))
-        appsmenu.add_command(label="Refresh Menu", command=runRfs)
+        appsmenu.add_command(label="Refresh Menu", command=self.runRfs)
         appsmenu.add_command(label="Close Menu", command=self.master.quit)
 
         appsmenu.add_separator()
@@ -267,6 +243,29 @@ class TkRootMenu:
             appsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         self.master.config(menu=menubar)
+
+    # Menu
+    def runRfs(self):
+        #app = "/usr/local/bin/tkRootMenu.sh"
+        app = sys.argv[0]
+        runCommand(app)
+        self.master.quit()
+
+    # Default Apps
+    def on_accel_runTerminal(self, widget):
+        runCommand(self.__terminal__)
+    def on_accel_runEditor(self, widget):
+        runCommand(self.__editor__)
+    def on_accel_runFileManager(self, widget):
+        runCommand(self.__file_manager__)
+    def on_accel_runBrowser(self, widget):
+        runCommand(self.__browser__)
+
+    # Volume
+    def setVlm(self, widget):
+        #app = "amixer cset id=1 " + str(v.get()) + "%"
+        app = "amixer set 'Master' " + str(self.v.get())
+        runCommand(app)
 
 if __name__ == "__main__":
     root = Tk()
