@@ -16,7 +16,7 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
-class TkRootMenu:
+class TkRootMenu(Tk):
 
     def __init__(self, master):
 
