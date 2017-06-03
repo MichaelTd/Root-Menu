@@ -120,6 +120,7 @@ class TkRootMenu(Tk):
             ("Open Office", "ooffice"),
             ("Gimp", "gimp"),
             #("Open Shot", "openshot"),
+            ("Blender", "/opt/blender"),
             ("VLC", "vlc"),
             ("Audacious", "audacious")):
             mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
@@ -268,6 +269,6 @@ class TkRootMenu(Tk):
         runCommand(app)
 
 if __name__ == "__main__":
-    root = Tk()
-    myMenu = TkRootMenu(root)
-    root.mainloop()
+    master = Tk()
+    myMenu = TkRootMenu(master)
+    master.mainloop()
