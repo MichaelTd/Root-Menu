@@ -3,7 +3,7 @@
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
 import sys
-import os
+#import os
 #from Tkinter import *
 from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE
 #import subprocess
