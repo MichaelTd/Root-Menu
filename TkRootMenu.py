@@ -2,12 +2,10 @@
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
-import sys
 import os
-#from Tkinter import *
+import sys
 from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE
 #import subprocess
-#print os.name
 
 def runCommand(app, prm=""):
   print app
@@ -20,6 +18,7 @@ class TkRootMenu(Tk):
 
     def __init__(self, master):
 
+        print os.name
         #self.__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
         self.__terminal__ = "terminology"
         self.__editor__ = "atom"
