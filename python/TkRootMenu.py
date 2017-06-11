@@ -123,7 +123,8 @@ class TkRootMenu(Tk):
             #("Open Shot", "openshot"),
             ("Blender", "/opt/blender"),
             ("VLC", "vlc"),
-            ("Audacious", "audacious")):
+            ("Audacious", "audacious"),
+            ("Audacity", "audacity")):
             mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         # Games menu
