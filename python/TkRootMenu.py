@@ -206,14 +206,15 @@ class TkRootMenu(Tk):
             ("Compiz settings manager", "ccsm"),
             ("Emerald themes manager", "emerald-theme-manager"),
             ("Conky config", self.__editor__ + " ~/.conky.conf/"),
-            ("Edit backup files", self.__editor__ + " ~/.backup.*"),
+            ("Edit backup files", self.__editor__ + " ~/.backup.txt"),
             ("Edit shell files", self.__editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
             ("View Log files", self.__editor__ + " /var/log/"),
             ("X Screen Saver", "xscreensaver-demo"),
-            ("Pavucontrol", "pavucontrol"),
+            ("Alsamixer", self.__terminal__ + " -e alsamixer"),
+            ("Volume Prefs", "paprefs"),
+            ("Volume Controls", "pavucontrol")):
             #("Xfce4-alsa-control", "xfce4-alsa-control"),
             #("Alsamixer Gui", "alsamixergui"),
-            ("Alsamixer", self.__terminal__ + " -e alsamixer")):
             configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         # Groups
