@@ -2,10 +2,8 @@
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
-# What?
 import os
 import sys
-#from Tkinter import *
 from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE
 #import subprocess
 #print os.name
