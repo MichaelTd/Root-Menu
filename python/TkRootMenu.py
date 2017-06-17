@@ -21,9 +21,9 @@ class TkRootMenu(Tk):
 
         #self.__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
         self.__terminal__ = "terminology"
-        self.__editor__ = "atom"
-        #self.__file_manager__ = "gentoo --root-ok"
-        self.__file_manager__ = "xfe"
+        self.__editor__ = self.__terminal__ + " -e " + "micro"
+        self.__file_manager__ = "gentoo --root-ok"
+        #self.__file_manager__ = "xfe"
         self.__browser__ = "firefox"
         #self.__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
         self.__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --askpass "
@@ -98,6 +98,7 @@ class TkRootMenu(Tk):
             ("Micro", self.__terminal__ + " -e " + "micro"),
             ("Idle", "idle"),
             ("Diakonos", self.__terminal__ + " -e " + "diakonos"),
+            ("Slap", self.__terminal__ + " -e " + "~/bin/slap"),
             ("Vim", self.__terminal__ + " -e vim"),
             #("Cuda Text", "${HOME}/bin/cudatext"),
             ("GVim", "gvim"),
@@ -154,8 +155,10 @@ class TkRootMenu(Tk):
             ("Midnight Commander", self.__terminal__ + " -e mc"),
             #("Ranger", self.__terminal__ + " -e ranger"),
             #("Rox filer", "rox"),
+            ("ViFm", self.__terminal__ + " -e vifm"),
             ("Gentoo", "gentoo"),
             ("Xfe", "xfe"),
+            ("SpaceFM", "spacefm"),
             ("Thunar", "thunar")):
             toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
