@@ -21,7 +21,8 @@ class TkRootMenu(Tk):
 
         #self.__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
         self.__terminal__ = "terminology"
-        self.__editor__ = self.__terminal__ + " -e " + "micro"
+        #self.__editor__ = self.__terminal__ + " -e " + "micro"
+        self.__editor__ = "nedit"
         self.__file_manager__ = "gentoo --root-ok"
         #self.__file_manager__ = "xfe"
         self.__browser__ = "firefox"
@@ -101,6 +102,8 @@ class TkRootMenu(Tk):
             ("Slap", self.__terminal__ + " -e " + "~/bin/slap"),
             ("Vim", self.__terminal__ + " -e vim"),
             #("Cuda Text", "${HOME}/bin/cudatext"),
+            ("NEdit", "nedit"),
+            ("Tea", "tea"),
             ("GVim", "gvim"),
             ("Emacs", "emacs"),
             ("VStudio Code", "code"),
