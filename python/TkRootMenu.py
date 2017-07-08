@@ -92,8 +92,8 @@ game_apps = (
     ("X Mah-jongg","xmj"),
     ("Quake 3", "~/bin/ioq3"),
     ("Quake 3 TA", "~/bin/ioq3-ta"),
-    ("Urban Terror", "~/bin/ut42u"),
-    ("Warsow", "~/warsow_21/warsow"))
+    ("Urban Terror", __terminal__ + " -e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
+    ("Warsow", __terminal__ + " -e ~/opt/warsow_21/warsow"))
 
 fs_apps = (
     ("Terminology", "terminology"),
@@ -137,7 +137,7 @@ util_apps = (
     ("Foxit Reader", "foxitreader"),
     ("Xv", "xv"),
     ("jCalculator", "jCalculator.sh"),
-    ("jsCalculator", __browser__ + " ~/git/fcc-app/01-front-end-cert/07-javascript-calculator/jc.html"),
+    ("jsCalculator", __browser__ + " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"),
     ("Calculator", "calculator"))
 
 config_apps = (
