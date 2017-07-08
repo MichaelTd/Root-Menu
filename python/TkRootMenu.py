@@ -84,6 +84,7 @@ media_apps = (
 game_apps = (
     ("GTypist", __terminal__ + " -e gtypist"),
     ("KLavaro", "klavaro"),
+    ("Lutris", "~/opt/lutris/bin/lutris"),
     ("GNU Back Gammon", "gnubg"),
     ("XGammon", "xgammon"),
     ("XBoard", "xboard"),
