@@ -67,7 +67,7 @@ dev_apps = (
     #("JuPyter", __terminal__ + " -e jupyter notebook"),
     ("Emacs", "emacs"),
     ("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
-    ("VStudio Code", "code"),
+    ("VSCode", "code"),
     ("LightTable", "light"),
     ("Sublime Text", "sublime"),
     ("Atom", "atom"))
