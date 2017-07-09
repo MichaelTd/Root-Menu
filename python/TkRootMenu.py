@@ -40,7 +40,8 @@ net_apps = (
     ("Mail", "seamonkey -mail"),
     #("FileZilla", "filezilla"),
     ("W3m", __terminal__ + " -e w3m www.google.com"),
-    ("HexChat", "hexchat"))
+    ("Quassel IRC", "quassel"),
+    ("HexChat IRC", "hexchat"))
 
 dev_apps = (
     ("Eclipse", "eclipse"),
