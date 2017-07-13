@@ -17,9 +17,9 @@ def runCommand(app, prm=""):
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
-__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
+#__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
 #__editor__ = __terminal__ + " -e micro"
-#__editor__ = "atom"
+__editor__ = "atom"
 #__file_manager__ = "gentoo --root-ok"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
