@@ -20,8 +20,8 @@ __terminal__ = "terminology"
 #__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
 #__editor__ = __terminal__ + " -e micro"
 __editor__ = "atom"
-__file_manager__ = "gentoo --root-ok"
-#__file_manager__ = "xfe"
+#__file_manager__ = "gentoo --root-ok"
+__file_manager__ = "xfe"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --askpass "
@@ -57,7 +57,7 @@ dev_apps = (
     ("Micro", __terminal__ + " -e " + "micro"),
     ("Idle", "idle"),
     ("Diakonos", __terminal__ + " -e " + "diakonos"),
-    ("Slap", __terminal__ + " -e " + "~/bin/slap"),
+    #("Slap", __terminal__ + " -e " + "~/bin/slap"),
     ("Vim", __terminal__ + " -e vim"),
     #("Cuda Text", "${HOME}/bin/cudatext"),
     ("NEdit", "nedit"),
