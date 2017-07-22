@@ -19,12 +19,13 @@ def runCommand(app, prm=""):
 __terminal__ = "terminology"
 #__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
 #__editor__ = __terminal__ + " -e micro"
-__editor__ = "atom"
-#__file_manager__ = "gentoo --root-ok"
-__file_manager__ = "xfe"
+#__editor__ = "atom"
+__editor__ = "nedit"
+__file_manager__ = "gentoo --root-ok"
+#__file_manager__ = "xfe"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
-__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --askpass "
+__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
 
 basic_apps = (
     ("Terminal", __terminal__, "ctl+t"),
@@ -169,8 +170,8 @@ class TkRootMenu(Tk):
         self.master.option_add('*resizable', TRUE)
         self.master.geometry('110x80+64+64')
 
-        self.r = Button(master, text=">>", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
-        self.l = Button(master, text="<<", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
+        self.r = Button(master, text="=>", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
+        self.l = Button(master, text="<=", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
         self.v.set(100)
