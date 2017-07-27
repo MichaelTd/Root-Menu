@@ -21,9 +21,10 @@ __terminal__ = "terminology"
 #__editor__ = __terminal__ + " -e micro"
 #__editor__ = "atom"
 __editor__ = "nedit"
-__file_manager__ = "gentoo --root-ok"
+#__file_manager__ = "gentoo --root-ok"
 #__file_manager__ = "xfe"
-__browser__ = "firefox"
+__file_manager__ = "spacefm"
+__browser__ = "~/bin/firefox-de"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
 
@@ -35,7 +36,7 @@ basic_apps = (
 
 net_apps = (
     ("Firefox", "firefox"),
-    #("Firefox DE", "firefox-de"),
+    ("Firefox DE", "~/bin/firefox-de"),
     ("Seamonkey", "seamonkey"),
     ("Tor Network", "cd /opt/tor/ && " + __terminal__ + " --login=false"),
     ("Mail", "seamonkey -mail"),
@@ -60,7 +61,7 @@ dev_apps = (
     ("Diakonos", __terminal__ + " -e " + "diakonos"),
     #("Slap", __terminal__ + " -e " + "~/bin/slap"),
     ("Vim", __terminal__ + " -e vim"),
-    #("Cuda Text", "${HOME}/bin/cudatext"),
+    ("Cuda Text", "${HOME}/bin/cudatext"),
     ("NEdit", "nedit"),
     ("Tea", "tea"),
     ("GVim", "gvim"),
