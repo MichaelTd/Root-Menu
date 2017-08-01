@@ -1,5 +1,5 @@
 ### Root-Menu
-A simple python graphical adhoc menu for personal use.
+A simple adhoc graphical menu for personal use writen in python.
 
 #### Usage
 /path/to/python2 /git/pythonRootMenu/python/TkRootMenu.py
