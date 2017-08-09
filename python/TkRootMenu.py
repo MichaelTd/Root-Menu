@@ -24,7 +24,7 @@ __editor__ = "atom"
 #__file_manager__ = "gentoo --root-ok"
 __file_manager__ = "xfe"
 #__file_manager__ = "spacefm"
-__browser__ = "firefox"
+__browser__ = "firefox-esr"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
 
