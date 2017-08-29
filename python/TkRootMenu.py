@@ -5,7 +5,8 @@
 import os, sys
 from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE
 #import subprocess
-#print os.name
+print os.name
+print sys.argv[0]
 
 def runCommand(app, prm=""):
   print app
@@ -35,7 +36,7 @@ basic_apps = (
 
 net_apps = (
     ("Firefox", "firefox"),
-    ("Firefox DE", "~/bin/firefox-de"),
+    ("Firefox DE", "firefox-de"),
     ("Seamonkey", "seamonkey"),
     ("Tor Network", "cd /opt/tor/ && " + __terminal__ + " --login=false"),
     ("Mail", "seamonkey -mail"),
@@ -176,7 +177,7 @@ class TkRootMenu(Tk):
         self.l = Button(master, text="<=", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
-        self.v.set(100)
+        #self.v.set(100)
 
         #tmp=`amixer cget numid=3|grep -e "[0-9]\{5\}\$"`
         #vlm=${tmp:(-5)}
