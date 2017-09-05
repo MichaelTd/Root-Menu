@@ -36,66 +36,67 @@ basic_apps = (
 
 net_apps = (
     ("Firefox", "firefox"),
-    ("Firefox DE", "firefox-de"),
+    #("Firefox DE", "firefox-de"),
     ("Seamonkey", "seamonkey"),
-    ("Tor Network", "cd /opt/tor/ && " + __terminal__ + " --login=false"),
+    ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
     ("Mail", "seamonkey -mail"),
     #("FileZilla", "filezilla"),
-    ("W3m", __terminal__ + " -e w3m www.google.com"),
-    ("Quassel IRC", "quassel"),
+    ("W3m", __terminal__ + " -e w3m https://www.gentoo.org/"),
+    ("Lynx", __terminal__ + " -e lynx https://www.gentoo.org/"),
+    #("Quassel IRC", "quassel"),
     ("HexChat IRC", "hexchat"))
 
 dev_apps = (
     ("Eclipse", "eclipse"),
     ("Netbeans", "netbeans"),
-    ("KDevelop", "kdevelop"),
+    #("KDevelop", "kdevelop"),
     #("QtCreator", "qtcreator.sh"),
-    #("QtDesigner", "qtchooser -run-tool=designer -qt=5"),
-    ("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer"),
-    ("QtCreator", "~/opt/qt/Tools/QtCreator/bin/qtcreator.sh"),
+    ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
+    #("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer"),
+    #("QtCreator", "~/opt/qt/Tools/QtCreator/bin/qtcreator.sh"),
     ("Code Blocks", "codeblocks"),
-    ("Glade", "glade"),
-    ("Pg Admin3", "pgadmin3"),
+    #("Glade", "glade"),
+    #("Pg Admin3", "pgadmin3"),
     ("Micro", __terminal__ + " -e " + "micro"),
     ("Idle", "idle"),
     ("Diakonos", __terminal__ + " -e " + "diakonos"),
     #("Slap", __terminal__ + " -e " + "~/bin/slap"),
     ("Vim", __terminal__ + " -e vim"),
-    ("Cuda Text", "${HOME}/bin/cudatext"),
+    #("Cuda Text", "${HOME}/bin/cudatext"),
     ("NEdit", "nedit"),
-    ("Tea", "tea"),
+    #("Tea", "tea"),
     ("GVim", "gvim"),
     #("Xemacs", __terminal__ + " -e xemacs"),
     #("Yudit", "yudit"),
     #("JuPyter", __terminal__ + " -e jupyter notebook"),
     ("Emacs", "emacs"),
-    ("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
-    ("VSCode", "code"),
-    ("LightTable", "light"),
-    ("Sublime Text", "sublime"),
+    #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
+    #("VSCode", "code"),
+    #("LightTable", "light"),
+    #("Sublime Text", "sublime"),
     ("Atom", "atom"))
 
 media_apps = (
     ("Open Office", "ooffice"),
     ("Gimp", "gimp"),
     #("Open Shot", "openshot"),
-    ("Blender", "/opt/blender"),
+    #("Blender", "/opt/blender"),
     ("VLC", "vlc"),
     ("Audacious", "audacious"),
     ("Audacity", "audacity"))
 
 game_apps = (
-    ("GTypist", __terminal__ + " -e gtypist"),
+    #("GTypist", __terminal__ + " -e gtypist"),
     ("KLavaro", "klavaro"),
-    ("Lutris", "~/opt/lutris/bin/lutris"),
-    ("GNU Back Gammon", "gnubg"),
-    ("XGammon", "xgammon"),
-    ("XBoard", "xboard"),
-    ("Xmahjongg","xmahjongg"),
-    ("X Mah-jongg","xmj"),
-    ("Quake 3", "~/bin/ioq3"),
-    ("Quake 3 TA", "~/bin/ioq3-ta"),
-    ("Urban Terror", __terminal__ + " -e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
+    #("Lutris", "~/opt/lutris/bin/lutris"),
+    #("GNU Back Gammon", "gnubg"),
+    #("XGammon", "xgammon"),
+    #("XBoard", "xboard"),
+    #("Xmahjongg","xmahjongg"),
+    #("X Mah-jongg","xmj"),
+    #("Quake 3", "~/bin/ioq3"),
+    #("Quake 3 TA", "~/bin/ioq3-ta"),
+    #("Urban Terror", __terminal__ + " -e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
     ("Warsow", __terminal__ + " -e ~/opt/warsow_21/warsow"))
 
 fs_apps = (
@@ -119,7 +120,9 @@ admin_apps = (
     ("File manager",  __sudo_cmd__ + " " + __file_manager__),
     ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
     #("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
-    ("Porthole", __sudo_cmd__ + " porthole"),
+    ("Porthole", __sudo_cmd__ + " " + __terminal__ + " -e porthole"),
+    ("gtk Partition Editor", __sudo_cmd__ + " " + __terminal__ + " -e gparted"),
+    ("cli Partition Editor", __sudo_cmd__ + " " + __terminal__ + " -e parted"),
     ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
     #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
     ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
@@ -138,11 +141,11 @@ util_apps = (
     #("PeaZip", "peazip"),
     ("Xarchiver", "xarchiver"),
     ("Ghost View", "gv"),
-    ("Foxit Reader", "foxitreader"),
+    #("Foxit Reader", "foxitreader"),
     ("Xv", "xv"),
     ("jCalculator", "jCalculator.sh"),
-    ("jsCalculator", __browser__ + " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"),
-    ("Calculator", "calculator"))
+    ("jsCalculator", __browser__ + " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"))
+    #("Calculator", "calculator"))
 
 config_apps = (
     ("Compiz settings manager", "ccsm"),
@@ -153,6 +156,8 @@ config_apps = (
     ("View Log files", __editor__ + " /var/log/"),
     ("View World file", __editor__ + " /var/lib/world"),
     ("X Screen Saver", "xscreensaver-demo"),
+    ("Wicd gtk", "wicd-gtk"),
+    ("Wicd curses", __terminal__ + " -e wicd-curses"),
     #("Xfce4-alsa-control", "xfce4-alsa-control"),
     #("Alsamixer Gui", "alsamixergui"),
     ("Alsamixer", __terminal__ + " -e alsamixer"),
@@ -177,7 +182,7 @@ class TkRootMenu(Tk):
         self.l = Button(master, text="<=", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
-        #self.v.set(100)
+        self.v.set(100)
 
         #tmp=`amixer cget numid=3|grep -e "[0-9]\{5\}\$"`
         #vlm=${tmp:(-5)}
@@ -266,6 +271,10 @@ class TkRootMenu(Tk):
 
         appsmenu.add_separator()
 
+        appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("xscreensaver-command -lock"))
+
+        appsmenu.add_separator()
+
         # PC
         for lbl, cmmnd in pc_options:
             appsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
@@ -292,7 +301,8 @@ class TkRootMenu(Tk):
     # Volume
     def setVlm(self, widget):
         #app = "amixer cset id=1 " + str(v.get()) + "%"
-        app = "amixer set 'Master' " + str(self.v.get())
+        app = "amixer set 'Master' " + str(self.v.get()) + "%"
+        #print app
         runCommand(app)
 
 if __name__ == "__main__":
