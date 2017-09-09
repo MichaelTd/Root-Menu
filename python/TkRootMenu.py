@@ -53,7 +53,7 @@ dev_apps = (
     #("QtCreator", "qtcreator.sh"),
     ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
     #("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer"),
-    #("QtCreator", "~/opt/qt/Tools/QtCreator/bin/qtcreator.sh"),
+    ("QtCreator", "~/opt/Qt/qtcreator-4.4.0/binqtcreator.sh"),
     ("Code Blocks", "codeblocks"),
     #("Glade", "glade"),
     #("Pg Admin3", "pgadmin3"),
@@ -86,18 +86,18 @@ media_apps = (
     ("Audacity", "audacity"))
 
 game_apps = (
-    #("GTypist", __terminal__ + " -e gtypist"),
+    ("GTypist", __terminal__ + " -e gtypist"),
     ("KLavaro", "klavaro"),
     #("Lutris", "~/opt/lutris/bin/lutris"),
-    #("GNU Back Gammon", "gnubg"),
-    #("XGammon", "xgammon"),
-    #("XBoard", "xboard"),
-    #("Xmahjongg","xmahjongg"),
+    ("GNU Back Gammon", "gnubg"),
+    ("XGammon", "xgammon"),
+    ("XBoard", "xboard"),
+    ("Xmahjongg","xmahjongg"))
     #("X Mah-jongg","xmj"),
     #("Quake 3", "~/bin/ioq3"),
     #("Quake 3 TA", "~/bin/ioq3-ta"),
     #("Urban Terror", __terminal__ + " -e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
-    ("Warsow", __terminal__ + " -e ~/opt/warsow_21/warsow"))
+    #("Warsow", __terminal__ + " -e ~/opt/warsow_21/warsow"))
 
 fs_apps = (
     ("Terminology", "terminology"),
@@ -125,6 +125,7 @@ admin_apps = (
     ("cli Partition Editor", __sudo_cmd__ + " " + __terminal__ + " -e parted"),
     ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
     #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
+    ("C Sys Dig", __sudo_cmd__ + " " + __terminal__ + " -e csysdig"),
     ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
     ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
     ("HTop", __sudo_cmd__ + " " + __terminal__ + " -e htop"),
@@ -150,6 +151,7 @@ util_apps = (
 config_apps = (
     ("Compiz settings manager", "ccsm"),
     ("Emerald themes manager", "emerald-theme-manager"),
+    ("Qt Config", "qtconfig"),
     ("Conky config", __editor__ + " ~/.conky.conf/"),
     ("Edit backup files", __editor__ + " ~/.backup.txt"),
     ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
