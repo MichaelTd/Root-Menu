@@ -102,8 +102,8 @@ game_apps = (
 fs_apps = (
     ("Terminology", "terminology"),
     ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
-    ("URXVT", "urxvt"),
-    ("XTerm", "xterm"),
+    ("URXVT", "urxvt -sb "),
+    ("XTerm", "xterm -sb "),
     #("Hyper", "hyper"),
     ("Midnight Commander", __terminal__ + " -e mc"),
     #("Ranger", __terminal__ + " -e ranger"),
