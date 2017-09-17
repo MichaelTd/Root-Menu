@@ -3,10 +3,13 @@
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
 import os, sys
-from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE
+from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, E, W
+from PIL import ImageTk, Image
 #import subprocess
+
 print os.name
 print sys.argv[0]
+
 
 def runCommand(app, prm=""):
   print app
@@ -16,16 +19,12 @@ def runCommand(app, prm=""):
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
-__terminal__ = "terminology"
+__terminal__ = "urxvt"
 #__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
-#__editor__ = __terminal__ + " -e micro"
-__editor__ = "atom"
-#__editor__ = "nedit"
-#__file_manager__ = "gentoo --root-ok"
-__file_manager__ = "xfe"
-#__file_manager__ = "spacefm"
+__editor__ = "nedit"
+__file_manager__ = "gentoo --root-ok"
 __browser__ = "firefox"
-#__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen &&sudo --askpass "
+#__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
 
 basic_apps = (
@@ -41,15 +40,15 @@ net_apps = (
     ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
     ("Mail", "seamonkey -mail"),
     #("FileZilla", "filezilla"),
-    ("W3m", __terminal__ + " -e w3m https://www.gentoo.org/"),
-    ("Lynx", __terminal__ + " -e lynx https://www.gentoo.org/"),
+    ("W3m", __terminal__ + " -e w3m -v"),
+    ("Lynx", __terminal__ + " -e lynx"),
     #("Quassel IRC", "quassel"),
     ("HexChat IRC", "hexchat"))
 
 dev_apps = (
     ("Eclipse", "eclipse"),
     ("Netbeans", "netbeans"),
-    #("KDevelop", "kdevelop"),
+    ("KDevelop", "kdevelop"),
     #("QtCreator", "qtcreator.sh"),
     ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
     #("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer"),
@@ -78,12 +77,13 @@ dev_apps = (
 
 media_apps = (
     ("Open Office", "ooffice"),
-    ("Gimp", "gimp"),
     #("Open Shot", "openshot"),
     #("Blender", "/opt/blender"),
+    ("Kodi", "kodi"),
     ("VLC", "vlc"),
-    ("Audacious", "audacious"),
-    ("Audacity", "audacity"))
+    ("Gimp", "gimp"),
+    ("Audacity", "audacity"),
+    ("Audacious", "audacious"))
 
 game_apps = (
     ("GTypist", __terminal__ + " -e gtypist"),
@@ -102,8 +102,8 @@ game_apps = (
 fs_apps = (
     ("Terminology", "terminology"),
     ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
-    ("URXVT", "urxvt -sb "),
-    ("XTerm", "xterm -sb "),
+    ("URXVT", "urxvt"),
+    ("XTerm", "xterm"),
     #("Hyper", "hyper"),
     ("Midnight Commander", __terminal__ + " -e mc"),
     #("Ranger", __terminal__ + " -e ranger"),
@@ -178,20 +178,25 @@ class TkRootMenu(Tk):
         self.master = master
         self.master.title("Root Menu")
         self.master.option_add('*resizable', TRUE)
-        self.master.geometry('110x80+64+64')
+        #self.master.geometry('110x80+64+64')
 
-        self.r = Button(master, text="=>", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
-        self.l = Button(master, text="<=", width=10, command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
+        self.l = Button(master, width=3, text="<=", command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
+        self.r = Button(master, width=3, text="=>", command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
+
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
+
+	self.l.grid(row=0, sticky=W)
+	self.r.grid(row=0, sticky=E)
+	self.v.grid(row=1)
 
         self.v.set(100)
 
         #tmp=`amixer cget numid=3|grep -e "[0-9]\{5\}\$"`
         #vlm=${tmp:(-5)}
 
-        self.r.pack()
-        self.l.pack()
-        self.v.pack()
+        #self.r.pack()
+        #self.l.pack()
+        #self.v.pack()
 
         self.master.bind_all("<Control-b>", self.on_accel_runBrowser)
         self.master.bind_all("<Control-t>", self.on_accel_runTerminal)
@@ -204,9 +209,24 @@ class TkRootMenu(Tk):
 
         menubar.add_cascade(label="Root Menu", menu=appsmenu)
 
+	#self.tepng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/xterm.XTerm.png'))
+	#self.edpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/nedit.NEdit.png'))
+	#self.fmpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/gentoo.Gentoo.png'))
+	#self.brpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/firefox.Firefox.png'))
+
+	#self.basic_apps = (
+	#    ("Terminal", __terminal__, "ctl+t", self.tepng),
+	#    ("Editor", __editor__, "ctl+e", self.edpng),
+	#    ("File Manager", __file_manager__, "ctl+f", self.fmpng),
+	#    ("Browser", __browser__, "ctl+b", self.brpng))
+
+        # Basic apps
+        #for lbl, cmmnd, k, img in self.basic_apps:
+        #   appsmenu.add_command(label=lbl, image=img, accelerator=k, command=lambda param=cmmnd: runCommand(param))
+
         # Basic apps
         for lbl, cmmnd, k in basic_apps:
-            appsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param), accelerator=k)
+            appsmenu.add_command(label=lbl, accelerator=k, command=lambda param=cmmnd: runCommand(param))
 
         appsmenu.add_separator()
 
