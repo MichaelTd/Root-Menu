@@ -19,9 +19,9 @@ def runCommand(app, prm=""):
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
 #__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
-__terminal__ = "urxvt"
+__terminal__ = "terminology"
 #__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
-__editor__ = "nedit"
+__editor__ = "atom"
 __file_manager__ = "gentoo --root-ok"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen sudo --askpass "
@@ -52,7 +52,7 @@ dev_apps = (
     #("QtCreator", "qtcreator.sh"),
     ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
     #("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer"),
-    ("QtCreator", "~/opt/Qt/qtcreator-4.4.0/binqtcreator.sh"),
+    ("QtCreator", "~/opt/Qt/qtcreator-4.4.0/bin/qtcreator.sh"),
     ("Code Blocks", "codeblocks"),
     #("Glade", "glade"),
     #("Pg Admin3", "pgadmin3"),
