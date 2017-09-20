@@ -22,7 +22,8 @@ def runCommand(app, prm=""):
 __terminal__ = "terminology"
 #__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
 __editor__ = "atom"
-__file_manager__ = "gentoo --root-ok"
+#__file_manager__ = "gentoo --root-ok"
+__file_manager__ = "xfe"
 __browser__ = "firefox"
 #__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
@@ -77,6 +78,10 @@ dev_apps = (
 
 media_apps = (
     ("Open Office", "ooffice"),
+    ("Scribus", "scribus-1.4.6"),
+    ("Inkscape", "inkscape"),
+    ("XFig", "xfig"),
+    ("Dia", "dia"),
     #("Open Shot", "openshot"),
     #("Blender", "/opt/blender"),
     ("Kodi", "kodi"),
