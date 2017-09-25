@@ -10,7 +10,6 @@ from PIL import ImageTk, Image
 print os.name
 print sys.argv[0]
 
-
 def runCommand(app, prm=""):
   print app
   os.system(app + prm + " &")
@@ -18,14 +17,10 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
-#__terminal__ = "xfce4-terminal --disable-server --geometry=120x40"
 __terminal__ = "terminology"
-#__editor__ = __terminal__ + " -e /bin/env /bin/bash  ~/opt/zed/zed"
 __editor__ = "atom"
-#__file_manager__ = "gentoo --root-ok"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
-#__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/ssh-askpass-fullscreen sudo --askpass "
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
 
 basic_apps = (
@@ -41,6 +36,7 @@ net_apps = (
     ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
     ("Mail", "seamonkey -mail"),
     #("FileZilla", "filezilla"),
+    ("Midori", "midori"),
     ("W3m", __terminal__ + " -e w3m -v"),
     ("Lynx", __terminal__ + " -e lynx"),
     #("Quassel IRC", "quassel"),
@@ -146,8 +142,9 @@ util_apps = (
     ("Viewnior", "viewnior"),
     #("PeaZip", "peazip"),
     ("Xarchiver", "xarchiver"),
+    ("Evince", "evince"),    
+    ("Foxit Reader", "foxitreader"),
     ("Ghost View", "gv"),
-    #("Foxit Reader", "foxitreader"),
     ("Xv", "xv"),
     ("jCalculator", "jCalculator.sh"),
     ("jsCalculator", __browser__ + " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"))
