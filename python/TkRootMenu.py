@@ -1,4 +1,4 @@
-#!/bin/env python2
+#!/usr/bin/env python2
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
@@ -17,9 +17,9 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
-__terminal__ = "terminology"
-__editor__ = "atom"
-__file_manager__ = "xfe"
+__terminal__ = "urxvt"
+__editor__ = "emacs"
+__file_manager__ = "gentoo"
 __browser__ = "firefox"
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
 
@@ -31,7 +31,7 @@ basic_apps = (
 
 net_apps = (
     ("Firefox", "firefox"),
-    #("Firefox DE", "firefox-de"),
+    ("Firefox DE", "firefox-de"),
     ("Seamonkey", "seamonkey"),
     ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
     ("Mail", "seamonkey -mail"),
@@ -66,14 +66,16 @@ dev_apps = (
     #("Yudit", "yudit"),
     #("JuPyter", __terminal__ + " -e jupyter notebook"),
     ("Emacs", "emacs"),
+    ("Geany","geany"),
     #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
-    #("VSCode", "code"),
-    #("LightTable", "light"),
-    #("Sublime Text", "sublime"),
+    ("VSCode", "vscode"),
+    ("LightTable", "lighttable"),
+    ("Sublime Text", "sublime_text"),
     ("Atom", "atom"))
 
 media_apps = (
     ("Open Office", "ooffice"),
+    ("Abi Word", "abiword"),
     ("Scribus", "scribus-1.4.6"),
     ("Inkscape", "inkscape"),
     ("XFig", "xfig"),
@@ -102,7 +104,7 @@ game_apps = (
 
 fs_apps = (
     ("Terminology", "terminology"),
-    ("Xfce4 Terminal", "xfce4-terminal --disable-server --geometry=120x40"),
+    ("Xfce4 Terminal", "xfce4-terminal --disable-server"),
     ("URXVT", "urxvt"),
     ("XTerm", "xterm"),
     #("Hyper", "hyper"),
@@ -142,7 +144,7 @@ util_apps = (
     ("Viewnior", "viewnior"),
     #("PeaZip", "peazip"),
     ("Xarchiver", "xarchiver"),
-    ("Evince", "evince"),    
+    ("Evince", "evince"),
     ("Foxit Reader", "foxitreader"),
     ("Ghost View", "gv"),
     ("Xv", "xv"),
@@ -154,6 +156,7 @@ config_apps = (
     ("Compiz settings manager", "ccsm"),
     ("Emerald themes manager", "emerald-theme-manager"),
     ("Qt Config", "qtconfig"),
+    ("Edit autostart.sh", __editor__ + " ~/bin/autostart.sh"),
     ("Conky config", __editor__ + " ~/.conky.conf/"),
     ("Edit backup files", __editor__ + " ~/.backup.txt"),
     ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
@@ -180,7 +183,7 @@ class TkRootMenu(Tk):
         self.master = master
         self.master.title("Root Menu")
         self.master.option_add('*resizable', TRUE)
-        #self.master.geometry('110x80+64+64')
+        self.master.geometry('105x50+64+64')
 
         self.l = Button(master, width=3, text="<=", command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
         self.r = Button(master, width=3, text="=>", command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
