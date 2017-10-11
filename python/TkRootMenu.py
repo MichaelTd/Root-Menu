@@ -17,9 +17,9 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
-__terminal__ = "urxvt"
-__editor__ = "emacs"
-__file_manager__ = "gentoo"
+__terminal__ = "terminology"
+__editor__ = "geany"
+__file_manager__ = "xfe"
 __browser__ = "firefox"
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
 
@@ -33,10 +33,11 @@ net_apps = (
     ("Firefox", "firefox"),
     ("Firefox DE", "firefox-de"),
     ("Seamonkey", "seamonkey"),
+    ("Opera","opera"),
     ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
     ("Mail", "seamonkey -mail"),
     #("FileZilla", "filezilla"),
-    ("Midori", "midori"),
+    #("Midori", "midori"),
     ("W3m", __terminal__ + " -e w3m -v"),
     ("Lynx", __terminal__ + " -e lynx"),
     #("Quassel IRC", "quassel"),
@@ -67,6 +68,7 @@ dev_apps = (
     #("JuPyter", __terminal__ + " -e jupyter notebook"),
     ("Emacs", "emacs"),
     ("Geany","geany"),
+    ("Blue Fish","bluefish"),
     #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
     ("VSCode", "vscode"),
     ("LightTable", "lighttable"),
@@ -75,7 +77,7 @@ dev_apps = (
 
 media_apps = (
     ("Open Office", "ooffice"),
-    ("Abi Word", "abiword"),
+    #("Abi Word", "abiword"),
     ("Scribus", "scribus-1.4.6"),
     ("Inkscape", "inkscape"),
     ("XFig", "xfig"),
@@ -92,6 +94,7 @@ game_apps = (
     ("GTypist", __terminal__ + " -e gtypist"),
     ("KLavaro", "klavaro"),
     #("Lutris", "~/opt/lutris/bin/lutris"),
+    ("Snake 3D", "snake3d"),
     ("GNU Back Gammon", "gnubg"),
     ("XGammon", "xgammon"),
     ("XBoard", "xboard"),
@@ -137,8 +140,10 @@ admin_apps = (
 util_apps = (
     ("App Runner", "~/bin/runcmd.sh"),
     ("Xfce4 App Finder", "xfce4-appfinder --collapsed --disable-server"),
+    ("Synapse", "synapse"),
     ("Xfce4 Screenshot", "xfce4-screenshooter"),
     ("Screengrab", "screengrab"),
+    #("Shutter","shutter"),
     ("Take a shot now", "~/bin/imss.sh 2"),
     ("Simple Screen Recorder", "simplescreenrecorder"),
     ("Viewnior", "viewnior"),
@@ -148,9 +153,12 @@ util_apps = (
     ("Foxit Reader", "foxitreader"),
     ("Ghost View", "gv"),
     ("Xv", "xv"),
-    ("jCalculator", "jCalculator.sh"),
+    ("Fox Calc","calculator"),
+    ("XCalc","xcalc"),
+    ("Calcoo","calcoo"),
+    ("Term Calc", __terminal__ + " -e calc"),
+    ("jCalc", "~/bin/jCalc.sh"),
     ("jsCalculator", __browser__ + " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"))
-    #("Calculator", "calculator"))
 
 config_apps = (
     ("Compiz settings manager", "ccsm"),
@@ -190,9 +198,9 @@ class TkRootMenu(Tk):
 
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
-	self.l.grid(row=0, sticky=W)
-	self.r.grid(row=0, sticky=E)
-	self.v.grid(row=1)
+        self.l.grid(row=0, sticky=W)
+        self.r.grid(row=0, sticky=E)
+        self.v.grid(row=1)
 
         self.v.set(100)
 
@@ -214,16 +222,16 @@ class TkRootMenu(Tk):
 
         menubar.add_cascade(label="Root Menu", menu=appsmenu)
 
-	#self.tepng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/xterm.XTerm.png'))
-	#self.edpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/nedit.NEdit.png'))
-	#self.fmpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/gentoo.Gentoo.png'))
-	#self.brpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/firefox.Firefox.png'))
-
-	#self.basic_apps = (
-	#    ("Terminal", __terminal__, "ctl+t", self.tepng),
-	#    ("Editor", __editor__, "ctl+e", self.edpng),
-	#    ("File Manager", __file_manager__, "ctl+f", self.fmpng),
-	#    ("Browser", __browser__, "ctl+b", self.brpng))
+    	#self.tepng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/xterm.XTerm.png'))
+    	#self.edpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/nedit.NEdit.png'))
+    	#self.fmpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/gentoo.Gentoo.png'))
+    	#self.brpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/firefox.Firefox.png'))
+    
+    	#self.basic_apps = (
+    	#    ("Terminal", __terminal__, "ctl+t", self.tepng),
+    	#    ("Editor", __editor__, "ctl+e", self.edpng),
+    	#    ("File Manager", __file_manager__, "ctl+f", self.fmpng),
+    	#    ("Browser", __browser__, "ctl+b", self.brpng))
 
         # Basic apps
         #for lbl, cmmnd, k, img in self.basic_apps:
