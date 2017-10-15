@@ -3,7 +3,7 @@
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
 import os, sys
-from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, E, W
+from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 from PIL import ImageTk, Image
 #import subprocess
 
@@ -94,6 +94,7 @@ game_apps = (
     ("GTypist", __terminal__ + " -e gtypist"),
     ("KLavaro", "klavaro"),
     #("Lutris", "~/opt/lutris/bin/lutris"),
+    ("Gx Mame", "gxmame"),
     ("Snake 3D", "snake3d"),
     ("GNU Back Gammon", "gnubg"),
     ("XGammon", "xgammon"),
@@ -190,7 +191,11 @@ class TkRootMenu(Tk):
 
         self.master = master
         self.master.title("Root Menu")
-        self.master.option_add('*resizable', TRUE)
+        
+        opts=(("*resizable", TRUE), ("*tearOff", FALSE))
+        for opt, cond in opts:
+          self.master.option_add(opt, cond)
+
         self.master.geometry('105x50+64+64')
 
         self.l = Button(master, width=3, text="<=", command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
@@ -226,7 +231,7 @@ class TkRootMenu(Tk):
     	#self.edpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/nedit.NEdit.png'))
     	#self.fmpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/gentoo.Gentoo.png'))
     	#self.brpng = ImageTk.PhotoImage(Image.open('/home/paperjam/GNUstep/Library/WindowMaker/ExtraIcons/firefox.Firefox.png'))
-    
+
     	#self.basic_apps = (
     	#    ("Terminal", __terminal__, "ctl+t", self.tepng),
     	#    ("Editor", __editor__, "ctl+e", self.edpng),
