@@ -164,6 +164,9 @@ util_apps = (
 config_apps = (
     ("Compiz settings manager", "ccsm"),
     ("Emerald themes manager", "emerald-theme-manager"),
+    ("Tint Wizard", "tintwizard"),
+    ("Tint2 Config", "tint2conf"),
+    ("OpenBox conf", "obconf"),
     ("Qt Config", "qtconfig"),
     ("Edit autostart.sh", __editor__ + " ~/bin/autostart.sh"),
     ("Conky config", __editor__ + " ~/.conky.conf/"),
