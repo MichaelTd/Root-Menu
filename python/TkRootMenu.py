@@ -86,6 +86,7 @@ media_apps = (
     #("Blender", "/opt/blender"),
     ("Kodi", "kodi"),
     ("VLC", "vlc"),
+    ("Dark Table", "darktable"),
     ("Gimp", "gimp"),
     ("Audacity", "audacity"),
     ("Audacious", "audacious"))
@@ -95,6 +96,7 @@ game_apps = (
     ("KLavaro", "klavaro"),
     #("Lutris", "~/opt/lutris/bin/lutris"),
     ("Gx Mame", "gxmame"),
+    ("Advanced Mame Menu", "advmenu"),
     ("Snake 3D", "snake3d"),
     ("GNU Back Gammon", "gnubg"),
     ("XGammon", "xgammon"),
