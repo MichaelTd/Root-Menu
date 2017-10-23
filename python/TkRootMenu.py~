@@ -18,7 +18,7 @@ def runCommand(app, prm=""):
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
 __terminal__ = "terminology"
-__editor__ = "atom"
+__editor__ = "bluefish"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
