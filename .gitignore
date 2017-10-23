@@ -3,3 +3,6 @@ Debug/*
 old/*
 python/*
 src/*
+.cproject
+.project
+.pydevproject
