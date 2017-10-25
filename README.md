@@ -2,4 +2,4 @@
 A simple adhoc graphical menu for personal use writen in python.
 
 #### Usage
-/path/to/python2 ~/git/pythonRootMenu/python/TkRootMenu.py
+/path/to/python2 ~/git/pythonRootMenu/TkRootMenu.py
