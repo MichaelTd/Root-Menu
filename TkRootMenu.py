@@ -17,7 +17,7 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
-__terminal__ = "terminology"
+__terminal__ = "cool-retro-term"
 __editor__ = "atom"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
@@ -36,6 +36,7 @@ net_apps = (
     ("Opera","opera"),
     ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
     ("Mail", "seamonkey -mail"),
+    ("Pidgin", "pidgin"),
     #("FileZilla", "filezilla"),
     #("Midori", "midori"),
     ("W3m", __terminal__ + " -e w3m -v"),
@@ -77,6 +78,7 @@ dev_apps = (
 
 media_apps = (
     ("Open Office", "ooffice"),
+    ("Calcurse", __terminal__ + " -e calcurse"),
     #("Abi Word", "abiword"),
     ("Scribus", "scribus-1.4.6"),
     ("Inkscape", "inkscape"),
@@ -110,6 +112,7 @@ game_apps = (
 
 fs_apps = (
     ("Terminology", "terminology"),
+    ("CRT", "cool-retro-term"),
     ("Xfce4 Terminal", "xfce4-terminal --disable-server"),
     ("URXVT", "urxvt"),
     ("XTerm", "xterm"),
@@ -196,7 +199,7 @@ class TkRootMenu(Tk):
 
         self.master = master
         self.master.title("Root Menu")
-        
+
         opts=(("*resizable", TRUE), ("*tearOff", FALSE))
         for opt, cond in opts:
           self.master.option_add(opt, cond)
