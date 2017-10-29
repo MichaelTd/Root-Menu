@@ -17,7 +17,7 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
-__terminal__ = "cool-retro-term"
+__terminal__ = "terminology"
 __editor__ = "atom"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
@@ -155,8 +155,9 @@ util_apps = (
     ("Viewnior", "viewnior"),
     #("PeaZip", "peazip"),
     ("Xarchiver", "xarchiver"),
-    ("Evince", "evince"),
     ("Foxit Reader", "foxitreader"),
+    ("Evince", "evince"),
+    ("XPdf", "xpdf"),
     ("Ghost View", "gv"),
     ("Xv", "xv"),
     ("Fox Calc","calculator"),
