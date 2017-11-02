@@ -84,6 +84,7 @@ media_apps = (
     ("Inkscape", "inkscape"),
     ("XFig", "xfig"),
     ("Dia", "dia"),
+    ("FreeCAD", "freecad"),
     #("Open Shot", "openshot"),
     #("Blender", "/opt/blender"),
     ("Kodi", "kodi"),
