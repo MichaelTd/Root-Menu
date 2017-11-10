@@ -86,10 +86,10 @@ media_apps = (
     ("Dia", "dia"),
     ("FreeCAD", "freecad"),
     #("Open Shot", "openshot"),
-    #("Blender", "/opt/blender"),
+    ("Blender", "~/opt/blender/blender"),
     ("Kodi", "kodi"),
     ("VLC", "vlc"),
-    ("Dark Table", "darktable"),
+    #("Dark Table", "darktable"),
     ("Gimp", "gimp"),
     ("Audacity", "audacity"),
     ("Audacious", "audacious"))
