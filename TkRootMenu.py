@@ -4,8 +4,8 @@
 
 import os, sys
 from tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-# from PIL import ImageTk, Image
 # import subprocess
+# from PIL import ImageTk, Image
 
 print (os.name)
 print (sys.argv[0])
