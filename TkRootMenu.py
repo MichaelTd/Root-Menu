@@ -1,17 +1,17 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
 import os, sys
-from Tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-from PIL import ImageTk, Image
-#import subprocess
+from tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
+# from PIL import ImageTk, Image
+# import subprocess
 
-print os.name
-print sys.argv[0]
+print (os.name)
+print (sys.argv[0])
 
 def runCommand(app, prm=""):
-  print app
+  print (app)
   os.system(app + prm + " &")
   #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
   #(__out__, __err__) = proc.communicate()
