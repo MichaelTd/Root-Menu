@@ -156,6 +156,7 @@ util_apps = (
     ("Take a shot now", "~/bin/imss.sh 2"),
     #("Simple Screen Recorder", "simplescreenrecorder"),
     #("Viewnior", "viewnior"),
+    ("Ristretto", "ristretto"),
     #("PeaZip", "peazip"),
     ("Xarchiver", "xarchiver"),
     #("Foxit Reader", "foxitreader"),
