@@ -18,7 +18,7 @@ def runCommand(app, prm=""):
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
 __terminal__ = "terminology"
-__editor__ = "atom"
+__editor__ = "light"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 __sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
@@ -74,7 +74,7 @@ dev_apps = (
     #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
     ("Brackets", "brackets"),
     ("VSCode", "vscode"),
-    #("LightTable", "lighttable"),
+    ("LightTable", "light"),
     #("Sublime Text", "sublime_text"),
     ("Atom", "atom"))
 
@@ -98,15 +98,15 @@ media_apps = (
 
 game_apps = (
     ("GTypist", __terminal__ + " -e gtypist"),
-    ("KLavaro", "klavaro"),
+    ("KLavaro", "klavaro"))
     #("Lutris", "~/opt/lutris/bin/lutris"),
-    ("Gx Mame", "gxmame"),
-    ("Advanced Mame Menu", "advmenu"),
-    ("Snake 3D", "snake3d"),
-    ("GNU Back Gammon", "gnubg"),
-    ("XGammon", "xgammon"),
-    ("XBoard", "xboard"),
-    ("Xmahjongg","xmahjongg"))
+    #("Gx Mame", "gxmame"),
+    #("Advanced Mame Menu", "advmenu"),
+    #("Snake 3D", "snake3d"),
+    #("GNU Back Gammon", "gnubg"),
+    #("XGammon", "xgammon"),
+    #("XBoard", "xboard"),
+    #("Xmahjongg","xmahjongg"),
     #("X Mah-jongg","xmj"),
     #("Quake 3", "~/bin/ioq3"),
     #("Quake 3 TA", "~/bin/ioq3-ta"),
@@ -147,7 +147,8 @@ admin_apps = (
     ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top"))
 
 util_apps = (
-    ("App Runner", "~/bin/runcmd.sh"),
+    ("App Runner", "TMPFILE=/tmp/${RANDOM}.input.box.txt && Xdialog --title 'Command Input' --default-button 'ok' --inputbox 'Enter command to continue' 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})"),
+    #("App Runner", "runcmd.sh"),
     ("Xfce4 App Finder", "xfce4-appfinder --collapsed --disable-server"),
     ("Synapse", "synapse"),
     ("Xfce4 Screenshot", "xfce4-screenshooter"),
