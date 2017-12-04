@@ -2,7 +2,7 @@
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
-import os, sys
+import os, sys, shutil
 from tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 # import subprocess
 # from PIL import ImageTk, Image
@@ -17,11 +17,30 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
+#import os
+for dir in os.getenv("PATH").split(':'):
+    for r,d,f in os.walk(dir):
+        for fl in f:
+            if "ssh-askpass" in fl :
+                sshap = os.path.join(r,fl)
+
+for dir in os.getenv("PATH").split(':'):
+    for r,d,f in os.walk(dir):
+        for fl in f:
+            if "ssh-askpass" in fl :
+                sshap = os.path.join(r,fl)
+
+__sudo_cmd__ = "SUDO_ASKPASS=" + sshap + " sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "light"
-__file_manager__ = "xfe"
+__editor__ = "code"
+__file_manager__ = "gentoo"
 __browser__ = "firefox"
-__sudo_cmd__ = "SUDO_ASKPASS=/usr/bin/x11-ssh-askpass sudo --login --askpass "
+'''
+if os.access(shutil.which("ssh-askpass"), os.X_OK):
+    __sudo_cmd__ = "SUDO_ASKPASS=ssh-askpass sudo --login --askpass "
+if os.access(shutil.which("x11-ssh-askpass"), os.X_OK):
+    __sudo_cmd__ = "SUDO_ASKPASS=x11-ssh-askpass sudo --login --askpass "
+'''
 
 basic_apps = (
     ("Terminal", __terminal__, "ctl+t"),
@@ -56,30 +75,30 @@ dev_apps = (
     #("Glade", "glade"),
     #("Pg Admin3", "pgadmin3"),
     #("Micro", __terminal__ + " -e " + "micro"),
-    ("Idle", "idle"),
+    #("Idle", "idle"),
     #("Diakonos", __terminal__ + " -e " + "diakonos"),
     #("Slap", __terminal__ + " -e " + "~/bin/slap"),
     ("Vim", __terminal__ + " -e vim"),
-    ("emacs", __terminal__ + " -e emacs -nw "),
+    ("emacs-nox", __terminal__ + " -e emacs -nw "),
     #("Cuda Text", "${HOME}/bin/cudatext"),
     #("NEdit", "nedit"),
     #("Tea", "tea"),
     ("GVim", "gvim"),
     #("Yudit", "yudit"),
     #("JuPyter", __terminal__ + " -e jupyter notebook"),
-    ("XEmacs", "xemacs"),
-    #("Emacs", "emacs"),
+    #("XEmacs", "xemacs"),
+    ("Emacs", "emacs"),
     #("Geany","geany"),
     #("Blue Fish","bluefish"),
     #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
     ("Brackets", "brackets"),
-    ("VSCode", "vscode"),
-    ("LightTable", "light"),
+    ("VSCode", "vscode|code"),
+    ("LightTable", "light|lighttable"),
     #("Sublime Text", "sublime_text"),
     ("Atom", "atom"))
 
 media_apps = (
-    ("Open Office", "ooffice || loffice"),
+    ("Open Office", "ooffice |loffice"),
     #("Calcurse", __terminal__ + " -e calcurse"),
     #("Abi Word", "abiword"),
     #("Scribus", "scribus-1.4.6"),
@@ -117,7 +136,7 @@ fs_apps = (
     ("Terminology", "terminology"),
     ("CRT", "cool-retro-term"),
     ("Xfce4 Terminal", "xfce4-terminal --disable-server"),
-    ("URXVT", "urxvt"),
+    ("URXVT", "urxvt |uxterm"),
     ("XTerm", "xterm"),
     #("Hyper", "hyper"),
     ("Midnight Commander", __terminal__ + " -e mc"),
@@ -136,6 +155,7 @@ admin_apps = (
     ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
     #("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
     ("Porthole", __sudo_cmd__ + " " + __terminal__ + " -e porthole"),
+    ("Synaptic", __sudo_cmd__ + " " + __terminal__ + " -e synaptic"),
     ("gtk Partition Editor", __sudo_cmd__ + " " + __terminal__ + " -e gparted"),
     ("cli Partition Editor", __sudo_cmd__ + " " + __terminal__ + " -e parted"),
     ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
