@@ -36,7 +36,7 @@ __sudo_cmd__ = "SUDO_ASKPASS=" + sshap + " sudo --login --askpass "
 
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "code"
+__editor__ = "atom"
 __file_manager__ = "gentoo"
 __browser__ = "firefox"
 '''
@@ -96,13 +96,13 @@ dev_apps = (
     #("Blue Fish","bluefish"),
     #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
     ("Brackets", "brackets"),
-    ("VSCode", "vscode|code"),
+    ("VSCode", "code|vscode"),
     ("LightTable", "light|lighttable"),
     #("Sublime Text", "sublime_text"),
     ("Atom", "atom"))
 
 media_apps = (
-    ("Open Office", "ooffice |loffice"),
+    ("Open Office", "ooffice|loffice"),
     #("Calcurse", __terminal__ + " -e calcurse"),
     #("Abi Word", "abiword"),
     #("Scribus", "scribus-1.4.6"),
