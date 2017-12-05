@@ -17,6 +17,7 @@ def runCommand(app, prm=""):
   #(__out__, __err__) = proc.communicate()
   #print "program: " , app, " output: ", __out__, " error: ", __err__
 
+'''
 #import os
 for dir in os.getenv("PATH").split(':'):
     for r,d,f in os.walk(dir):
@@ -31,6 +32,9 @@ for dir in os.getenv("PATH").split(':'):
                 sshap = os.path.join(r,fl)
 
 __sudo_cmd__ = "SUDO_ASKPASS=" + sshap + " sudo --login --askpass "
+'''
+
+__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
 __terminal__ = "terminology"
 __editor__ = "code"
 __file_manager__ = "gentoo"
@@ -108,7 +112,7 @@ media_apps = (
     #("FreeCAD", "freecad"),
     #("Open Shot", "openshot"),
     #("Blender", "~/opt/blender/blender"),
-    #("Kodi", "kodi"),
+    ("Kodi", "kodi"),
     ("VLC", "vlc"),
     #("Dark Table", "darktable"),
     ("Gimp", "gimp"),
@@ -167,7 +171,7 @@ admin_apps = (
     ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top"))
 
 util_apps = (
-    ("App Runner", "TMPFILE=/tmp/${RANDOM}.input.box.txt && Xdialog --title 'Command Input' --default-button 'ok' --inputbox 'Enter command to continue' 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})"),
+    #("App Runner", 'xterm -e TMPFILE=/tmp/${RANDOM}.input.box.txt && dialog --title "Command Input" --default-button "ok" --inputbox "Enter command to continue" 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})'),
     #("App Runner", "runcmd.sh"),
     ("Xfce4 App Finder", "xfce4-appfinder --collapsed --disable-server"),
     ("Synapse", "synapse"),
