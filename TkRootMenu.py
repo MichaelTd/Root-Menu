@@ -39,6 +39,7 @@ __terminal__ = "terminology"
 __editor__ = "atom"
 __file_manager__ = "gentoo"
 __browser__ = "firefox"
+
 '''
 if os.access(shutil.which("ssh-askpass"), os.X_OK):
     __sudo_cmd__ = "SUDO_ASKPASS=ssh-askpass sudo --login --askpass "
@@ -82,6 +83,7 @@ dev_apps = (
     #("Idle", "idle"),
     #("Diakonos", __terminal__ + " -e " + "diakonos"),
     #("Slap", __terminal__ + " -e " + "~/bin/slap"),
+    ("Just MarkDown", "justmd"),    
     ("Vim", __terminal__ + " -e vim"),
     ("emacs-nox", __terminal__ + " -e emacs -nw "),
     #("Cuda Text", "${HOME}/bin/cudatext"),
