@@ -29,7 +29,7 @@ def my_which(program):
 
 def runCommand(app, prm=""):
     print (app)
-    os.system(app + prm + " &")
+    os.system(app + " " + prm + " &")
     #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
     #(__out__, __err__) = proc.communicate()
     #print "program: " , app, " output: ", __out__, " error: ", __err__
@@ -76,7 +76,7 @@ net_apps = (
     ("Seamonkey", "seamonkey"),
     ("Opera","opera"),
     ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
-    ("Mail", "seamonkey -mail"),
+    ("Seamonkey Mail", "seamonkey -mail"),
     ("Pidgin", "pidgin"),
     ("FileZilla", "filezilla"),
     ("Midori", "midori"),
@@ -316,7 +316,7 @@ class TkRootMenu(Tk):
         netmenu = Menu(menubar)
         for lbl, cmmnd in net_apps:
             if shutil.which(cmmnd) is not None:
-                netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+                netmenu.add_command(label=lbl, command=lambda param=cmmnd: runCommand(param))
 
         # Dev menu
         devmenu = Menu(menubar)
