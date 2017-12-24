@@ -187,7 +187,7 @@ util_apps = (
     ("Ristretto", "ristretto"),
     #("PeaZip", "peazip"),
     ("Xarchiver", "xarchiver"),
-    #("Foxit Reader", "foxitreader"),
+    ("Foxit Reader", "${HOME}/bin/foxitreader"),
     ("Evince", "evince"),
     #("XPdf", "xpdf"),
     #("Ghost View", "gv"),
