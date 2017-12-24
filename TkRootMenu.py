@@ -10,12 +10,29 @@ from tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, 
 print (os.name)
 print (sys.argv[0])
 
+def my_which(program):
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+    fpath, fname = os.path.split(program)
+
+    if fpath:
+        if is_exe(program):
+            return program
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+
+    return None
+
 def runCommand(app, prm=""):
-  print (app)
-  os.system(app + prm + " &")
-  #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
-  #(__out__, __err__) = proc.communicate()
-  #print "program: " , app, " output: ", __out__, " error: ", __err__
+    print (app)
+    os.system(app + prm + " &")
+    #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
+    #(__out__, __err__) = proc.communicate()
+    #print "program: " , app, " output: ", __out__, " error: ", __err__
 
 '''
 #import os
@@ -84,7 +101,7 @@ dev_apps = (
     #("Diakonos", __terminal__ + " -e " + "diakonos"),
     #("Slap", __terminal__ + " -e " + "~/bin/slap"),
     ("Just MarkDown", "justmd"),
-    ("Micro", __terminal__ + " -e " + "micro"),
+    ("Micro", __terminal__ + " -e micro"),
     ("Vim", __terminal__ + " -e vim"),
     ("emacs-nox", __terminal__ + " -e emacs -nw "),
     #("Cuda Text", "${HOME}/bin/cudatext"),
@@ -99,45 +116,48 @@ dev_apps = (
     #("Blue Fish","bluefish"),
     #("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
     #("Brackets", "brackets"),
-    ("VSCode", "code|vscode"),
-    ("LightTable", "light|lighttable"),
+    ("VSCode", "code"),
+    ("VSCode", "vscode"),
+    ("LightTable", "light"),
+    ("LightTable", "lighttable"),
     #("Sublime Text", "sublime_text"),
     ("Atom", "atom"))
 
 media_apps = (
-    ("Open Office", "ooffice|loffice"),
-    #("Calcurse", __terminal__ + " -e calcurse"),
-    #("Abi Word", "abiword"),
-    #("Scribus", "scribus-1.4.6"),
-    #("Inkscape", "inkscape"),
-    #("XFig", "xfig"),
-    #("Dia", "dia"),
-    #("FreeCAD", "freecad"),
-    #("Open Shot", "openshot"),
-    #("Blender", "~/opt/blender/blender"),
+    ("Open Office", "ooffice"),
+    ("Libre Office", "loffice"),
+    ("Calcurse", __terminal__ + " -e calcurse"),
+    ("Abi Word", "abiword"),
+    ("Scribus", "scribus-1.4.6"),
+    ("Inkscape", "inkscape"),
+    ("XFig", "xfig"),
+    ("Dia", "dia"),
+    ("FreeCAD", "freecad"),
+    ("Open Shot", "openshot"),
+    ("Blender", "~/opt/blender/blender"),
     ("Kodi", "kodi"),
     ("VLC", "vlc"),
-    #("Dark Table", "darktable"),
+    ("Dark Table", "darktable"),
     ("Gimp", "gimp"),
-    #("Audacity", "audacity"),
+    ("Audacity", "audacity"),
     ("Audacious", "audacious"))
 
 game_apps = (
     ("GTypist", __terminal__ + " -e gtypist"),
-    ("KLavaro", "klavaro"))
-    #("Lutris", "~/opt/lutris/bin/lutris"),
-    #("Gx Mame", "gxmame"),
-    #("Advanced Mame Menu", "advmenu"),
-    #("Snake 3D", "snake3d"),
-    #("GNU Back Gammon", "gnubg"),
-    #("XGammon", "xgammon"),
-    #("XBoard", "xboard"),
-    #("Xmahjongg","xmahjongg"),
-    #("X Mah-jongg","xmj"),
-    #("Quake 3", "~/bin/ioq3"),
-    #("Quake 3 TA", "~/bin/ioq3-ta"),
-    #("Urban Terror", __terminal__ + " -e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
-    #("Warsow", __terminal__ + " -e ~/opt/warsow_21/warsow"))
+    ("KLavaro", "klavaro"),
+    ("Lutris", "lutris"),
+    ("Gx Mame", "gxmame"),
+    ("Advanced Mame Menu", "advmenu"),
+    ("Snake 3D", "snake3d"),
+    ("GNU Back Gammon", "gnubg"),
+    ("XGammon", "xgammon"),
+    ("XBoard", "xboard"),
+    ("Xmahjongg","xmahjongg"),
+    ("X Mah-jongg","xmj"),
+    ("Quake 3", "~/bin/ioq3"),
+    ("Quake 3 TA", "~/bin/ioq3-ta"),
+    ("Urban Terror", __terminal__ + " -e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
+    ("Warsow", __terminal__ + " -e ~/opt/warsow_21/warsow"))
 
 fs_apps = (
     ("Terminology", "terminology"),
@@ -145,14 +165,14 @@ fs_apps = (
     ("Xfce4 Terminal", "xfce4-terminal --disable-server"),
     ("URXVT", "urxvt |uxterm"),
     ("XTerm", "xterm"),
-    #("Hyper", "hyper"),
+    ("Hyper", "hyper"),
     ("Midnight Commander", __terminal__ + " -e mc"),
-    #("Ranger", __terminal__ + " -e ranger"),
-    #("Rox filer", "rox"),
-    #("ViFm", __terminal__ + " -e vifm"),
+    ("Ranger", __terminal__ + " -e ranger"),
+    ("Rox filer", "rox"),
+    ("ViFm", __terminal__ + " -e vifm"),
     ("Gentoo", "gentoo"),
     ("Xfe", "xfe"),
-    #("SpaceFM", "spacefm"),
+    ("SpaceFM", "spacefm"),
     ("Thunar", "thunar"))
 
 admin_apps = (
@@ -160,13 +180,13 @@ admin_apps = (
     ("Text Editor", __sudo_cmd__ + " " + __editor__),
     ("File manager",  __sudo_cmd__ + " " + __file_manager__),
     ("Midnight Commander", __sudo_cmd__ + " " + __terminal__ + " -e mc"),
-    #("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
+    ("Ranger", __sudo_cmd__ + " " + __terminal__ + " -e ranger"),
     ("Porthole", __sudo_cmd__ + " " + __terminal__ + " -e porthole"),
     ("Synaptic", __sudo_cmd__ + " " + __terminal__ + " -e synaptic"),
     ("gtk Partition Editor", __sudo_cmd__ + " " + __terminal__ + " -e gparted"),
     ("cli Partition Editor", __sudo_cmd__ + " " + __terminal__ + " -e parted"),
     ("Wireshark", __sudo_cmd__ + " " + __terminal__ + " -e wireshark"),
-    #("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
+    ("DStat", __sudo_cmd__ + " " + __terminal__ + " -e dstat -fcdngy"),
     ("C Sys Dig", __sudo_cmd__ + " " + __terminal__ + " -e csysdig"),
     ("Glances", __sudo_cmd__ + " " + __terminal__ + " -e glances"),
     ("PowerTop", __sudo_cmd__ + " " + __terminal__ + " -e powertop"),
@@ -174,49 +194,49 @@ admin_apps = (
     ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top"))
 
 util_apps = (
-    #("App Runner", 'xterm -e TMPFILE=/tmp/${RANDOM}.input.box.txt && dialog --title "Command Input" --default-button "ok" --inputbox "Enter command to continue" 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})'),
-    #("App Runner", "runcmd.sh"),
+    ("App Runner", 'xterm -e TMPFILE=/tmp/${RANDOM}.input.box.txt && dialog --title "Command Input" --default-button "ok" --inputbox "Enter command to continue" 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})'),
+    ("App Runner", "runcmd.sh"),
     ("Xfce4 App Finder", "xfce4-appfinder --collapsed --disable-server"),
     ("Synapse", "synapse"),
     ("Xfce4 Screenshot", "xfce4-screenshooter"),
     ("Screengrab", "screengrab"),
-    #("Shutter","shutter"),
+    ("Shutter","shutter"),
     ("Take a shot now", "~/bin/imss.sh 2"),
-    #("Simple Screen Recorder", "simplescreenrecorder"),
-    #("Viewnior", "viewnior"),
+    ("Simple Screen Recorder", "simplescreenrecorder"),
+    ("Viewnior", "viewnior"),
     ("Ristretto", "ristretto"),
-    #("PeaZip", "peazip"),
+    ("PeaZip", "peazip"),
     ("Xarchiver", "xarchiver"),
     ("Foxit Reader", "${HOME}/bin/foxitreader"),
     ("Evince", "evince"),
-    #("XPdf", "xpdf"),
-    #("Ghost View", "gv"),
-    #("Xv", "xv"),
-    #("Fox Calc","calculator"),
-    #("XCalc","xcalc"),
-    #("Calcoo","calcoo"),
-    #("Term Calc", __terminal__ + " -e calc"),
-    ("jCalc", "~/bin/jCalc.sh"),
+    ("XPdf", "xpdf"),
+    ("Ghost View", "gv"),
+    ("Xv", "xv"),
+    ("Fox Calc","calculator"),
+    ("XCalc","xcalc"),
+    ("Calcoo","calcoo"),
+    ("Term Calc", __terminal__ + " -e calc"),
+    ("jCalc", "jCalc.sh"),
     ("jsCalculator", __browser__ + " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"))
 
 config_apps = (
     ("Compiz settings manager", "ccsm"),
     ("Emerald themes manager", "emerald-theme-manager"),
-    #("Tint Wizard", "tintwizard"),
-    #("Tint2 Config", "tint2conf"),
-    #("OpenBox conf", "obconf"),
+    ("Tint Wizard", "tintwizard"),
+    ("Tint2 Config", "tint2conf"),
+    ("OpenBox conf", "obconf"),
     ("Qt Config", "qtconfig"),
     ("Edit autostart.sh", __editor__ + " ~/bin/autostart.sh"),
     ("Conky config", __editor__ + " ~/.conky.conf/"),
     ("Edit backup files", __editor__ + " ~/.backup.txt"),
     ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
     ("View Log files", __editor__ + " /var/log/"),
-    #("View World file", __editor__ + " /var/lib/world"),
+    ("View World file", __editor__ + " /var/lib/world"),
     ("X Screen Saver", "xscreensaver-demo"),
     ("Wicd gtk", "wicd-gtk"),
     ("Wicd curses", __terminal__ + " -e wicd-curses"),
-    #("Xfce4-alsa-control", "xfce4-alsa-control"),
-    #("Alsamixer Gui", "alsamixergui"),
+    ("Xfce4-alsa-control", "xfce4-alsa-control"),
+    ("Alsamixer Gui", "alsamixergui"),
     ("Alsamixer", __terminal__ + " -e alsamixer"),
     ("Xfce4 Mixer", "xfce4-mixer"),
     ("Volume Prefs", "paprefs"),
@@ -286,34 +306,41 @@ class TkRootMenu(Tk):
 
         # Basic apps
         for lbl, cmmnd, k in basic_apps:
-            appsmenu.add_command(label=lbl, accelerator=k, command=lambda param=cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                appsmenu.add_command(label=lbl, accelerator=k, command=lambda param=cmmnd: runCommand(param))
+            
 
         appsmenu.add_separator()
 
         # Internet
         netmenu = Menu(menubar)
         for lbl, cmmnd in net_apps:
-            netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                netmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         # Dev menu
         devmenu = Menu(menubar)
         for lbl, cmmnd in dev_apps:
-            devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
 
         # Multimedia
         mmmenu = Menu(menubar)
         for lbl, cmmnd in media_apps:
-            mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         # Games menu
         gammenu = Menu(menubar)
         for lbl, cmmnd in game_apps:
-            gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         # File system tools
         toolsmenu = Menu(menubar)
         for lbl, cmmnd in fs_apps:
-            toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         # Admin tools
         adminmenu = Menu(menubar)
@@ -323,12 +350,14 @@ class TkRootMenu(Tk):
         # Util Menu
         utilmenu = Menu(menubar)
         for lbl, cmmnd in util_apps:
-            utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         # Config Menu
         configmenu = Menu(menubar)
         for lbl, cmmnd in config_apps:
-            configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+            if shutil.which(cmmnd) is not None:
+                configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
 
         self.groups = (
             ("Internet", netmenu),
