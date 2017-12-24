@@ -71,109 +71,110 @@ basic_apps = (
     ("Browser", __browser__, "ctl+b"))
 
 net_apps = (
-    ("Firefox", "firefox"),
-    ("Firefox DE", "firefox-de"),
-    ("Seamonkey", "seamonkey"),
-    ("Opera","opera"),
-    ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__),
-    ("Seamonkey Mail", "seamonkey -mail"),
-    ("Pidgin", "pidgin"),
-    ("FileZilla", "filezilla"),
-    ("Midori", "midori"),
-    ("W3m", __terminal__ + " -e w3m -v"),
-    ("Lynx", __terminal__ + " -e lynx"),
-    ("Quassel IRC", "quassel"),
-    ("HexChat IRC", "hexchat"))
+    ("Firefox", "firefox", ""),
+    ("Firefox DE", "firefox-de", ""),
+    ("Seamonkey", "seamonkey", ""),
+    ("Opera","opera", ""),
+    ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__, ""),
+    ("Seamonkey Mail", "seamonkey", "-mail"),
+    ("Pidgin", "pidgin", ""),
+    ("FileZilla", "filezilla", ""),
+    ("Midori", "midori", ""),
+    ("W3m", __terminal__, " -e w3m -v"),
+    ("Lynx", __terminal__, " -e lynx"),
+    ("Quassel IRC", "quassel", ""),
+    ("HexChat IRC", "hexchat", ""))
 
 dev_apps = (
-    ("Eclipse", "eclipse"),
-    ("Netbeans", "netbeans"),
-    ("KDevelop", "kdevelop"),
-    ("QtCreator", "qtcreator.sh"),
-    ("QtDesigner", "qtchooser -run-tool=designer -qt=4"),
-    ("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer"),
-    ("QtCreator", "~/opt/Qt/qtcreator-4.4.0/bin/qtcreator.sh"),
-    ("Code Blocks", "codeblocks"),
-    ("Glade", "glade"),
-    ("Pg Admin3", "pgadmin3"),
-    ("Scite", "scite"),
-    ("Idle", "idle"),
-    ("Diakonos", __terminal__ + " -e " + "diakonos"),
-    ("Slap", __terminal__ + " -e " + "~/bin/slap"),
-    ("Just MarkDown", "justmd"),
-    ("Micro", __terminal__ + " -e micro"),
-    ("Vim", __terminal__ + " -e vim"),
-    ("emacs-nox", __terminal__ + " -e emacs -nw "),
-    ("Cuda Text", "${HOME}/bin/cudatext"),
-    ("NEdit", "nedit"),
-    ("Tea", "tea"),
-    ("GVim", "gvim"),
-    ("Yudit", "yudit"),
-    ("JuPyter", __terminal__ + " -e jupyter notebook"),
-    ("XEmacs", "xemacs"),
-    ("Emacs", "emacs"),
-    ("Geany","geany"),
-    ("Blue Fish","bluefish"),
-    ("ZED", __terminal__ + " -e /bin/env /bin/bash ~/opt/zed/zed"),
-    ("Brackets", "brackets"),
-    ("VSCode", "code"),
-    ("VSCode", "vscode"),
-    ("LightTable", "light"),
-    ("LightTable", "lighttable"),
-    ("Sublime Text", "sublime_text"),
-    ("Atom", "atom"))
+    ("Eclipse", "eclipse", ""),
+    ("Netbeans", "netbeans", ""),
+    ("KDevelop", "kdevelop", ""),
+    ("QtCreator", "qtcreator.sh", ""),
+    ("QtDesigner", "qtchooser", "-run-tool=designer -qt=5"),
+    ("QtDesigner", "~/opt/qt/5.8/gcc_64/bin/designer", ""),
+    ("QtCreator", "~/opt/Qt/qtcreator-4.4.0/bin/qtcreator.sh", ""),
+    ("Code Blocks", "codeblocks", ""),
+    ("Glade", "glade", ""),
+    ("Pg Admin3", "pgadmin3", ""),
+    ("Scite", "scite", ""),
+    ("Idle", "idle", ""),
+    ("Diakonos", __terminal__, "-e diakonos"),
+    ("Slap", __terminal__, "-e ~/bin/slap"),
+    ("Just MarkDown", "justmd", ""),
+    ("Micro", __terminal__, "-e micro"),
+    ("Vim", __terminal__, "-e vim"),
+    ("emacs-nox", __terminal__, "-e emacs -nw"),
+    ("Cuda Text", "${HOME}/bin/cudatext", ""),
+    ("NEdit", "nedit", ""),
+    ("Tea", "tea", ""),
+    ("GVim", "gvim", ""),
+    ("Yudit", "yudit", ""),
+    ("JuPyter", __terminal__, "-e jupyter notebook"),
+    ("XEmacs", "xemacs", ""),
+    ("Emacs", "emacs", ""),
+    ("Geany", "geany", ""),
+    ("Blue Fish", "bluefish", ""),
+    ("ZED", __terminal__, "-e /usr/bin/env bash ~/opt/zed/zed"),
+    ("Brackets", "brackets", ""),
+    ("VSCode", "code", ""),
+    ("VSCode", "vscode", ""),
+    ("LightTable", "light", ""),
+    ("LightTable", "lighttable", ""),
+    ("Sublime Text", "sublime_text", ""),
+    ("Atom", "atom", ""))
 
 media_apps = (
-    ("Open Office", "ooffice"),
-    ("Libre Office", "loffice"),
-    ("Calcurse", __terminal__ + " -e calcurse"),
-    ("Abi Word", "abiword"),
-    ("Scribus", "scribus-1.4.6"),
-    ("Inkscape", "inkscape"),
-    ("XFig", "xfig"),
-    ("Dia", "dia"),
-    ("FreeCAD", "freecad"),
-    ("Open Shot", "openshot"),
-    ("Blender", "~/opt/blender/blender"),
-    ("Kodi", "kodi"),
-    ("VLC", "vlc"),
-    ("Dark Table", "darktable"),
-    ("Gimp", "gimp"),
-    ("Audacity", "audacity"),
-    ("Audacious", "audacious"))
+    ("Open Office", "ooffice", ""),
+    ("Libre Office", "loffice", ""),
+    ("Calcurse", __terminal__, "-e calcurse"),
+    ("Abi Word", "abiword", ""),
+    ("Scribus", "scribus-1.4.6", ""),
+    ("Inkscape", "inkscape", ""),
+    ("XFig", "xfig", ""),
+    ("Dia", "dia", ""),
+    ("FreeCAD", "freecad", ""),
+    ("Open Shot", "openshot", ""),
+    ("Blender", "~/opt/blender/blender", ""),
+    ("Kodi", "kodi", ""),
+    ("VLC", "vlc", ""),
+    ("Dark Table", "darktable", ""),
+    ("Gimp", "gimp", ""),
+    ("Audacity", "audacity", ""),
+    ("Audacious", "audacious", ""))
 
 game_apps = (
-    ("GTypist", __terminal__ + " -e gtypist"),
-    ("KLavaro", "klavaro"),
-    ("Lutris", "lutris"),
-    ("Gx Mame", "gxmame"),
-    ("Advanced Mame Menu", "advmenu"),
-    ("Snake 3D", "snake3d"),
-    ("GNU Back Gammon", "gnubg"),
-    ("XGammon", "xgammon"),
-    ("XBoard", "xboard"),
-    ("Xmahjongg","xmahjongg"),
-    ("X Mah-jongg","xmj"),
-    ("Quake 3", "~/bin/ioq3"),
-    ("Quake 3 TA", "~/bin/ioq3-ta"),
-    ("Urban Terror", __terminal__ + " -e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
-    ("Warsow", __terminal__ + " -e ~/opt/warsow_21/warsow"))
+    ("GTypist", __terminal__, "-e gtypist"),
+    ("KLavaro", "klavaro", ""),
+    ("Lutris", "lutris", ""),
+    ("Gx Mame", "gxmame", ""),
+    ("Advanced Mame Menu", "advmenu", ""),
+    ("Snake 3D", "snake3d", ""),
+    ("GNU Back Gammon", "gnubg", ""),
+    ("XGammon", "xgammon", ""),
+    ("XBoard", "xboard", ""),
+    ("Xmahjongg","xmahjongg", ""),
+    ("X Mah-jongg","xmj", ""),
+    ("Quake 3", "~/bin/ioq3", ""),
+    ("Quake 3 TA", "~/bin/ioq3-ta", ""),
+    ("Urban Terror", __terminal__, "-e ~/opt/UrbanTerror43/Quake3-UrT.x86_64"),
+    ("Warsow", __terminal__, "-e ~/opt/warsow_21/warsow"))
 
 fs_apps = (
-    ("Terminology", "terminology"),
-    ("CRT", "cool-retro-term"),
-    ("Xfce4 Terminal", "xfce4-terminal --disable-server"),
-    ("URXVT", "urxvt |uxterm"),
-    ("XTerm", "xterm"),
-    ("Hyper", "hyper"),
-    ("Midnight Commander", __terminal__ + " -e mc"),
-    ("Ranger", __terminal__ + " -e ranger"),
-    ("Rox filer", "rox"),
-    ("ViFm", __terminal__ + " -e vifm"),
-    ("Gentoo", "gentoo"),
-    ("Xfe", "xfe"),
-    ("SpaceFM", "spacefm"),
-    ("Thunar", "thunar"))
+    ("Terminology", "terminology", ""),
+    ("CRT", "cool-retro-term", ""),
+    ("Xfce4 Terminal", "xfce4-terminal", "--disable-server"),
+    ("URXVT", "urxvt", ""),
+    ("URXVT", "uxterm", ""),
+    ("XTerm", "xterm", ""),
+    ("Hyper", "hyper", ""),
+    ("Midnight Commander", __terminal__, "-e mc"),
+    ("Ranger", __terminal__, "-e ranger"),
+    ("Rox filer", "rox", ""),
+    ("ViFm", __terminal__, "-e vifm"),
+    ("Gentoo", "gentoo", ""),
+    ("Xfe", "xfe", ""),
+    ("SpaceFM", "spacefm", ""),
+    ("Thunar", "thunar", ""))
 
 admin_apps = (
     ("Terminal", __sudo_cmd__ + " " + __terminal__),
@@ -194,53 +195,53 @@ admin_apps = (
     ("Top", __sudo_cmd__ + " " + __terminal__ + " -e top"))
 
 util_apps = (
-    ("App Runner", 'xterm -e TMPFILE=/tmp/${RANDOM}.input.box.txt && dialog --title "Command Input" --default-button "ok" --inputbox "Enter command to continue" 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})'),
-    ("App Runner", "runcmd.sh"),
-    ("Xfce4 App Finder", "xfce4-appfinder --collapsed --disable-server"),
-    ("Synapse", "synapse"),
-    ("Xfce4 Screenshot", "xfce4-screenshooter"),
-    ("Screengrab", "screengrab"),
-    ("Shutter","shutter"),
-    ("Take a shot now", "~/bin/imss.sh 2"),
-    ("Simple Screen Recorder", "simplescreenrecorder"),
-    ("Viewnior", "viewnior"),
-    ("Ristretto", "ristretto"),
-    ("PeaZip", "peazip"),
-    ("Xarchiver", "xarchiver"),
-    ("Foxit Reader", "${HOME}/bin/foxitreader"),
-    ("Evince", "evince"),
-    ("XPdf", "xpdf"),
-    ("Ghost View", "gv"),
-    ("Xv", "xv"),
-    ("Fox Calc","calculator"),
-    ("XCalc","xcalc"),
-    ("Calcoo","calcoo"),
-    ("Term Calc", __terminal__ + " -e calc"),
-    ("jCalc", "jCalc.sh"),
-    ("jsCalculator", __browser__ + " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"))
+    ("App Runner", 'xterm -e TMPFILE=/tmp/${RANDOM}.input.box.txt && dialog --title "Command Input" --default-button "ok" --inputbox "Enter command to continue" 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})', ""),
+    ("App Runner", "runcmd.sh", ""),
+    ("Xfce4 App Finder", "xfce4-appfinder", "--collapsed --disable-server"),
+    ("Synapse", "synapse", ""),
+    ("Xfce4 Screenshot", "xfce4-screenshooter", ""),
+    ("Screengrab", "screengrab", ""),
+    ("Shutter","shutter", ""),
+    ("Take a shot now", "~/bin/imss.sh", "2"),
+    ("Simple Screen Recorder", "simplescreenrecorder", ""),
+    ("Viewnior", "viewnior", ""),
+    ("Ristretto", "ristretto", ""),
+    ("PeaZip", "peazip", ""),
+    ("Xarchiver", "xarchiver", ""),
+    ("Foxit Reader", "${HOME}/bin/foxitreader", ""),
+    ("Evince", "evince", ""),
+    ("XPdf", "xpdf", ""),
+    ("Ghost View", "gv", ""),
+    ("Xv", "xv", ""),
+    ("Fox Calc","calculator", ""),
+    ("XCalc","xcalc", ""),
+    ("Calcoo","calcoo", ""),
+    ("Term Calc", __terminal__, " -e calc"),
+    ("jCalc", "jCalc.sh", ""),
+    ("jsCalculator", __browser__, " ~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html"))
 
 config_apps = (
-    ("Compiz settings manager", "ccsm"),
-    ("Emerald themes manager", "emerald-theme-manager"),
-    ("Tint Wizard", "tintwizard"),
-    ("Tint2 Config", "tint2conf"),
-    ("OpenBox conf", "obconf"),
-    ("Qt Config", "qtconfig"),
-    ("Edit autostart.sh", __editor__ + " ~/bin/autostart.sh"),
-    ("Conky config", __editor__ + " ~/.conky.conf/"),
-    ("Edit backup files", __editor__ + " ~/.backup.txt"),
-    ("Edit shell files", __editor__ + " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
-    ("View Log files", __editor__ + " /var/log/"),
-    ("View World file", __editor__ + " /var/lib/world"),
-    ("X Screen Saver", "xscreensaver-demo"),
-    ("Wicd gtk", "wicd-gtk"),
-    ("Wicd curses", __terminal__ + " -e wicd-curses"),
-    ("Xfce4-alsa-control", "xfce4-alsa-control"),
-    ("Alsamixer Gui", "alsamixergui"),
-    ("Alsamixer", __terminal__ + " -e alsamixer"),
-    ("Xfce4 Mixer", "xfce4-mixer"),
-    ("Volume Prefs", "paprefs"),
-    ("Volume Controls", "pavucontrol"))
+    ("Compiz settings manager", "ccsm", ""),
+    ("Emerald themes manager", "emerald-theme-manager", ""),
+    ("Tint Wizard", "tintwizard", ""),
+    ("Tint2 Config", "tint2conf", ""),
+    ("OpenBox conf", "obconf", ""),
+    ("Qt Config", "qtconfig", ""),
+    ("Edit autostart.sh", __editor__, " ~/bin/autostart.sh"),
+    ("Conky config", __editor__, " ~/.conky.conf/"),
+    ("Edit backup files", __editor__, " ~/.backup.txt"),
+    ("Edit shell files", __editor__, " ~/.zsh* ~/.bash* /etc/bash/bashrc.d/*.sh "),
+    ("View Log files", __editor__, " /var/log/"),
+    ("View World file", __editor__, " /var/lib/world"),
+    ("X Screen Saver", "xscreensaver-demo", ""),
+    ("Wicd gtk", "wicd-gtk", ""),
+    ("Wicd curses", __terminal__, " -e wicd-curses"),
+    ("Xfce4-alsa-control", "xfce4-alsa-control", ""),
+    ("Alsamixer Gui", "alsamixergui", ""),
+    ("Alsamixer", __terminal__, "-e alsamixer"),
+    ("Xfce4 Mixer", "xfce4-mixer", ""),
+    ("Volume Prefs", "paprefs", ""),
+    ("Volume Controls", "pavucontrol", ""))
 
 pc_options = (
     ("Logout", "kill -15 -1"),
@@ -308,56 +309,55 @@ class TkRootMenu(Tk):
         for lbl, cmmnd, k in basic_apps:
             if shutil.which(cmmnd) is not None:
                 appsmenu.add_command(label=lbl, accelerator=k, command=lambda param=cmmnd: runCommand(param))
-            
 
         appsmenu.add_separator()
 
         # Internet
         netmenu = Menu(menubar)
-        for lbl, cmmnd in net_apps:
+        for lbl, cmmnd, cla in net_apps:
             if shutil.which(cmmnd) is not None:
-                netmenu.add_command(label=lbl, command=lambda param=cmmnd: runCommand(param))
+                netmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         # Dev menu
         devmenu = Menu(menubar)
-        for lbl, cmmnd in dev_apps:
+        for lbl, cmmnd, cla in dev_apps:
             if shutil.which(cmmnd) is not None:
-                devmenu.add_command(label = lbl,command = lambda param = cmmnd: runCommand(param))
+                devmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         # Multimedia
         mmmenu = Menu(menubar)
-        for lbl, cmmnd in media_apps:
+        for lbl, cmmnd, cla in media_apps:
             if shutil.which(cmmnd) is not None:
-                mmmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+                mmmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         # Games menu
         gammenu = Menu(menubar)
-        for lbl, cmmnd in game_apps:
+        for lbl, cmmnd, cla in game_apps:
             if shutil.which(cmmnd) is not None:
-                gammenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+                gammenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         # File system tools
         toolsmenu = Menu(menubar)
-        for lbl, cmmnd in fs_apps:
+        for lbl, cmmnd, cla in fs_apps:
             if shutil.which(cmmnd) is not None:
-                toolsmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+                toolsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         # Admin tools
         adminmenu = Menu(menubar)
         for lbl, cmmnd in admin_apps:
-            adminmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+            adminmenu.add_command(label=lbl, command=lambda param=cmmnd: runCommand(param))
 
         # Util Menu
         utilmenu = Menu(menubar)
-        for lbl, cmmnd in util_apps:
+        for lbl, cmmnd, cla in util_apps:
             if shutil.which(cmmnd) is not None:
-                utilmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+                utilmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         # Config Menu
         configmenu = Menu(menubar)
-        for lbl, cmmnd in config_apps:
+        for lbl, cmmnd, cla in config_apps:
             if shutil.which(cmmnd) is not None:
-                configmenu.add_command(label=lbl,command=lambda param=cmmnd: runCommand(param))
+                configmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         self.groups = (
             ("Internet", netmenu),
