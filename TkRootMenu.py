@@ -9,7 +9,7 @@ from apps import *
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
 __terminal__ = "terminology"
 __editor__ = "code"
-__file_manager__ = "gentoo --root-ok"
+__file_manager__ = "gentoo"
 __browser__ = "firefox"
 
 def runCommand(app, prm="", hlpr=0, sudo=0):
@@ -55,10 +55,10 @@ class TkRootMenu(Tk):
 
         self.v.set(100)
 
-        self.master.bind_all("<Control-b>", self.on_accel_runBrowser)
-        self.master.bind_all("<Control-t>", self.on_accel_runTerminal)
-        self.master.bind_all("<Control-f>", self.on_accel_runFileManager)
-        self.master.bind_all("<Control-e>", self.on_accel_runEditor)
+        self.master.option_add("<Control-b>", self.on_accel_runBrowser)
+        self.master.option_add("<Control-t>", self.on_accel_runTerminal)
+        self.master.option_add("<Control-f>", self.on_accel_runFileManager)
+        self.master.option_add("<Control-e>", self.on_accel_runEditor)
 
         menubar = Menu(master)
 
