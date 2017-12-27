@@ -1,9 +1,4 @@
-
-__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
-__terminal__ = "terminology"
-__editor__ = "code"
-__file_manager__ = "gentoo --root-ok"
-__browser__ = "firefox"
+from TkRootMenu import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__
 
 basic_apps = (
     ("Terminal", __terminal__, "ctl+t"),

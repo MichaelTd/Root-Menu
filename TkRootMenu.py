@@ -6,8 +6,11 @@ import os, sys, shutil
 from tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 from apps import *
 
-print (os.name)
-print (sys.argv[0])
+__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
+__terminal__ = "terminology"
+__editor__ = "code"
+__file_manager__ = "gentoo --root-ok"
+__browser__ = "firefox"
 
 def runCommand(app, prm="", hlpr=0, sudo=0):
     runstr = ""
@@ -134,7 +137,7 @@ class TkRootMenu(Tk):
         appsmenu.add_separator()
 
         # Menu
-        #appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " " + sys.argv[0]))
+        appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " " + sys.argv[0]))
         appsmenu.add_command(label="Refresh Menu", command=self.runRfs)
         appsmenu.add_command(label="Close Menu", command=self.master.quit)
 
