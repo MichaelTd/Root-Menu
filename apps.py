@@ -67,7 +67,7 @@ media_apps = (
     ("Libre Office", "loffice", "", 0),
     ("Calcurse", "calcurse", "", 1),
     ("Abi Word", "abiword", "", 0),
-    ("Scribus", "scribus-1.4.6", "", 0),
+    ("Scribus", "scribus", "", 0),
     ("Inkscape", "inkscape", "", 0),
     ("XFig", "xfig", "", 0),
     ("Dia", "dia", "", 0),
@@ -134,8 +134,7 @@ admin_apps = (
     ("Top", "top", "", 1))
 
 util_apps = (
-    ("App Runner", 'xterm -e TMPFILE=/tmp/${RANDOM}.input.box.txt && dialog --title "Command Input" --default-button "ok" --inputbox "Enter command to continue" 10 40 command 2> ${TMPFILE} && $(cat ${TMPFILE})', "", 0),
-    ("App Runner", "runcmd.sh", "", 0),
+    ("App Runner", "runcmd.sh", "", 1),
     ("Xfce4 App Finder", "xfce4-appfinder", "--collapsed --disable-server", 0),
     ("Synapse", "synapse", "", 0),
     ("Xfce4 Screenshot", "xfce4-screenshooter", "", 0),
@@ -157,7 +156,7 @@ util_apps = (
     ("Calcoo","calcoo", "", 0),
     ("Term Calc", "calc", "", 1),
     ("jCalc", "jCalc.sh", "", 0),
-    ("jsCalculator", "~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", "", 4))
+    ("jsCalculator", __browser__, "~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", 0))
 
 config_apps = (
     ("Compiz settings manager", "ccsm", "", 0),
