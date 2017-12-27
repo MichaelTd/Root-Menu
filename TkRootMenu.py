@@ -3,7 +3,7 @@
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
 import os, sys, shutil
-from tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
+from tkinter import Tk, Frame, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 from apps import *
 
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
@@ -40,7 +40,7 @@ class TkRootMenu(Tk):
 
         opts=(("*resizable", TRUE), ("*tearOff", FALSE))
         for opt, cond in opts:
-          self.master.option_add(opt, cond)
+            self.master.option_add(opt, cond)
 
         self.master.geometry('105x50+64+64')
 
