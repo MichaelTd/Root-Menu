@@ -134,12 +134,11 @@ class TkRootMenu(Tk):
         appsmenu.add_separator()
 
         # Menu
-        appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " " + sys.argv[0]))
+        #appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " " + sys.argv[0]))
         appsmenu.add_command(label="Refresh Menu", command=self.runRfs)
         appsmenu.add_command(label="Close Menu", command=self.master.quit)
 
         appsmenu.add_separator()
-
         appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("xscreensaver-command -lock"))
 
         appsmenu.add_separator()
