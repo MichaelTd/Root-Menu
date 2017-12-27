@@ -38,7 +38,7 @@ class TkRootMenu(Tk):
         self.master = master
         self.master.title("Root Menu")
 
-        opts = (("*resizable", TRUE), ("*tearOff", FALSE))
+        opts = (("*resizable", TRUE), ("*tearOff", TRUE))
         for opt, cond in opts:
             self.master.option_add(opt, cond)
 
