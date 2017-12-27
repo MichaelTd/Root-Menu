@@ -1,6 +1,7 @@
 .settings/*
 Debug/*
 old/*
+private/*
 python/*
 src/*
 .cproject
