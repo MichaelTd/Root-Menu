@@ -60,8 +60,8 @@ class TkRootMenu(Tk):
             ("<Control-f>", self.on_accel_runFileManager),
             ("<Control-e>", self.on_accel_runEditor))
 
-        for key, envt in binds:
-            self.master.bind_all(key, envt)
+        for keys, envt in binds:
+            self.master.bind_all(keys, envt)
 
         menubar = Menu(master)
 

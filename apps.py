@@ -151,7 +151,7 @@ util_apps = (
     ("Calcoo","calcoo", "", 0),
     ("Term Calc", "calc", "", 1),
     ("jCalc", "jCalc.sh", "", 0),
-    ("jsCalculator", __browser__, "~/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", 0))
+    ("jsCalculator", __browser__, "${HOME}/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", 0))
 
 config_apps = (
     ("Compiz settings manager", "ccsm", "", 0),
