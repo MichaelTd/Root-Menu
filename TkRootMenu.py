@@ -10,30 +10,6 @@ from tkinter import Tk, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, 
 print (os.name)
 print (sys.argv[0])
 
-def my_which(program):
-    def is_exe(fpath):
-        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
-
-    fpath, fname = os.path.split(program)
-
-    if fpath:
-        if is_exe(program):
-            return program
-    else:
-        for path in os.environ["PATH"].split(os.pathsep):
-            exe_file = os.path.join(path, program)
-            if is_exe(exe_file):
-                return exe_file
-
-    return None
-
-def runCommand(app, prm=""):
-    print (app)
-    os.system(app + " " + prm + " &")
-    #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
-    #(__out__, __err__) = proc.communicate()
-    #print "program: " , app, " output: ", __out__, " error: ", __err__
-
 '''
 #import os
 for dir in os.getenv("PATH").split(':'):
@@ -64,6 +40,53 @@ if os.access(shutil.which("x11-ssh-askpass"), os.X_OK):
     __sudo_cmd__ = "SUDO_ASKPASS=x11-ssh-askpass sudo --login --askpass "
 '''
 
+def my_which(program):
+    def is_exe(fpath):
+        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+    fpath, fname = os.path.split(program)
+
+    if fpath:
+        if is_exe(program):
+            return program
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+
+    return None
+
+def helper_app(argument):
+    switcher = {
+        1: __terminal__,
+        2: __editor__,
+        3: __file_manager__,
+        4: __browser__,
+    }
+    return switcher.get(argument, "nothing")
+
+def runCommand(app, prm="", hlpr=0):
+    if hlpr == 0:
+        os.system(app + " " + prm + " &")
+        print(app + " " + prm + " &")
+    elif hlpr == 1:
+        os.system(__terminal__ + " -e " + app + " " + prm + " &")
+        print(__terminal__ + " -e " + app + " " + prm + " &")
+    elif hlpr == 2:
+        os.system(__editor__  + " " + app + " " + prm + " &")
+        print(__editor__  + " " + app + " " + prm + " &")
+    elif hlpr == 3:
+        os.system(__file_manager__  + " " + app + " " + prm + " &")
+        print(__file_manager__  + " " + app + " " + prm + " &")
+    elif hlpr == 4:
+        os.system(__browser__  + " " + app + " " + prm + " &")
+        print(__browser__  + " " + app + " " + prm + " &")
+
+    #proc = subprocess.Popen([app, ""], stdout=subprocess.PIPE, shell=True)
+    #(__out__, __err__) = proc.communicate()
+    #print "program: " , app, " output: ", __out__, " error: ", __err__
+
 basic_apps = (
     ("Terminal", __terminal__, "ctl+t"),
     ("Editor", __editor__, "ctl+e"),
@@ -71,19 +94,20 @@ basic_apps = (
     ("Browser", __browser__, "ctl+b"))
 
 net_apps = (
-    ("Firefox", "firefox", ""),
-    ("Firefox DE", "firefox-de", ""),
-    ("Seamonkey", "seamonkey", ""),
-    ("Opera","opera", ""),
-    ("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__, ""),
-    ("Seamonkey Mail", "seamonkey", "-mail"),
-    ("Pidgin", "pidgin", ""),
-    ("FileZilla", "filezilla", ""),
-    ("Midori", "midori", ""),
-    ("W3m", __terminal__, " -e w3m -v"),
-    ("Lynx", __terminal__, " -e lynx"),
-    ("Quassel IRC", "quassel", ""),
-    ("HexChat IRC", "hexchat", ""))
+    ("Firefox", "firefox", "", ""),
+    ("Firefox DE", "firefox-de", "", ""),
+    ("Seamonkey", "seamonkey", "", ""),
+    ("Opera","opera", "", ""),
+    #("Tor Network", "cd /home/paperjam/opt/tor/ && " + __terminal__, "", "1"),
+    ("Seamonkey Mail", "seamonkey", "-mail", ""),
+    ("Pidgin", "pidgin", "", ""),
+    ("FileZilla", "filezilla", "", ""),
+    ("Midori", "midori", "", ""),
+    ("W3m", "w3m", " -v", "1"),
+    ("Lynx", "lynx", "", "1"),
+    ("Quassel IRC", "quassel", "", ""),
+    ("HexChat IRC", "hexchat", "", ""))
+
 
 dev_apps = (
     ("Eclipse", "eclipse", ""),
@@ -208,7 +232,7 @@ util_apps = (
     ("Ristretto", "ristretto", ""),
     ("PeaZip", "peazip", ""),
     ("Xarchiver", "xarchiver", ""),
-    ("Foxit Reader", "${HOME}/bin/foxitreader", ""),
+    ("Foxit Reader", "foxitreader", ""),
     ("Evince", "evince", ""),
     ("XPdf", "xpdf", ""),
     ("Ghost View", "gv", ""),
@@ -314,9 +338,9 @@ class TkRootMenu(Tk):
 
         # Internet
         netmenu = Menu(menubar)
-        for lbl, cmmnd, cla in net_apps:
+        for lbl, cmmnd, cla, hlpr in net_apps:
             if shutil.which(cmmnd) is not None:
-                netmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
+                netmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Dev menu
         devmenu = Menu(menubar)
@@ -360,7 +384,7 @@ class TkRootMenu(Tk):
                 configmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla: runCommand(param, arg))
 
         self.groups = (
-            ("Internet", netmenu),
+            ("Internet", netmenu)
             ("Development", devmenu),
             ("Mediums", mmmenu),
             ("Games", gammenu),
@@ -371,7 +395,9 @@ class TkRootMenu(Tk):
 
         # Groups
         for lbl, mnGrp in self.groups:
-            appsmenu.add_cascade(label=lbl,menu=mnGrp)
+            appsmenu.add_cascade(label=lbl, menu=mnGrp)
+
+        #appsmenu.add_cascade("Internet", netmenu)
 
         appsmenu.add_separator()
 
