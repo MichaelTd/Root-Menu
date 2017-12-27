@@ -3,7 +3,7 @@
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
 import os, sys, shutil
-from tkinter import Tk, Frame, Label, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
+from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 from apps import *
 
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
@@ -53,7 +53,7 @@ class TkRootMenu(Tk):
         self.r.grid(row=0, sticky=E)
         self.v.grid(row=1)
 
-        self.v.set(100)
+        self.v.set(75)
 
         self.master.option_add("<Control-b>", self.on_accel_runBrowser)
         self.master.option_add("<Control-t>", self.on_accel_runTerminal)
@@ -148,7 +148,7 @@ class TkRootMenu(Tk):
 
         # PC
         for lbl, cmmnd, cla, hlpr, adm in pc_options:
-            appsmenu.add_command(label=lbl,command=lambda param=cmmnd, arg=cla, hlp=hlpr, sd=adm: runCommand(param, arg, hlp, sd))
+            appsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr, sd=adm: runCommand(param, arg, hlp, sd))
 
         self.master.config(menu=menubar)
 
@@ -158,7 +158,7 @@ class TkRootMenu(Tk):
         runCommand(app)
         self.master.quit()
 
-    # Default Apps
+    # Accelearator difinitions
     def on_accel_runTerminal(self, widget):
         runCommand(__terminal__)
     def on_accel_runEditor(self, widget):
