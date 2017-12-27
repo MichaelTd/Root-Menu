@@ -58,7 +58,6 @@ dev_apps = (
     ("Netbeans", "netbeans", "", 0),
     ("KDevelop", "kdevelop", "", 0),
     ("QtCreator", "qtcreator.sh", "", 0),
-    ("QtDesigner", "qtchooser", "-run-tool=designer -qt=5", 0),
     ("QtDesigner", "designer", "", 0),
     ("QtCreator", "qtcreator.sh", "", 0),
     ("Code Blocks", "codeblocks", "", 0),
