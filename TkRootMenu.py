@@ -38,7 +38,7 @@ class TkRootMenu(Tk):
         self.master = master
         self.master.title("Root Menu")
 
-        opts=(("*resizable", TRUE), ("*tearOff", FALSE))
+        opts = (("*resizable", TRUE), ("*tearOff", FALSE))
         for opt, cond in opts:
             self.master.option_add(opt, cond)
 
@@ -55,10 +55,13 @@ class TkRootMenu(Tk):
 
         self.v.set(75)
 
-        self.master.option_add("<Control-b>", self.on_accel_runBrowser)
-        self.master.option_add("<Control-t>", self.on_accel_runTerminal)
-        self.master.option_add("<Control-f>", self.on_accel_runFileManager)
-        self.master.option_add("<Control-e>", self.on_accel_runEditor)
+        binds = (("<Control-b>", self.on_accel_runBrowser),
+            ("<Control-t>", self.on_accel_runTerminal),
+            ("<Control-f>", self.on_accel_runFileManager),
+            ("<Control-e>", self.on_accel_runEditor))
+
+        for key, envt in binds:
+            self.master.bind_all(key, envt)
 
         menubar = Menu(master)
 
