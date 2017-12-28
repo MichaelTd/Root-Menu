@@ -2,7 +2,9 @@
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 
-import os, sys, shutil
+import os
+import sys
+import shutil
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 from apps import *
 
