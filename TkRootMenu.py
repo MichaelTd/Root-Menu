@@ -6,7 +6,7 @@ import os
 import sys
 import shutil
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-from apps import *
+from Executables import *
 
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
 __terminal__ = "terminology"
