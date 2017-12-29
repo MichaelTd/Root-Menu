@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # A custom menu (tsouchlarakis@gmail.com)
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
-
+# alsa-utils, sudo, ssh-askpass, xscreensaver, xdotool
 import os
 import sys
 import shutil
@@ -57,7 +57,8 @@ class TkRootMenu(Tk):
 
         self.v.set(75)
 
-        binds = (("<Control-b>", self.on_accel_runBrowser),
+        binds = (
+            ("<Control-b>", self.on_accel_runBrowser),
             ("<Control-t>", self.on_accel_runTerminal),
             ("<Control-f>", self.on_accel_runFileManager),
             ("<Control-e>", self.on_accel_runEditor))
