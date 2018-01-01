@@ -1,0 +1,5 @@
+__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
+__terminal__ = "terminology"
+__editor__ = "code"
+__file_manager__ = "gentoo"
+__browser__ = "firefox"

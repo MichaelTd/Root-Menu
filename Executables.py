@@ -1,12 +1,12 @@
-from TkRootMenu import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__
+from Defaults import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__
 
-basic_apps = (
+__basic_apps__ = (
     ("Terminal", __terminal__, "ctl+t"),
     ("Editor", __editor__, "ctl+e"),
     ("File Manager", __file_manager__, "ctl+f"),
     ("Browser", __browser__, "ctl+b"))
 
-net_apps = (
+__net_apps__ = (
     ("Firefox", "firefox", "", 0),
     ("Firefox DE", "firefox-de", "", 0),
     ("Seamonkey", "seamonkey", "", 0),
@@ -20,7 +20,7 @@ net_apps = (
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
 
-dev_apps = (
+__dev_apps__ = (
     ("Eclipse", "eclipse", "", 0),
     ("Netbeans", "netbeans", "", 0),
     ("KDevelop", "kdevelop", "", 0),
@@ -57,7 +57,7 @@ dev_apps = (
     ("Sublime Text", "sublime_text", "", 0),
     ("Atom", "atom", "", 0))
 
-media_apps = (
+__media_apps__ = (
     ("Open Office", "ooffice", "", 0),
     ("Libre Office", "loffice", "", 0),
     ("Calcurse", "calcurse", "", 1),
@@ -76,7 +76,7 @@ media_apps = (
     ("Audacity", "audacity", "", 0),
     ("Audacious", "audacious", "", 0))
 
-game_apps = (
+__game_apps__ = (
     ("GTypist", "gtypist", "", 1),
     ("KLavaro", "klavaro", "", 0),
     ("Lutris", "lutris", "", 0),
@@ -93,7 +93,7 @@ game_apps = (
     ("Urban Terror", "Quake3-UrT.x86_64", "", 1),
     ("Warsow", "warsow", "", 1))
 
-fs_apps = (
+__fs_apps__ = (
     ("Terminology", "terminology", "", 0),
     ("CRT", "cool-retro-term", "", 0),
     ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
@@ -110,7 +110,7 @@ fs_apps = (
     ("SpaceFM", "spacefm", "", 0),
     ("Thunar", "thunar", "", 0))
 
-admin_apps = (
+__admin_apps__ = (
     ("Terminal", __terminal__, "", 0),
     ("Text Editor", __editor__, "", 0),
     ("File manager", __file_manager__, "", 0),
@@ -128,7 +128,7 @@ admin_apps = (
     ("HTop", "htop", "", 1),
     ("Top", "top", "", 1))
 
-util_apps = (
+__util_apps__ = (
     ("App Runner", "runcmd.sh", "", 1),
     ("Xfce4 App Finder", "xfce4-appfinder", "--collapsed --disable-server", 0),
     ("Synapse", "synapse", "", 0),
@@ -153,7 +153,7 @@ util_apps = (
     ("jCalc", "jCalc.sh", "", 0),
     ("jsCalculator", __browser__, "${HOME}/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", 0))
 
-config_apps = (
+__config_apps__ = (
     ("Compiz settings manager", "ccsm", "", 0),
     ("Emerald themes manager", "emerald-theme-manager", "", 0),
     ("Tint Wizard", "tintwizard", "", 0),
@@ -170,7 +170,7 @@ config_apps = (
     ("Volume Prefs", "paprefs", "", 0),
     ("Volume Controls", "pavucontrol", "", 0))
 
-pc_options = (
-    ("Logout", "kill", "-15 -1", 1, 0),
-    ("Reboot", "shutdown", "-r now", 1, 1),
-    ("Shutdown","shutdown", "-h now", 1, 1))
+__pc_options__ = (
+    ("Logout", "kill", "-15 -1", 0, 0),
+    ("Reboot", "shutdown", "-r now", 0, 1),
+    ("Shutdown","shutdown", "-h now", 0, 1))

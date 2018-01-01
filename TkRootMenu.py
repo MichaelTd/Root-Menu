@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
-# A custom menu (tsouchlarakis@gmail.com)
+# TkRootMenu.py (tsouchlarakis@gmail.com) A custom menu 
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 # alsa-utils, sudo, ssh-askpass, xscreensaver, xdotool
+
 import os
 import sys
 import shutil
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-from Executables import *
-
-__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
-__terminal__ = "terminology"
-__editor__ = "code"
-__file_manager__ = "gentoo"
-__browser__ = "firefox"
+from Defaults import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__
+from Executables import __basic_apps__, __net_apps__, __dev_apps__, __media_apps__, __game_apps__, __fs_apps__, __admin_apps__, __util_apps__, __config_apps__, __pc_options__
 
 def runCommand(app, prm="", hlpr=0, sudo=0):
     runstr = ""
@@ -73,7 +69,7 @@ class TkRootMenu(Tk):
         menubar.add_cascade(label="Root Menu", menu=appsmenu)
 
         # Basic apps
-        for lbl, cmmnd, k in basic_apps:
+        for lbl, cmmnd, k in __basic_apps__:
             if shutil.which(cmmnd) is not None:
                 appsmenu.add_command(label=lbl, accelerator=k, command=lambda param=cmmnd: runCommand(param))
 
@@ -81,48 +77,48 @@ class TkRootMenu(Tk):
 
         # Internet
         netmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in net_apps:
+        for lbl, cmmnd, cla, hlpr in __net_apps__:
             if shutil.which(cmmnd) is not None:
                 netmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Dev menu
         devmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in dev_apps:
+        for lbl, cmmnd, cla, hlpr in __dev_apps__:
             if shutil.which(cmmnd) is not None:
                 devmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Multimedia
         mmmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in media_apps:
+        for lbl, cmmnd, cla, hlpr in __media_apps__:
             if shutil.which(cmmnd) is not None:
                 mmmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Games menu
         gammenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in game_apps:
+        for lbl, cmmnd, cla, hlpr in __game_apps__:
             if shutil.which(cmmnd) is not None:
                 gammenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # File system tools
         toolsmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in fs_apps:
+        for lbl, cmmnd, cla, hlpr in __fs_apps__:
             if shutil.which(cmmnd) is not None:
                 toolsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Admin tools
         adminmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in admin_apps:
+        for lbl, cmmnd, cla, hlpr in __admin_apps__:
             adminmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp, 1))
 
         # Util Menu
         utilmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in util_apps:
+        for lbl, cmmnd, cla, hlpr in __util_apps__:
             if shutil.which(cmmnd) is not None:
                 utilmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Config Menu
         configmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in config_apps:
+        for lbl, cmmnd, cla, hlpr in __config_apps__:
             if shutil.which(cmmnd) is not None:
                 configmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
@@ -153,7 +149,7 @@ class TkRootMenu(Tk):
         appsmenu.add_separator()
 
         # PC
-        for lbl, cmmnd, cla, hlpr, adm in pc_options:
+        for lbl, cmmnd, cla, hlpr, adm in __pc_options__:
             appsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr, sd=adm: runCommand(param, arg, hlp, sd))
 
         self.master.config(menu=menubar)
