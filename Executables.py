@@ -1,4 +1,8 @@
-from Defaults import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__
+__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
+__terminal__ = "terminology"
+__editor__ = "atom"
+__file_manager__ = "xfe"
+__browser__ = "firefox"
 
 __basic_apps__ = (
     ("Terminal", __terminal__, "ctl+t"),
@@ -19,11 +23,6 @@ __net_apps__ = (
     ("Lynx", "lynx", "", 1),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
-__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
-__terminal__ = "terminology"
-__editor__ = "code"
-__file_manager__ = "gentoo"
-__browser__ = "firefox"
 
 __dev_apps__ = (
     ("Eclipse", "eclipse", "", 0),
