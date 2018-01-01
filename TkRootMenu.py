@@ -3,15 +3,14 @@
 # GNU/GPL https://www.gnu.org/licenses/gpl.html
 # alsa-utils, sudo, ssh-askpass, xscreensaver, xdotool
 
-import os
-import sys
-import shutil
+import os, sys, shutil
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-from Defaults import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__
-from Executables import __basic_apps__, __net_apps__, __dev_apps__, __media_apps__, __game_apps__, __fs_apps__, __admin_apps__, __util_apps__, __config_apps__, __pc_options__
+from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic_apps__, __net_apps__, __dev_apps__, __media_apps__, __game_apps__, __fs_apps__, __admin_apps__, __util_apps__, __config_apps__, __pc_options__
 
 def runCommand(app, prm="", hlpr=0, sudo=0):
+
     runstr = ""
+
     if sudo == 1: # Prefix sudo
         runstr += __sudo_cmd__ + " "
 
@@ -34,9 +33,11 @@ class TkRootMenu(Tk):
     def __init__(self, master):
 
         self.master = master
+
         self.master.title("Root Menu")
 
         opts = (("*resizable", TRUE), ("*tearOff", TRUE))
+
         for opt, cond in opts:
             self.master.option_add(opt, cond)
 
@@ -144,6 +145,7 @@ class TkRootMenu(Tk):
         appsmenu.add_command(label="Close Menu", command=self.master.quit)
 
         appsmenu.add_separator()
+
         appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("xscreensaver-command -lock"))
 
         appsmenu.add_separator()

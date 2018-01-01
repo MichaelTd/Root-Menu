@@ -19,6 +19,11 @@ __net_apps__ = (
     ("Lynx", "lynx", "", 1),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
+__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
+__terminal__ = "terminology"
+__editor__ = "code"
+__file_manager__ = "gentoo"
+__browser__ = "firefox"
 
 __dev_apps__ = (
     ("Eclipse", "eclipse", "", 0),
