@@ -74,6 +74,7 @@ __media_apps__ = (
     ("FreeCAD", "freecad", "", 0),
     ("Open Shot", "openshot", "", 0),
     ("Blender", "blender", "", 0),
+    ("XfBurn", "xfburn", "", 0),    
     ("Kodi", "kodi", "", 0),
     ("VLC", "vlc", "", 0),
     ("Dark Table", "darktable", "", 0),
