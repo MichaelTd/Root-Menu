@@ -1,7 +1,7 @@
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass|which ssh-askpass` sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "atom"
-__file_manager__ = "xfe"
+__editor__ = "code"
+__file_manager__ = "gentoo"
 __browser__ = "firefox"
 
 __basic_apps__ = (
@@ -70,6 +70,7 @@ __media_apps__ = (
     ("Inkscape", "inkscape", "", 0),
     ("XFig", "xfig", "", 0),
     ("Dia", "dia", "", 0),
+    ("GNU/Plot", "gnuplot", "", 1),
     ("FreeCAD", "freecad", "", 0),
     ("Open Shot", "openshot", "", 0),
     ("Blender", "blender", "", 0),
