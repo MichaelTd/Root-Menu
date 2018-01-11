@@ -14,7 +14,7 @@ def runCommand(app, prm="", hlpr=0, sudo=0):
     if sudo == 1: # Prefix sudo
         runstr += __sudo_cmd__ + " "
 
-    if hlpr == 1: # Postfix helper
+    if hlpr == 1: # Append helper
         runstr += __terminal__ + " -e "
     elif hlpr == 2:
         runstr += __editor__ + " "
@@ -23,7 +23,7 @@ def runCommand(app, prm="", hlpr=0, sudo=0):
     elif hlpr == 4:
         runstr += __browser__ + " "
 
-    runstr += app + " " + prm + " &" # Append app, params and background
+    runstr += app + " " + prm + " &" # Postfix app, params and background
 
     print(runstr)
     os.system(runstr)
