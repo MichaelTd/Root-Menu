@@ -103,8 +103,8 @@ __fs_apps__ = (
     ("Terminology", "terminology", "", 0),
     ("CRT", "cool-retro-term", "", 0),
     ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
-    ("URXVT", "urxvt", "", 0),
-    ("URXVT", "uxterm", "", 0),
+    ("uRXVT", "urxvt", "", 0),
+    ("uXTerm", "uxterm", "", 0),
     ("XTerm", "xterm", "", 0),
     ("Hyper", "hyper", "", 0),
     ("Midnight Commander", "mc", "", 1),
@@ -115,6 +115,14 @@ __fs_apps__ = (
     ("Xfe", "xfe", "", 0),
     ("SpaceFM", "spacefm", "", 0),
     ("Thunar", "thunar", "", 0))
+
+__shells__ = (
+    ("bash", "bash", "", 1),
+    ("KornSH", "ksh", "", 1),
+    ("Zsh", "zsh", "", 1),
+    ("Csh", "csh", "", 1),
+    ("SH", "sh", "", 1),
+    ("Fish", "fish", "", 1))
 
 __admin_apps__ = (
     ("Terminal", __terminal__, "", 0),

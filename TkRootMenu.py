@@ -5,7 +5,7 @@
 
 import os, sys, shutil
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic_apps__, __net_apps__, __dev_apps__, __media_apps__, __game_apps__, __fs_apps__, __admin_apps__, __util_apps__, __config_apps__, __pc_options__
+from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic_apps__, __net_apps__, __dev_apps__, __media_apps__, __game_apps__, __fs_apps__, __shells__, __admin_apps__, __util_apps__, __config_apps__, __pc_options__
 
 def runCommand(app, prm="", hlpr=0, sudo=0):
 
@@ -106,6 +106,12 @@ class TkRootMenu(Tk):
             if shutil.which(cmmnd) is not None:
                 toolsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
+        # Shells
+        shellsmenu = Menu(menubar)
+        for lbl, cmmnd, cla, hlpr in __shells__:
+            if shutil.which(cmmnd) is not None:
+                shellsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
+
         # Admin tools
         adminmenu = Menu(menubar)
         for lbl, cmmnd, cla, hlpr in __admin_apps__:
@@ -129,6 +135,7 @@ class TkRootMenu(Tk):
             ("Mediums", mmmenu),
             ("Games", gammenu),
             ("File System", toolsmenu),
+            ("Shells", shellsmenu),
             ("Admin Tools", adminmenu),
             ("Utilities", utilmenu),
             ("Config", configmenu))
