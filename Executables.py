@@ -143,7 +143,7 @@ __admin_apps__ = (
     ("Top", "top", "", 1))
 
 __util_apps__ = (
-    ("App Runner", "runcmd.sh", "", 1),
+    ("App Runner", "/home/paperjam/bin/runcmd.sh", "", 1),
     ("Xfce4 App Finder", "xfce4-appfinder", "--collapsed --disable-server", 0),
     ("Synapse", "synapse", "", 0),
     ("Xfce4 Screenshot", "xfce4-screenshooter", "", 0),
