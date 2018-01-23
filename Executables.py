@@ -173,6 +173,8 @@ __config_apps__ = (
     ("Tint Wizard", "tintwizard", "", 0),
     ("Tint2 Config", "tint2conf", "", 0),
     ("OpenBox conf", "obconf", "", 0),
+    ("e16 Keyedit", "e16keyedit", "", 0),
+    ("e16 Menuedit", "e16menuedit2", "", 0),
     ("Qt Config", "qtconfig", "", 0),
     ("X Screen Saver", "xscreensaver-demo", "", 0),
     ("Wicd gtk", "wicd-gtk", "", 0),
