@@ -43,10 +43,10 @@ class TkRootMenu(Tk):
 
         self.master.geometry('105x80+64+64')
 
-        self.u = Button(master, width=1, height=1, text=u"\u2191", command=lambda: runCommand("xdotool key 'ctrl+alt+Up'"))
-        self.l = Button(master, width=1, height=3, text=u"\u2190", command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
-        self.r = Button(master, width=1, height=3, text=u"\u2192", command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
-        self.d = Button(master, width=1, height=1, text=u"\u2193", command=lambda: runCommand("xdotool key 'ctrl+alt+Down'"))
+        self.u = Button(master, width=1, height=1, text=u"\u21E7", command=lambda: runCommand("xdotool key 'ctrl+alt+Up'"))
+        self.l = Button(master, width=1, height=3, text=u"\u21E6", command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
+        self.r = Button(master, width=1, height=3, text=u"\u21E8", command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
+        self.d = Button(master, width=1, height=1, text=u"\u21E9", command=lambda: runCommand("xdotool key 'ctrl+alt+Down'"))
 
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
