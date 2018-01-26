@@ -41,19 +41,19 @@ class TkRootMenu(Tk):
         for opt, cond in opts:
             self.master.option_add(opt, cond)
 
-        self.master.geometry('105x80+64+64')
+        self.master.geometry('105x50+64+64')
 
-        self.u = Button(master, width=1, height=1, text=u"\u21E7", command=lambda: runCommand("xdotool key 'ctrl+alt+Up'"))
-        self.l = Button(master, width=1, height=3, text=u"\u21E6", command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
-        self.r = Button(master, width=1, height=3, text=u"\u21E8", command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
-        self.d = Button(master, width=1, height=1, text=u"\u21E9", command=lambda: runCommand("xdotool key 'ctrl+alt+Down'"))
+        #self.u = Button(master, width=1, height=1, text=u"\u21E7", command=lambda: runCommand("xdotool key 'ctrl+alt+Up'"))
+        self.l = Button(master, width=3, height=1, text=u"\u21E6", command=lambda: runCommand("xdotool key 'ctrl+alt+Left'"))
+        self.r = Button(master, width=3, height=1, text=u"\u21E8", command=lambda: runCommand("xdotool key 'ctrl+alt+Right'"))
+        #self.d = Button(master, width=1, height=1, text=u"\u21E9", command=lambda: runCommand("xdotool key 'ctrl+alt+Down'"))
 
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
-        self.u.grid(row=0, sticky=N)
+        #self.u.grid(row=0, sticky=N)
         self.l.grid(row=0, sticky=W)
         self.r.grid(row=0, sticky=E)
-        self.d.grid(row=0, sticky=S)
+        #self.d.grid(row=0, sticky=S)
         self.v.grid(row=1)
 
         self.v.set(75)
