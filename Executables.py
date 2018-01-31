@@ -54,6 +54,7 @@ __dev_apps__ = (
     ("Blue Fish", "bluefish", "", 0),
     ("ZED", "zed", "", 1),
     ("Just MarkDown", "justmd", "", 0),
+    ("Komodo", "komodo", "", 0),
     ("Brackets", "brackets", "", 0),
     ("VSCode", "code", "", 0),
     ("VSCode", "vscode", "", 0),
@@ -190,4 +191,12 @@ __config_apps__ = (
 __pc_options__ = (
     ("Logout", "kill", "-15 -1", 0, 0),
     ("Reboot", "shutdown", "-r now", 0, 1),
-    ("Shutdown","shutdown", "-h now", 0, 1))
+    ("Shutdown", "shutdown", "-h now", 0, 1))
+
+__help__ = (
+    ("e16 Docs", "edox", "", 0),
+    ("Bash Documentation", __browser__ , "http://tldp.org/LDP/abs/html/", 0),
+    ("TiddlyWiki", __browser__, "file:///mnt/data/Documents/TiddlyWiki/TiddlyWiki.html", 0),
+    ("TiddlyWiki5", __browser__, "file:///mnt/data/Documents/TiddlyWiki/TiddlyWiki5.html", 0),
+    ("Git Root", __browser__, "file:///home/paperjam/git", 0),
+    ("Docs Root", __browser__, "file:///mnt/data/Documents/docs/", 0))
