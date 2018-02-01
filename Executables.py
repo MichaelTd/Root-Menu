@@ -196,6 +196,7 @@ __pc_options__ = (
 __help__ = (
     ("e16 Docs", "edox", "", 0),
     ("Bash Documentation", __browser__ , "http://tldp.org/LDP/abs/html/", 0),
+    ("Shared Docs", __browser__ , "file:///usr/share/doc/", 0),
     ("TiddlyWiki", __browser__, "file:///mnt/data/Documents/TiddlyWiki/TiddlyWiki.html", 0),
     ("TiddlyWiki5", __browser__, "file:///mnt/data/Documents/TiddlyWiki/TiddlyWiki5.html", 0),
     ("Git Root", __browser__, "file:///home/paperjam/git", 0),
