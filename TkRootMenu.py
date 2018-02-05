@@ -180,7 +180,7 @@ class TkRootMenu(Tk):
         runCommand(app)
         self.master.quit()
 
-    # Accelearator difinitions
+    # Accelearator definitions
     def on_accel_runTerminal(self, widget):
         runCommand(__terminal__)
     def on_accel_runEditor(self, widget):
