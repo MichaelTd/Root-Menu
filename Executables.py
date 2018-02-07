@@ -77,6 +77,7 @@ __media_apps__ = (
     ("Open Shot", "openshot", "", 0),
     ("Blender", "blender", "", 0),
     ("XfBurn", "xfburn", "", 0),
+    ("X CD Roast", "xcdroast", "", 0),
     ("Kodi", "kodi", "", 0),
     ("VLC", "vlc", "", 0),
     ("Dark Table", "darktable", "", 0),
