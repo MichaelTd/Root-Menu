@@ -78,6 +78,8 @@ __media_apps__ = (
     ("Blender", "blender", "", 0),
     ("XfBurn", "xfburn", "", 0),
     ("X CD Roast", "xcdroast", "", 0),
+    ("ACiDRip", "acidrip", "", 0),
+    ("HandBrake", "ghb", "", 0),
     ("Kodi", "kodi", "", 0),
     ("VLC", "vlc", "", 0),
     ("Dark Table", "darktable", "", 0),
@@ -129,8 +131,11 @@ __shells__ = (
 
 __admin_apps__ = (
     ("Terminal", __terminal__, "", 0),
+    ("Terminology", "terminology", "", 0),
     ("Text Editor", __editor__, "", 0),
+    ("Atom", "atom", "", 0),
     ("File manager", __file_manager__, "", 0),
+    ("Xfe", "xfe", "--root-ok", 0),
     ("Midnight Commander", "mc", "-a", 1),
     ("Ranger", "ranger", "", 1),
     ("Porthole", "porthole", "", 0),
