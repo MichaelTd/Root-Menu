@@ -192,7 +192,7 @@ __config_apps__ = (
     ("Alsamixer", "alsamixer", "", 1),
     ("Xfce4 Mixer", "xfce4-mixer", "", 0),
     ("Volume Prefs", "paprefs", "", 0),
-    ("Volume Controls", "pavucontrol", "", 0))
+    ("Volume Controls", "pavucontrol", "-t 3", 0))
 
 __pc_options__ = (
     ("Logout", "kill", "-15 -1", 0, 0),
