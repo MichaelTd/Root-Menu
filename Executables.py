@@ -4,13 +4,13 @@ __editor__ = "gvim"
 __file_manager__ = "gentoo"
 __browser__ = "firefox"
 
-__basic_apps__ = (
+__basic__ = (
     ("Terminal", __terminal__, "ctl+t"),
     ("Editor", __editor__, "ctl+e"),
     ("File Manager", __file_manager__, "ctl+f"),
     ("Browser", __browser__, "ctl+b"))
 
-__net_apps__ = (
+__net__ = (
     ("Firefox", "firefox", "", 0),
     ("Firefox DE", "firefox-de", "", 0),
     ("Seamonkey", "seamonkey", "", 0),
@@ -24,7 +24,7 @@ __net_apps__ = (
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
 
-__dev_apps__ = (
+__dev__ = (
     ("Eclipse", "eclipse", "", 0),
     ("Netbeans", "netbeans", "", 0),
     ("KDevelop", "kdevelop", "", 0),
@@ -63,7 +63,7 @@ __dev_apps__ = (
     ("Sublime Text", "sublime_text", "", 0),
     ("Atom", "atom", "", 0))
 
-__media_apps__ = (
+__media__ = (
     ("Open Office", "ooffice", "", 0),
     ("Libre Office", "loffice", "", 0),
     ("Calcurse", "calcurse", "", 1),
@@ -87,7 +87,7 @@ __media_apps__ = (
     ("Audacity", "audacity", "", 0),
     ("Audacious", "audacious", "", 0))
 
-__game_apps__ = (
+__games__ = (
     ("GTypist", "gtypist", "", 1),
     ("KLavaro", "klavaro", "", 0),
     ("Lutris", "lutris", "", 0),
@@ -104,7 +104,7 @@ __game_apps__ = (
     ("Urban Terror", "Quake3-UrT.x86_64", "", 1),
     ("Warsow", "warsow", "", 1))
 
-__fs_apps__ = (
+__fs__ = (
     ("Terminology", "terminology", "", 0),
     ("CRT", "cool-retro-term", "", 0),
     ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
@@ -129,7 +129,7 @@ __shells__ = (
     ("SH", "sh", "", 1),
     ("Fish", "fish", "", 1))
 
-__admin_apps__ = (
+__admin__ = (
     ("Terminal", __terminal__, "", 0),
     ("Terminology", "terminology", "", 0),
     ("Text Editor", __editor__, "", 0),
@@ -143,6 +143,7 @@ __admin_apps__ = (
     ("gtk PartEd", "gparted", "", 0),
     ("cli PartEd", "parted", "", 1),
     ("Wireshark", "wireshark", "", 0),
+    ("ZenMap", "zenmap", "", 0),
     ("DStat", "dstat", "-fcdngy", 1),
     ("C Sys Dig", "csysdig", "", 1),
     ("Glances", "glances", "", 1),
@@ -150,32 +151,35 @@ __admin_apps__ = (
     ("HTop", "htop", "", 1),
     ("Top", "top", "", 1))
 
-__util_apps__ = (
-    ("App Runner", "/home/paperjam/bin/runcmd.sh", "", 1),
+__utils__ = (
+    ("App Runner", "/home/paperjam/bin/runcmd.sh", "", 1), # App finders
     ("Xfce4 App Finder", "xfce4-appfinder", "--collapsed --disable-server", 0),
     ("Synapse", "synapse", "", 0),
-    ("Xfce4 Screenshot", "xfce4-screenshooter", "", 0),
+    ("Xfce4 Screenshot", "xfce4-screenshooter", "", 0), # Image capture
     ("Screengrab", "screengrab", "", 0),
     ("Shutter","shutter", "", 0),
     ("Take a shot now", "imss.sh", "2", 0),
-    ("Simple Screen Recorder", "simplescreenrecorder", "", 0),
-    ("Viewnior", "viewnior", "", 0),
+    ("Simple Screen Recorder", "simplescreenrecorder", "", 0), # Video capture
+    ("Viewnior", "viewnior", "", 0), # Image Viewers
     ("Ristretto", "ristretto", "", 0),
-    ("PeaZip", "peazip", "", 0),
+    ("PeaZip", "peazip", "", 0), # Compression
     ("Xarchiver", "xarchiver", "", 0),
-    ("Foxit Reader", "foxitreader", "", 0),
+    ("GNU Privacy Assistant", "gpa", "", 0), # PGP
+    ("Foxit Reader", "foxitreader", "", 0), # PDF
+    ("QPdf View", "qpdfview", "", 0),
     ("Evince", "evince", "", 0),
     ("XPdf", "xpdf", "", 0),
     ("Ghost View", "gv", "", 0),
     ("Xv", "xv", "", 0),
-    ("Fox Calc","calculator", "", 0),
+    ("Fox Calc","calculator", "", 0), # Calc
     ("XCalc","xcalc", "", 0),
     ("Calcoo","calcoo", "", 0),
+    ("BC", "bc", "", 1),
     ("Term Calc", "calc", "", 1),
     ("jCalc", "jCalc.sh", "", 0),
     ("jsCalculator", __browser__, "${HOME}/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", 0))
 
-__config_apps__ = (
+__config__ = (
     ("Compiz settings manager", "ccsm", "", 0),
     ("Emerald themes manager", "emerald-theme-manager", "", 0),
     ("Tint Wizard", "tintwizard", "", 0),

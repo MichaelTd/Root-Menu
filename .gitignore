@@ -9,3 +9,4 @@ src/*
 .project
 .pydevproject
 _config.yml
+Logger.py

@@ -5,7 +5,7 @@
 
 import os, sys, shutil
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic_apps__, __net_apps__, __dev_apps__, __media_apps__, __game_apps__, __fs_apps__, __shells__, __admin_apps__, __util_apps__, __config_apps__, __help__, __pc_options__
+from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic__, __net__, __dev__, __media__, __games__, __fs__, __shells__, __admin__, __utils__, __config__, __help__, __pc_options__
 
 def runCommand(app, prm="", hlpr=0, sudo=0):
 
@@ -74,7 +74,7 @@ class TkRootMenu(Tk):
         menubar.add_cascade(label="Root Menu", menu=appsmenu)
 
         # Basic apps
-        for lbl, cmmnd, k in __basic_apps__:
+        for lbl, cmmnd, k in __basic__:
             if shutil.which(cmmnd) is not None:
                 appsmenu.add_command(label=lbl, accelerator=k, command=lambda param=cmmnd: runCommand(param))
 
@@ -82,31 +82,31 @@ class TkRootMenu(Tk):
 
         # Internet
         netmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __net_apps__:
+        for lbl, cmmnd, cla, hlpr in __net__:
             if shutil.which(cmmnd) is not None:
                 netmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Dev menu
         devmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __dev_apps__:
+        for lbl, cmmnd, cla, hlpr in __dev__:
             if shutil.which(cmmnd) is not None:
                 devmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Multimedia
         mmmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __media_apps__:
+        for lbl, cmmnd, cla, hlpr in __media__:
             if shutil.which(cmmnd) is not None:
                 mmmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Games menu
         gammenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __game_apps__:
+        for lbl, cmmnd, cla, hlpr in __games__:
             if shutil.which(cmmnd) is not None:
                 gammenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # File system tools
         toolsmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __fs_apps__:
+        for lbl, cmmnd, cla, hlpr in __fs__:
             if shutil.which(cmmnd) is not None:
                 toolsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
@@ -118,18 +118,18 @@ class TkRootMenu(Tk):
 
         # Admin tools
         adminmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __admin_apps__:
+        for lbl, cmmnd, cla, hlpr in __admin__:
             adminmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp, 1))
 
         # Util Menu
         utilmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __util_apps__:
+        for lbl, cmmnd, cla, hlpr in __utils__:
             if shutil.which(cmmnd) is not None:
                 utilmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Config Menu
         configmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __config_apps__:
+        for lbl, cmmnd, cla, hlpr in __config__:
             if shutil.which(cmmnd) is not None:
                 configmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
