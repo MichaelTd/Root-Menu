@@ -199,7 +199,7 @@ __config__ = (
     ("Volume Controls", "pavucontrol", "-t 3", 0))
 
 __pc_options__ = (
-    ("Logout", "kill", "-15 -1", 0, 0),
+    ("Logout", "kill", "-15 -1", 1, 0),
     ("Reboot", "shutdown", "-r now", 0, 1),
     ("Shutdown", "shutdown", "-h now", 0, 1))
 

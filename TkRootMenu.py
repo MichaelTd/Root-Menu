@@ -4,8 +4,11 @@
 # alsa-utils, sudo, ssh-askpass, xscreensaver, xdotool
 
 import os, sys, shutil
+from PIL import ImageTk, Image
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic__, __net__, __dev__, __media__, __games__, __fs__, __shells__, __admin__, __utils__, __config__, __help__, __pc_options__
+
+ncnss = "0"
 
 def runCommand(app, prm="", hlpr=0, sudo=0):
 
@@ -13,6 +16,8 @@ def runCommand(app, prm="", hlpr=0, sudo=0):
 
     if sudo == 1: # Prefix sudo
         runstr += __sudo_cmd__ + " "
+
+    runstr += "nice -n " + ncnss + " "
 
     if hlpr == 1: # Append helper
         runstr += __terminal__ + " -e "
@@ -50,13 +55,19 @@ class TkRootMenu(Tk):
 
         self.v = Scale(master, from_=0, to=100, orient=HORIZONTAL, showvalue=0, command=self.setVlm)
 
+        #self.n = Scale(master, from_=0, to=19 , orient=HORIZONTAL, showvalue=0, command=self.setNcs)
+
         #self.u.grid(row=0, sticky=N)
         self.l.grid(row=0, sticky=W)
         self.r.grid(row=0, sticky=E)
         #self.d.grid(row=0, sticky=S)
+
         self.v.grid(row=1)
 
+				#self.n.grid(row=2)
+
         self.v.set(75)
+        #self.n.set(19)
 
         binds = (
             ("<Control-b>", self.on_accel_runBrowser),
@@ -194,6 +205,10 @@ class TkRootMenu(Tk):
     def setVlm(self, widget):
         app = "amixer set 'Master' " + str(self.v.get()) + "%"
         runCommand(app)
+
+    #def setNcs(self, widget):
+		#		pass
+    #    #ncnss = str(self.n.get())
 
 if __name__ == "__main__":
     master = Tk()
