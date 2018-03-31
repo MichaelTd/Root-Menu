@@ -1,7 +1,7 @@
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass||which ssh-askpass` sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "gvim"
-__file_manager__ = "gentoo"
+__editor__ = "atom"
+__file_manager__ = "xfe"
 __browser__ = "firefox"
 
 __basic__ = (
@@ -64,7 +64,7 @@ __dev__ = (
     ("Atom", "atom", "", 0))
 
 __media__ = (
-    ("Open Office", "ooffice", "", 0),
+    ("Open Office", "ooffice", "", 0), # Office
     ("Libre Office", "loffice", "", 0),
     ("Calcurse", "calcurse", "", 1),
     ("Abi Word", "abiword", "", 0),
@@ -74,16 +74,18 @@ __media__ = (
     ("Dia", "dia", "", 0),
     ("GNU/Plot", "gnuplot", "", 1),
     ("FreeCAD", "freecad", "", 0),
-    ("Open Shot", "openshot", "", 0),
     ("Blender", "blender", "", 0),
-    ("XfBurn", "xfburn", "", 0),
+    ("XfBurn", "xfburn", "", 0),    # DVD/CD Burn
     ("X CD Roast", "xcdroast", "", 0),
     ("ACiDRip", "acidrip", "", 0),
     ("HandBrake", "ghb", "", 0),
-    ("Kodi", "kodi", "", 0),
+    ("OBS Studio", "obs", "", 0), # Video broadcast
+    ("Open Shot", "openshot", "", 0), # Video edit
+    ("Kodi", "kodi", "", 0),    # Video Playback
     ("VLC", "vlc", "", 0),
-    ("Dark Table", "darktable", "", 0),
+    ("Dark Table", "darktable", "", 0), # Image Edit
     ("Gimp", "gimp", "", 0),
+    ("Muse Score", "musescore", "", 0), # Sound
     ("Audacity", "audacity", "", 0),
     ("Audacious", "audacious", "", 0))
 
@@ -176,7 +178,7 @@ __utils__ = (
     ("Calcoo","calcoo", "", 0),
     ("BC", "bc", "", 1),
     ("Term Calc", "calc", "", 1),
-    ("jCalc", "jCalc.sh", "", 0),
+    ("jCalc", "java", "-jar ~/bin/jCalc.jar", 0),
     ("jsCalculator", __browser__, "${HOME}/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", 0))
 
 __config__ = (

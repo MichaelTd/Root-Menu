@@ -4,7 +4,7 @@
 # alsa-utils, sudo, ssh-askpass, xscreensaver, xdotool
 
 import os, sys, shutil
-from PIL import ImageTk, Image
+#from PIL import ImageTk, Image
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
 from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic__, __net__, __dev__, __media__, __games__, __fs__, __shells__, __admin__, __utils__, __config__, __help__, __pc_options__
 
