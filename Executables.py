@@ -21,6 +21,7 @@ __net__ = (
     ("Midori", "midori", "", 0),
     ("W3m", "w3m", "-v", 1),
     ("Lynx", "lynx", "", 1),
+    ("Zoom", "zoom", "", 0),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
 
