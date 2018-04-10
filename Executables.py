@@ -6,9 +6,9 @@ __browser__ = "firefox"
 
 __basic__ = (
     ("Terminal", __terminal__, "ctl+t"),
+    ("Browser", __browser__, "ctl+b"),
     ("Editor", __editor__, "ctl+e"),
-    ("File Manager", __file_manager__, "ctl+f"),
-    ("Browser", __browser__, "ctl+b"))
+    ("File Manager", __file_manager__, "ctl+f"))
 
 __net__ = (
     ("Firefox", "firefox", "", 0),
@@ -21,6 +21,8 @@ __net__ = (
     ("Midori", "midori", "", 0),
     ("W3m", "w3m", "-v", 1),
     ("Lynx", "lynx", "", 1),
+    ("Discord", "discord", "", 0),
+    ("Skype", "skype", "", 0),
     ("Zoom", "zoom", "", 0),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
