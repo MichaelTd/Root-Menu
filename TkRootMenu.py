@@ -159,8 +159,8 @@ class TkRootMenu(Tk):
             #("Shells", shellsmenu),
             ("Admin Tools", adminmenu),
             ("Utilities", utilmenu),
-            ("Config", configmenu),
-            ("Help", helpmenu))
+            ("Config", configmenu))
+            # ("Help", helpmenu))
 
         # Groups
         for lbl, mnGrp in self.groups:

@@ -10,3 +10,4 @@ src/*
 .pydevproject
 _config.yml
 Logger.py
+UnitConverter.py

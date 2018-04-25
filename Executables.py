@@ -1,6 +1,6 @@
 __sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass||which ssh-askpass` sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "atom"
+__editor__ = "emacs"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 
@@ -28,34 +28,35 @@ __net__ = (
     ("HexChat IRC", "hexchat", "", 0))
 
 __dev__ = (
-    ("Eclipse", "eclipse", "", 0),
+    ("Eclipse", "eclipse", "", 0), # Java Based
     ("Netbeans", "netbeans", "", 0),
-    ("KDevelop", "kdevelop", "", 0),
+    ("KDevelop", "kdevelop", "", 0), # c/cpp based
     ("QtCreator", "qtcreator.sh", "", 0),
     ("QtDesigner", "designer", "", 0),
     ("QtCreator", "qtcreator.sh", "", 0),
     ("Code Blocks", "codeblocks", "", 0),
     ("Glade", "glade", "", 0),
     ("Pg Admin3", "pgadmin3", "", 0),
-    ("Scite", "scite", "", 0),
+    ("Mousepad", "mousepad", "", 0), 
+    ("Geany", "geany", "", 0),
+    ("Blue Fish", "bluefish", "", 0),
+    ("Tea", "tea", "", 0),
+    ("Yudit", "yudit", "", 0),
+    ("NEdit", "nedit", "", 0), # Motif
+    ("Scite", "scite", "", 0), # Python based
     ("Idle", "idle", "", 0),
-    ("Diakonos", "diakonos", "", 1),
-    ("Slap", "slap", "", 1),
+    ("JuPyter", "jupyter", "notebook", 1),
+    ("Anaconda3", "anaconda-navigator", "", 0),
+    ("Cuda Text", "cudatext", "", 0),
+    ("Diakonos", "diakonos", "", 1), # CLI based
     ("Micro", "micro", "", 1),
     ("Vim", "vim", "", 1),
     ("emacs-nox", "emacs", "-nw", 1),
-    ("Mousepad", "mousepad", "", 0),
-    ("Cuda Text", "cudatext", "", 0),
-    ("NEdit", "nedit", "", 0),
-    ("Tea", "tea", "", 0),
-    ("Yudit", "yudit", "", 0),
-    ("JuPyter", "jupyter", "notebook", 1),
     ("GVim", "gvim", "", 0),
     ("XEmacs", "xemacs", "", 0),
     ("Emacs", "emacs", "", 0),
-    ("Geany", "geany", "", 0),
-    ("Blue Fish", "bluefish", "", 0),
-    ("ZED", "zed", "", 1),
+    ("ZED", "/home/paperjam/opt/zed/zed", "", 0), # JavaSctip Based
+    ("Slap", "slap", "", 1),
     ("Just MarkDown", "justmd", "", 0),
     ("Komodo", "komodo", "", 0),
     ("Brackets", "brackets", "", 0),
@@ -71,6 +72,7 @@ __media__ = (
     ("Libre Office", "loffice", "", 0),
     ("Calcurse", "calcurse", "", 1),
     ("Abi Word", "abiword", "", 0),
+    ("DjVuSmooth", "djvusmooth", "", 0), # DjVu files
     ("Scribus", "scribus", "", 0),
     ("Inkscape", "inkscape", "", 0),
     ("XFig", "xfig", "", 0),
@@ -176,6 +178,7 @@ __utils__ = (
     ("XPdf", "xpdf", "", 0),
     ("Ghost View", "gv", "", 0),
     ("Xv", "xv", "", 0),
+    ("DjView", "djview", "", 0), # DjVu
     ("Fox Calc","calculator", "", 0), # Calc
     ("XCalc","xcalc", "", 0),
     ("Calcoo","calcoo", "", 0),
@@ -185,18 +188,18 @@ __utils__ = (
     ("jsCalculator", __browser__, "${HOME}/git/freeCodeCamp/01-front-end-cert/07-javascript-calculator/jc.html", 0))
 
 __config__ = (
-    ("Compiz settings manager", "ccsm", "", 0),
+    ("Compiz settings manager", "ccsm", "", 0), # Compiz
     ("Emerald themes manager", "emerald-theme-manager", "", 0),
-    ("Tint Wizard", "tintwizard", "", 0),
+    ("Tint Wizard", "tintwizard", "", 0), # Tint
     ("Tint2 Config", "tint2conf", "", 0),
-    ("OpenBox conf", "obconf", "", 0),
-    ("e16 Keyedit", "e16keyedit", "", 0),
+    ("OpenBox conf", "obconf", "", 0), # Openbox
+    ("e16 Keyedit", "e16keyedit", "", 0), # e16
     ("e16 Menuedit", "e16menuedit2", "", 0),
-    ("Qt Config", "qtconfig", "", 0),
-    ("X Screen Saver", "xscreensaver-demo", "", 0),
-    ("Wicd gtk", "wicd-gtk", "", 0),
+    ("Qt Config", "qtconfig", "", 0), # Qt
+    ("X Screen Saver", "xscreensaver-demo", "", 0), # XScreenSaver
+    ("Wicd gtk", "wicd-gtk", "", 0), # Network
     ("Wicd curses", "wicd-curses", "", 1),
-    ("Xfce4-alsa-control", "xfce4-alsa-control", "", 0),
+    ("Xfce4-alsa-control", "xfce4-alsa-control", "", 0), # Sound
     ("Alsamixer Gui", "alsamixergui", "", 0),
     ("Alsamixer", "alsamixer", "", 1),
     ("Xfce4 Mixer", "xfce4-mixer", "", 0),
@@ -213,6 +216,5 @@ __help__ = (
     ("Bash Documentation", __browser__ , "http://tldp.org/LDP/abs/html/", 0),
     ("Shared Docs", __browser__ , "file:///usr/share/doc/", 0),
     ("TiddlyWiki", __browser__, "file:///mnt/data/Documents/TiddlyWiki/TiddlyWiki.html", 0),
-    ("TiddlyWiki5", __browser__, "file:///mnt/data/Documents/TiddlyWiki/TiddlyWiki5.html", 0),
     ("Git Root", __browser__, "file:///home/paperjam/git", 0),
-    ("Docs Root", __browser__, "file:///mnt/data/Documents/docs/", 0))
+    ("Docs Root", __browser__, "file:///mnt/data/Documents/DOCS/", 0))
