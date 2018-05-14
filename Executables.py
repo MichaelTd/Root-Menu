@@ -95,18 +95,19 @@ __media__ = (
     ("Audacious", "audacious", "", 0))
 
 __games__ = (
-    ("GTypist", "gtypist", "", 1),
+    ("GTypist", "gtypist", "", 1), # Touch Typing
     ("KLavaro", "klavaro", "", 0),
-    ("Lutris", "lutris", "", 0),
-    ("Gx Mame", "gxmame", "", 0),
+    ("Lutris", "lutris", "", 0), 
+    ("Gx Mame", "gxmame", "", 0), # MAME
     ("Advanced Mame Menu", "advmenu", "", 0),
-    ("Snake 3D", "snake3d", "", 0),
-    ("GNU Back Gammon", "gnubg", "", 0),
+    ("Snake 3D", "snake3d", "", 0), # Board
+    ("GNUbg", "gnubg", "", 0),
     ("XGammon", "xgammon", "", 0),
     ("XBoard", "xboard", "", 0),
+    ("ChessX", "chessx", "", 0),
     ("Xmahjongg","xmahjongg", "", 0),
     ("X Mah-jongg","xmj", "", 0),
-    ("Quake 3", "ioq3", "", 1),
+    ("Quake 3", "ioq3", "", 1), # 3D
     ("Quake 3 TA", "ioq3-ta", "", 1),
     ("Urban Terror", "Quake3-UrT.x86_64", "", 1),
     ("Warsow", "warsow", "", 1))
