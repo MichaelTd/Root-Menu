@@ -50,7 +50,8 @@ __dev__ = (
     ("Cuda Text", "cudatext", "", 0),
     ("Diakonos", "diakonos", "", 1), # CLI based
     ("Micro", "micro", "", 1),
-    ("Vim", "vim", "", 1),
+    ("Kakoune", "kak", "", 1),
+    ("Vim", "vim", "", 1), # Traditional
     ("emacs-nox", "emacs", "-nw", 1),
     ("GVim", "gvim", "", 0),
     ("XEmacs", "xemacs", "", 0),
@@ -101,6 +102,7 @@ __games__ = (
     ("Gx Mame", "gxmame", "", 0), # MAME
     ("Advanced Mame Menu", "advmenu", "", 0),
     ("Snake 3D", "snake3d", "", 0), # Board
+    ("Gnake", "gnake", "", 1),
     ("GNUbg", "gnubg", "", 0),
     ("XGammon", "xgammon", "", 0),
     ("XBoard", "xboard", "", 0),
