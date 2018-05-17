@@ -103,6 +103,8 @@ __games__ = (
     ("Advanced Mame Menu", "advmenu", "", 0),
     ("Snake 3D", "snake3d", "", 0), # Board
     ("Gnake", "gnake", "", 1),
+    ("MyMan", "xterm", "-g 80x35 -e /home/paperjam/opt/myman-wip-2009-10-30/myman", 0),
+    ("MSnake", "xterm", "-g 80x35 -e /home/paperjam/git/msnake/build/msnake", 0),
     ("GNUbg", "gnubg", "", 0),
     ("XGammon", "xgammon", "", 0),
     ("XBoard", "xboard", "", 0),
