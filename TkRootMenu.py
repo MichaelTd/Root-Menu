@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # TkRootMenu.py (tsouchlarakis@gmail.com) A custom menu
-# GNU/GPL https://www.gnu.org/licenses/gpl.html
+# MIT License 
 # alsa-utils, sudo, ssh-askpass, xscreensaver, xdotool
 
 import os, sys, shutil
