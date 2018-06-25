@@ -46,7 +46,7 @@ class TkRootMenu(Tk):
         for opt, cond in opts:
             self.master.option_add(opt, cond)
 
-        self.master.geometry('105x50+1+1')
+        self.master.geometry('105x50+64+64')
 
         #self.u = Button(master, width=1, height=1, text=u"\u21E7", command=lambda: runCommand("xdotool key 'Super_L+Up'"))
         self.l = Button(master, width=3, height=1, text=u"\u21E6", command=lambda: runCommand("xdotool key 'Super_L+Left'"))

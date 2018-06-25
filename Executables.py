@@ -31,7 +31,7 @@ __dev__ = (
     ("Eclipse", "eclipse", "", 0), # Java Based
     ("Netbeans", "netbeans", "", 0),
     ("KDevelop", "kdevelop", "", 0), # c/cpp based
-    ("QtCreator", "qtcreator.sh", "", 0),
+    ("QtCreator", "qtcreator", "", 0),
     ("QtDesigner", "designer", "", 0),
     ("QtCreator", "qtcreator.sh", "", 0),
     ("Code Blocks", "codeblocks", "", 0),
