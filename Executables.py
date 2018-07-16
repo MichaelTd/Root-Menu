@@ -170,6 +170,7 @@ __utils__ = (
     ("Xfce4 Screenshot", "xfce4-screenshooter", "", 0), # Image capture
     ("Screengrab", "screengrab", "", 0),
     ("Shutter","shutter", "", 0),
+    ("X Snap","xsnap", "", 0),
     ("Take a shot now", "imss.sh", "2", 0),
     ("Simple Screen Recorder", "simplescreenrecorder", "", 0), # Video capture
     ("Viewnior", "viewnior", "", 0), # Image Viewers
