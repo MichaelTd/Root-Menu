@@ -22,8 +22,8 @@ __net__ = (
     ("W3m", "w3m", "-v", 1),
     ("Lynx", "lynx", "", 1),
     ("Discord", "discord", "", 0),
-    ("Skype", "skype", "", 0),
-    ("Zoom", "zoom", "", 0),
+    ("Skype", "skypeforlinux", "", 0),
+    ("Zoom", "/home/paperjam/opt/zoom/zoomlinux", "", 0),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
 
@@ -37,7 +37,7 @@ __dev__ = (
     ("Code Blocks", "codeblocks", "", 0),
     ("Glade", "glade", "", 0),
     ("Pg Admin3", "pgadmin3", "", 0),
-    ("Mousepad", "mousepad", "", 0), 
+    ("Mousepad", "mousepad", "", 0),
     ("Geany", "geany", "", 0),
     ("Blue Fish", "bluefish", "", 0),
     ("Tea", "tea", "", 0),
@@ -98,7 +98,7 @@ __media__ = (
 __games__ = (
     ("GTypist", "gtypist", "", 1), # Touch Typing
     ("KLavaro", "klavaro", "", 0),
-    ("Lutris", "lutris", "", 0), 
+    ("Lutris", "lutris", "", 0),
     ("Gx Mame", "gxmame", "", 0), # MAME
     ("Advanced Mame Menu", "advmenu", "", 0),
     ("Snake 3D", "snake3d", "", 0), # Board
@@ -111,7 +111,8 @@ __games__ = (
     ("ChessX", "chessx", "", 0),
     ("Xmahjongg","xmahjongg", "", 0),
     ("X Mah-jongg","xmj", "", 0),
-    ("Quake 3", "ioq3", "", 1), # 3D
+    ("Super Tux Kart", "supertuxkart", "", 0), # 3D
+    ("Quake 3", "ioq3", "", 1),
     ("Quake 3 TA", "ioq3-ta", "", 1),
     ("Urban Terror", "Quake3-UrT.x86_64", "", 1),
     ("Warsow", "warsow", "", 1))
