@@ -23,7 +23,8 @@ __net__ = (
     ("Lynx", "lynx", "", 1),
     ("Discord", "discord", "", 0),
     ("Skype", "skypeforlinux", "", 0),
-    ("Zoom", "/home/paperjam/opt/zoom/zoomlinux", "", 0),
+    ("Zoom last", "/home/paperjam/opt/zoom/zoomlinux", "", 0),
+    ("Zoom", "zoom", "", 0),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
 
