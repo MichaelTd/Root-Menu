@@ -23,7 +23,6 @@ __net__ = (
     ("Lynx", "lynx", "", 1),
     ("Discord", "discord", "", 0),
     ("Skype", "skypeforlinux", "", 0),
-    ("Zoom last", "/home/paperjam/opt/zoom/zoomlinux", "", 0),
     ("Zoom", "zoom", "", 0),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
@@ -31,6 +30,7 @@ __net__ = (
 __dev__ = (
     ("Eclipse", "eclipse", "", 0), # Java Based
     ("Netbeans", "netbeans", "", 0),
+    ("InteliJ", "idea.sh", "", 0),
     ("KDevelop", "kdevelop", "", 0), # c/cpp based
     ("QtCreator", "qtcreator", "", 0),
     ("QtDesigner", "designer", "", 0),
@@ -44,6 +44,7 @@ __dev__ = (
     ("Tea", "tea", "", 0),
     ("Yudit", "yudit", "", 0),
     ("NEdit", "nedit", "", 0), # Motif
+    ("DrRacket", "drracket", "", 0), # lisp-scheme-racket
     ("Scite", "scite", "", 0), # Python based
     ("Idle", "idle", "", 0),
     ("JuPyter", "jupyter", "notebook", 1),
@@ -188,6 +189,7 @@ __utils__ = (
     ("Xv", "xv", "", 0),
     ("DjView", "djview", "", 0), # DjVu
     ("Fox Calc","calculator", "", 0), # Calc
+    ("Galculator","galculator", "", 0),
     ("XCalc","xcalc", "", 0),
     ("Calcoo","calcoo", "", 0),
     ("BC", "bc", "", 1),
