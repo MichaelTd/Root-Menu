@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # TkRootMenu.py (tsouchlarakis@gmail.com) A custom menu
-# MIT License 
+# MIT License
 # alsa-utils, sudo, ssh-askpass, xscreensaver, xdotool
 
 import os, sys, shutil
@@ -41,7 +41,7 @@ class TkRootMenu(Tk):
 
         self.master.title("Root Menu")
 
-        opts = (("*resizable", TRUE), ("*tearOff", TRUE))
+        opts = (("*resizable", FALSE), ("*tearOff", FALSE))
 
         for opt, cond in opts:
             self.master.option_add(opt, cond)
@@ -175,7 +175,7 @@ class TkRootMenu(Tk):
 
         appsmenu.add_separator()
 
-        appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("xscreensaver-command -lock"))
+        appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("${HOME}/bin/lock.sh||xscreensaver-command -lock"))
 
         appsmenu.add_separator()
 

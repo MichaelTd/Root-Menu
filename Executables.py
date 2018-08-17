@@ -74,6 +74,7 @@ __media__ = (
     ("Open Office", "ooffice", "", 0), # Office
     ("Libre Office", "loffice", "", 0),
     ("Calcurse", "calcurse", "", 1),
+    ("Spredsheet Calculator Improvised", "sc-im", "", 1),
     ("Abi Word", "abiword", "", 0),
     ("DjVuSmooth", "djvusmooth", "", 0), # DjVu files
     ("Scribus", "scribus", "", 0),
