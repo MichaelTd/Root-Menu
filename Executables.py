@@ -6,8 +6,8 @@ __browser__ = "firefox"
 
 __basic__ = (
     ("Terminal", __terminal__, "ctl+t"),
-    ("Browser", __browser__, "ctl+b"),
     ("Editor", __editor__, "ctl+e"),
+    ("Browser", __browser__, "ctl+b"),
     ("File Manager", __file_manager__, "ctl+f"))
 
 __net__ = (
