@@ -156,11 +156,11 @@ class TkRootMenu(Tk):
             ("Mediums", mmmenu),
             ("Games", gammenu),
             ("File System", toolsmenu),
-            #("Shells", shellsmenu),
+            ("Shells", shellsmenu),
             ("Admin Tools", adminmenu),
             ("Utilities", utilmenu),
-            ("Config", configmenu))
-            # ("Help", helpmenu))
+            ("Config", configmenu),
+            ("Help", helpmenu))
 
         # Groups
         for lbl, mnGrp in self.groups:
@@ -205,10 +205,6 @@ class TkRootMenu(Tk):
     def setVlm(self, widget):
         app = "amixer set 'Master' " + str(self.v.get()) + "%"
         runCommand(app)
-
-    #def setNcs(self, widget):
-		#		pass
-    #    #ncnss = str(self.n.get())
 
 if __name__ == "__main__":
     master = Tk()

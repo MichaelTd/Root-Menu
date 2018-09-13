@@ -1,4 +1,4 @@
-__sudo_cmd__ = "SUDO_ASKPASS=`which x11-ssh-askpass||which ssh-askpass` sudo --login --askpass "
+__sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass) sudo --login --askpass "
 __terminal__ = "terminology"
 __editor__ = "atom"
 __file_manager__ = "xfe"
@@ -215,11 +215,6 @@ __config__ = (
     ("Volume Prefs", "paprefs", "", 0),
     ("Volume Controls", "pavucontrol", "-t 3", 0))
 
-__pc_options__ = (
-    ("Logout", "kill", "-15 -1", 1, 0),
-    ("Reboot", "shutdown", "-r now", 0, 1),
-    ("Shutdown", "shutdown", "-h now", 0, 1))
-
 __help__ = (
     ("e16 Docs", "edox", "", 0),
     ("Bash Documentation", __browser__ , "http://tldp.org/LDP/abs/html/", 0),
@@ -227,3 +222,8 @@ __help__ = (
     ("TiddlyWiki", __browser__, "file:///mnt/data/Documents/TiddlyWiki/TiddlyWiki.html", 0),
     ("Git Root", __browser__, "file:///home/paperjam/git", 0),
     ("Docs Root", __browser__, "file:///mnt/data/Documents/DOCS/", 0))
+
+__pc_options__ = (
+    ("Logout", "kill", "-15 -1", 1, 0),
+    ("Reboot", "shutdown", "-r now", 1, 1),
+    ("Shutdown", "shutdown", "-h now", 1, 1))
