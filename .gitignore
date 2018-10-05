@@ -1,14 +1,1 @@
 __pycache__/*
-.settings/*
-Debug/*
-old/*
-private/*
-python/*
-src/*
-.cproject
-.project
-.pydevproject
-_config.yml
-Logger.py
-UnitConverter.py
-ReadDesktop.py
