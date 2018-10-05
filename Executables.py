@@ -58,6 +58,7 @@ __dev__ = (
     ("GVim", "gvim", "", 0),
     ("XEmacs", "xemacs", "", 0),
     ("Emacs", "emacs", "", 0),
+    ("Exclient", "emacsclient", "-c -a emacs", 0),
     ("ZED", "/home/paperjam/opt/zed/zed", "", 0), # JavaSctip Based
     ("Slap", "slap", "", 1),
     ("Just MarkDown", "justmd", "", 0),

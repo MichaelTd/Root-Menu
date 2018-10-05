@@ -11,3 +11,4 @@ src/*
 _config.yml
 Logger.py
 UnitConverter.py
+ReadDesktop.py
