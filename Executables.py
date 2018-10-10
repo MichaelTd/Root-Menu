@@ -141,7 +141,7 @@ __shells__ = (
     ("KornSH", "ksh", "", 1),
     ("Zsh", "zsh", "", 1),
     ("Csh", "csh", "", 1),
-    ("SH", "sh", "", 1),
+    ("SH", "bash", "-c sh", 1),
     ("Fish", "fish", "", 1))
 
 __admin__ = (
