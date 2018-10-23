@@ -156,7 +156,7 @@ class TkRootMenu(Tk):
             ("Mediums", mmmenu),
             ("Games", gammenu),
             ("File System", toolsmenu),
-            ("Shells", shellsmenu),
+            #("Shells", shellsmenu),
             ("Admin Tools", adminmenu),
             ("Utilities", utilmenu),
             ("Config", configmenu),

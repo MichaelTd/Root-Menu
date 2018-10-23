@@ -1,6 +1,6 @@
 __sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass) sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "atom"
+__editor__ = "mxcl"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 
@@ -97,6 +97,7 @@ __media__ = (
     ("Gimp", "gimp", "", 0),
     ("Muse Score", "musescore", "", 0), # Sound
     ("Audacity", "audacity", "", 0),
+    ("Qmmp", "qmmp", "", 0),
     ("Audacious", "audacious", "", 0))
 
 __games__ = (
