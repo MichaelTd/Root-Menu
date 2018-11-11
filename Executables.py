@@ -53,12 +53,13 @@ __dev__ = (
     ("Diakonos", "diakonos", "", 1), # CLI based
     ("Micro", "micro", "", 1),
     ("Kakoune", "kak", "", 1),
-    ("Vim", "vim", "", 1), # Traditional
-    ("emacs-nox", "emacs", "-nw", 1),
+    ("Vim", "vim", "", 1), # Traditional # Vim
     ("GVim", "gvim", "", 0),
-    ("XEmacs", "xemacs", "", 0),
-    ("Emacs", "emacs", "", 0),
-    ("Emacs client", "emacsclient", "-a emacs -c", 0),
+    ("emacs", "emacs", "", 0), # Emacs
+    ("emacsclient", "emacsclient", "-a emacs -c", 0),
+    ("emacsnox", "emacs", "-nw", 1),
+    ("emacsclientnox", "emacsclient", "-t", 1),
+    ("xemacs", "xemacs", "", 0),
     ("ZED", "/home/paperjam/opt/zed/zed", "", 0), # JavaSctip Based
     ("Slap", "slap", "", 1),
     ("Just MarkDown", "justmd", "", 0),
@@ -144,6 +145,14 @@ __shells__ = (
     ("Csh", "csh", "", 1),
     ("SH", "bash", "-c sh", 1),
     ("Fish", "fish", "", 1))
+
+__terms__ = (
+    ("Terminology", "terminology", "", 0),
+    ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
+    ("QTerminal", "qterminal", "", 0),
+    ("Sakura", "sakura", "", 0),
+    ("URXvt", "uxterm", "", 0),
+    ("XTerm", "xterm", "", 0))
 
 __admin__ = (
     ("Terminal", __terminal__, "", 0),
