@@ -56,8 +56,8 @@ __dev__ = (
     ("Vim", "vim", "", 1), # Traditional # Vim
     ("GVim", "gvim", "", 0),
     ("emacs", "emacs", "", 0), # Emacs
-    ("emacsclient", "emacsclient", "-a emacs -c", 0),
     ("emacsnox", "emacs", "-nw", 1),
+    ("emacsclient", "emacsclient", "-c", 0),
     ("emacsclientnox", "emacsclient", "-t", 1),
     ("xemacs", "xemacs", "", 0),
     ("ZED", "/home/paperjam/opt/zed/zed", "", 0), # JavaSctip Based
@@ -112,6 +112,7 @@ __games__ = (
     ("GNUbg", "gnubg", "", 0),
     ("XGammon", "xgammon", "", 0),
     ("XBoard", "xboard", "", 0),
+    ("EBoard", "eboard", "", 0),
     ("ChessX", "chessx", "", 0),
     ("Xmahjongg","xmahjongg", "", 0),
     ("X Mah-jongg","xmj", "", 0),
