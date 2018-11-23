@@ -156,6 +156,17 @@ class TkRootMenu(Tk):
             if shutil.which(cmmnd) is not None:
                 helpmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
+        # Menu
+        menumenu = Menu(menubar)
+        menumenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " " + sys.argv[0]))
+        menumenu.add_command(label="Refresh Menu", command=self.runRfs)
+        menumenu.add_command(label="Close Menu", command=self.master.quit)
+
+        # PC
+        pcmenu = Menu(menubar)
+        for lbl, cmmnd, cla, hlpr, adm in __pc_options__:
+            pcmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr, sd=adm: runCommand(param, arg, hlp, sd))
+
         self.groups = (
             ("Internet", netmenu),
             ("Development", devmenu),
@@ -167,7 +178,9 @@ class TkRootMenu(Tk):
             ("Admin Tools", adminmenu),
             ("Utilities", utilmenu),
             ("Config", configmenu),
-            ("Help", helpmenu))
+            ("Help", helpmenu),
+            ("Menu", menumenu),
+            ("PC Menu",pcmenu))
 
         # Groups
         for lbl, mnGrp in self.groups:
@@ -175,20 +188,7 @@ class TkRootMenu(Tk):
 
         appsmenu.add_separator()
 
-        # Menu
-        appsmenu.add_command(label="Edit Menu", command=lambda: runCommand(__editor__ + " " + sys.argv[0]))
-        appsmenu.add_command(label="Refresh Menu", command=self.runRfs)
-        appsmenu.add_command(label="Close Menu", command=self.master.quit)
-
-        appsmenu.add_separator()
-
         appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("${HOME}/bin/lock.sh||xscreensaver-command -lock"))
-
-        appsmenu.add_separator()
-
-        # PC
-        for lbl, cmmnd, cla, hlpr, adm in __pc_options__:
-            appsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr, sd=adm: runCommand(param, arg, hlp, sd))
 
         self.master.config(menu=menubar)
 

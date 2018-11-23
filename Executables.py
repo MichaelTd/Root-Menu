@@ -33,8 +33,9 @@ __dev__ = (
     ("InteliJ", "idea.sh", "", 0),
     ("KDevelop", "kdevelop", "", 0), # c/cpp based
     ("QtCreator", "qtcreator", "", 0),
-    ("QtDesigner", "designer", "", 0),
     ("QtCreator", "qtcreator.sh", "", 0),
+    ("QtDesigner", "designer", "", 0),
+    #("QtDesigner", "qtchooser", "-run-tool=designer", 0),
     ("Code Blocks", "codeblocks", "", 0),
     ("Glade", "glade", "", 0),
     ("Pg Admin3", "pgadmin3", "", 0),
@@ -45,6 +46,9 @@ __dev__ = (
     ("Yudit", "yudit", "", 0),
     ("NEdit", "nedit", "", 0), # Motif
     ("DrRacket", "drracket", "", 0), # lisp-scheme-racket
+    ("squirrelsql", "/home/paperjam/opt/squirrelsql/squirrel-sql.sh", "", 0), # SQL
+    ("sqLite Browser", "sqlitebrowser", "", 0), # SQL
+    ("sqLite Studio", "sqlitestudio", "", 0), # SQL
     ("Scite", "scite", "", 0), # Python based
     ("Idle", "idle", "", 0),
     ("JuPyter", "jupyter", "notebook", 1),
