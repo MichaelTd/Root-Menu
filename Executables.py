@@ -1,6 +1,6 @@
 __sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass) sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "mxcl"
+__editor__ = "atom"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 
@@ -18,6 +18,7 @@ __net__ = (
     ("Seamonkey Mail", "seamonkey", "-mail", 0),
     ("Pidgin", "pidgin", "", 0),
     ("FileZilla", "filezilla", "", 0),
+    ("puTTY", "putty", "", 0),
     ("Midori", "midori", "", 0),
     ("W3m", "w3m", "-v", 1),
     ("Lynx", "lynx", "", 1),
@@ -28,7 +29,9 @@ __net__ = (
     ("HexChat IRC", "hexchat", "", 0))
 
 __dev__ = (
-    ("Eclipse", "eclipse", "", 0), # Java Based
+    #("Eclipse", "eclipse", "", 0), # Java Based
+    ("Neon", "neon", "", 0), # Java Based
+    ("Photon", "photon", "", 0), # Java Based
     ("Netbeans", "netbeans", "", 0),
     ("InteliJ", "idea.sh", "", 0),
     ("KDevelop", "kdevelop", "", 0), # c/cpp based
@@ -47,8 +50,9 @@ __dev__ = (
     ("NEdit", "nedit", "", 0), # Motif
     ("DrRacket", "drracket", "", 0), # lisp-scheme-racket
     ("squirrelsql", "/home/paperjam/opt/squirrelsql/squirrel-sql.sh", "", 0), # SQL
-    ("sqLite Browser", "sqlitebrowser", "", 0), # SQL
-    ("sqLite Studio", "sqlitestudio", "", 0), # SQL
+    ("mySQL workbench", "mysql-workbench", "", 0),
+    ("sqLite Browser", "sqlitebrowser", "", 0),
+    ("sqLite Studio", "sqlitestudio", "", 0),
     ("Scite", "scite", "", 0), # Python based
     ("Idle", "idle", "", 0),
     ("JuPyter", "jupyter", "notebook", 1),
@@ -156,7 +160,7 @@ __terms__ = (
     ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
     ("QTerminal", "qterminal", "", 0),
     ("Sakura", "sakura", "", 0),
-    ("URXvt", "uxterm", "", 0),
+    ("URXvt", "urxvt", "-depth 32 -bg rgba:0000/0000/0000/aaaa", 0),
     ("XTerm", "xterm", "", 0))
 
 __admin__ = (
@@ -196,6 +200,7 @@ __utils__ = (
     ("PeaZip", "peazip", "", 0), # Compression
     ("Xarchiver", "xarchiver", "", 0),
     ("GNU Privacy Assistant", "gpa", "", 0), # PGP
+    ("bashpass.sh", "/home/paperjam/git/bashpass/bashpass.sh", "tdm.db3", 1),
     ("Foxit Reader", "foxitreader", "", 0), # PDF
     ("QPdf View", "qpdfview", "", 0),
     ("Evince", "evince", "", 0),
