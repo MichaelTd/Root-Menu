@@ -1,6 +1,6 @@
 __sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass) sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "atom"
+__editor__ = "code"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 
@@ -200,7 +200,7 @@ __utils__ = (
     ("PeaZip", "peazip", "", 0), # Compression
     ("Xarchiver", "xarchiver", "", 0),
     ("GNU Privacy Assistant", "gpa", "", 0), # PGP
-    ("bashpass.sh", "/home/paperjam/git/bashpass/bashpass.sh", "tdm.db3", 1),
+    ("bashpass.sh", "/home/paperjam/git/pass/bashpass/bashpass.sh", "tdm.db3", 1),
     ("Foxit Reader", "foxitreader", "", 0), # PDF
     ("QPdf View", "qpdfview", "", 0),
     ("Evince", "evince", "", 0),
