@@ -83,9 +83,13 @@ __dev__ = (
 __media__ = (
     ("Open Office", "ooffice", "", 0), # Office
     ("Libre Office", "loffice", "", 0),
+    ("freeOffice text", "textmaker18free", "", 0),
+    ("freeOffice calc", "planmaker18free", "", 0),
+    ("freeOffice present", "presentations18free", "", 0),
     ("Calcurse", "calcurse", "", 1),
     ("Spredsheet Calculator Improvised", "sc-im", "", 1),
     ("Abi Word", "abiword", "", 0),
+    ("GNU/Octave", "octave", "", 1), # Sci Math
     ("DjVuSmooth", "djvusmooth", "", 0), # DjVu files
     ("Scribus", "scribus", "", 0),
     ("Inkscape", "inkscape", "", 0),
