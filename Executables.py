@@ -56,7 +56,7 @@ __dev__ = (
     ("Scite", "scite", "", 0), # Python based
     ("Idle", "idle", "", 0),
     ("JuPyter", "jupyter", "notebook", 1),
-    ("Anaconda3", "anaconda-navigator", "", 0),
+    ("Anaconda3", "conda-env.sh", "", 1),
     ("Cuda Text", "cudatext", "", 0),
     ("Diakonos", "diakonos", "", 1), # CLI based
     ("Micro", "micro", "", 1),
