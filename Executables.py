@@ -13,6 +13,8 @@ __basic__ = (
 __net__ = (
     ("Firefox", "firefox", "", 0),
     ("Firefox DE", "firefox-de", "", 0),
+    ("Chromium", "chromium", "", 0),
+    ("Google chrome", "google-chrome-stable", "", 0),
     ("Seamonkey", "seamonkey", "", 0),
     ("Opera","opera", "", 0),
     ("Seamonkey Mail", "seamonkey", "-mail", 0),
