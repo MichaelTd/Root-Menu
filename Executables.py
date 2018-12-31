@@ -35,6 +35,7 @@ __dev__ = (
     ("Neon", "neon", "", 0), # Java Based
     ("Photon", "photon", "", 0), # Java Based
     ("Netbeans", "netbeans", "", 0),
+    ("JDeveloper", "/home/paperjam/opt/Oracle/Middleware/Oracle_Home/jdeveloper/jdev/bin/jdev", "", 0),
     ("InteliJ", "idea.sh", "", 0),
     ("KDevelop", "kdevelop", "", 0), # c/cpp based
     ("QtCreator", "qtcreator", "", 0),
