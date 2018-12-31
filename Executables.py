@@ -34,7 +34,9 @@ __dev__ = (
     #("Eclipse", "eclipse", "", 0), # Java Based
     ("Neon", "neon", "", 0), # Java Based
     ("Photon", "photon", "", 0), # Java Based
-    ("Netbeans", "netbeans", "", 0),
+    ("Netbeans 8.2", "netbeans", "", 0),
+    ("Netbeans 9.0", "/opt/netbeans-9.0/bin/netbeans", "", 0),
+    ("Netbeans 10.0", "/opt/netbeans-10.0/bin/netbeans", "", 0),
     ("JDeveloper", "/home/paperjam/opt/Oracle/Middleware/Oracle_Home/jdeveloper/jdev/bin/jdev", "", 0),
     ("InteliJ", "idea.sh", "", 0),
     ("KDevelop", "kdevelop", "", 0), # c/cpp based
