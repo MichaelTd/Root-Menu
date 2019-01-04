@@ -16,6 +16,7 @@ __net__ = (
     ("Chromium", "chromium", "", 0),
     ("Google chrome", "google-chrome-stable", "", 0),
     ("Seamonkey", "seamonkey", "", 0),
+    ("PaleMoon", "palemoon", "", 0),
     ("Opera","opera", "", 0),
     ("Seamonkey Mail", "seamonkey", "-mail", 0),
     ("Pidgin", "pidgin", "", 0),
@@ -140,13 +141,6 @@ __games__ = (
     ("Warsow", "warsow", "", 1))
 
 __fs__ = (
-    ("Terminology", "terminology", "", 0),
-    ("CRT", "cool-retro-term", "", 0),
-    ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
-    ("uRXVT", "urxvt", "", 0),
-    ("uXTerm", "uxterm", "", 0),
-    ("XTerm", "xterm", "", 0),
-    ("Hyper", "hyper", "", 0),
     ("Midnight Commander", "mc", "-a", 1),
     ("Ranger", "ranger", "", 1),
     ("Rox filer", "rox", "", 0),
@@ -156,6 +150,18 @@ __fs__ = (
     ("SpaceFM", "spacefm", "", 0),
     ("Thunar", "thunar", "", 0))
 
+__terms__ = (
+    ("Terminology", "terminology", "", 0),
+    ("CRT", "cool-retro-term", "", 0),
+    ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
+    ("URXvt", "urxvt", "-depth 32 -bg rgba:0000/0000/0000/aaaa", 0),
+    ("uXTerm", "uxterm", "", 0),
+    ("XTerm", "xterm", "", 0),
+    ("Hyper", "hyper", "", 0),
+    ("QTerminal", "qterminal", "", 0),
+    ("Sakura", "sakura", "", 0),
+    ("XTerm", "xterm", "", 0))
+
 __shells__ = (
     ("bash", "bash", "", 1),
     ("KornSH", "ksh", "", 1),
@@ -163,14 +169,6 @@ __shells__ = (
     ("Csh", "csh", "", 1),
     ("SH", "bash", "-c sh", 1),
     ("Fish", "fish", "", 1))
-
-__terms__ = (
-    ("Terminology", "terminology", "", 0),
-    ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
-    ("QTerminal", "qterminal", "", 0),
-    ("Sakura", "sakura", "", 0),
-    ("URXvt", "urxvt", "-depth 32 -bg rgba:0000/0000/0000/aaaa", 0),
-    ("XTerm", "xterm", "", 0))
 
 __admin__ = (
     ("Terminal", __terminal__, "", 0),

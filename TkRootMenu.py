@@ -121,17 +121,17 @@ class TkRootMenu(Tk):
             if shutil.which(cmmnd) is not None:
                 toolsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
-        # Shells
-        shellsmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __shells__:
-            if shutil.which(cmmnd) is not None:
-                shellsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
-
         # Terms
         termsmenu = Menu(menubar)
         for lbl, cmmnd, cla, hlpr in __terms__:
             if shutil.which(cmmnd) is not None:
                 termsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
+
+        # Shells
+        shellsmenu = Menu(menubar)
+        for lbl, cmmnd, cla, hlpr in __shells__:
+            if shutil.which(cmmnd) is not None:
+                shellsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
         # Admin tools
         adminmenu = Menu(menubar)
@@ -173,8 +173,8 @@ class TkRootMenu(Tk):
             ("Mediums", mmmenu),
             ("Games", gammenu),
             ("File System", toolsmenu),
-            ("Shells", shellsmenu),
             ("Terminals", termsmenu),
+            ("Shells", shellsmenu),
             ("Admin Tools", adminmenu),
             ("Utilities", utilmenu),
             ("Config", configmenu),
