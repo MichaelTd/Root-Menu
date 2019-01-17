@@ -1,6 +1,6 @@
 __sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass) sudo --login --askpass "
 __terminal__ = "terminology"
-__editor__ = "code"
+__editor__ = "mxcl"
 __file_manager__ = "xfe"
 __browser__ = "firefox"
 
@@ -96,12 +96,12 @@ __media__ = (
     ("Spredsheet Calculator Improvised", "sc-im", "", 1),
     ("Abi Word", "abiword", "", 0),
     ("GNU/Octave", "octave", "", 1), # Sci Math
+    ("GNU/Plot", "gnuplot", "", 1),
+    ("Dia", "dia", "", 0),
     ("DjVuSmooth", "djvusmooth", "", 0), # DjVu files
     ("Scribus", "scribus", "", 0),
     ("Inkscape", "inkscape", "", 0),
     ("XFig", "xfig", "", 0),
-    ("Dia", "dia", "", 0),
-    ("GNU/Plot", "gnuplot", "", 1),
     ("FreeCAD", "freecad", "", 0),
     ("Blender", "blender", "", 0),
     ("XfBurn", "xfburn", "", 0),    # DVD/CD Burn
@@ -115,6 +115,7 @@ __media__ = (
     ("Dark Table", "darktable", "", 0), # Image Edit
     ("Gimp", "gimp", "", 0),
     ("Muse Score", "musescore", "", 0), # Sound
+    ("ncmpcpp", "ncmpcpp", "", 1),
     ("Audacity", "audacity", "", 0),
     ("Qmmp", "qmmp", "", 0),
     ("Audacious", "audacious", "", 0))
@@ -209,6 +210,7 @@ __utils__ = (
     ("GNU Privacy Assistant", "gpa", "", 0), # PGP
     ("bashpass.sh", "/home/paperjam/git/pass/bashpass/bashpass.sh", "tdm.db3", 1),
     ("Foxit Reader", "foxitreader", "", 0), # PDF
+    ("FBreader", "fbreader", "", 0),
     ("QPdf View", "qpdfview", "", 0),
     ("Evince", "evince", "", 0),
     ("XPdf", "xpdf", "", 0),

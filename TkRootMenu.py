@@ -188,7 +188,7 @@ class TkRootMenu(Tk):
 
         appsmenu.add_separator()
 
-        appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("${HOME}/bin/lock.sh||xscreensaver-command -lock"))
+        appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("${HOME}/bin/xlock.sh||xscreensaver-command -lock"))
 
         self.master.config(menu=menubar)
 
