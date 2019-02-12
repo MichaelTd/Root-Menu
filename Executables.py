@@ -33,8 +33,8 @@ __net__ = (
 
 __dev__ = (
     #("Eclipse", "eclipse", "", 0), # Java Based
-    ("Neon", "neon", "", 0), # Java Based
-    ("Photon", "photon", "", 0), # Java Based
+    ("Neon", "neon", "", 0),
+    ("Photon", "photon", "", 0),
     ("Netbeans 8.2", "netbeans", "", 0),
     ("Netbeans 9.0", "/opt/netbeans-9.0/bin/netbeans", "", 0),
     ("Netbeans 10.0", "/opt/netbeans-10.0/bin/netbeans", "", 0),
@@ -47,6 +47,8 @@ __dev__ = (
     #("QtDesigner", "qtchooser", "-run-tool=designer", 0),
     ("Code Blocks", "codeblocks", "", 0),
     ("Glade", "glade", "", 0),
+    ("LiveCode", "/home/paperjam/opt/livecode/livecodecommunity-9.0.2.x86_64/livecodecommunity.x86_64", "", 0),
+    ("wxHexEditor", "wxHexEditor", "", 0), # Hex
     ("Pg Admin3", "pgadmin3", "", 0),
     ("Mousepad", "mousepad", "", 0),
     ("Geany", "geany", "", 0),
@@ -205,6 +207,7 @@ __utils__ = (
     ("Simple Screen Recorder", "simplescreenrecorder", "", 0), # Video capture
     ("Viewnior", "viewnior", "", 0), # Image Viewers
     ("Ristretto", "ristretto", "", 0),
+    ("Eye of Gnome", "eog", "", 0),
     ("PeaZip", "peazip", "", 0), # Compression
     ("Xarchiver", "xarchiver", "", 0),
     ("GNU Privacy Assistant", "gpa", "", 0), # PGP
@@ -236,6 +239,7 @@ __config__ = (
     ("e16 Menuedit", "e16menuedit2", "", 0),
     ("Qt Config", "qtconfig", "", 0), # Qt
     ("X Screen Saver", "xscreensaver-demo", "", 0), # XScreenSaver
+    ("X Screen Saver lockscreen", "xscreensaver-command", "-lock", 0), # XScreenSaver lock
     ("Wicd gtk", "wicd-gtk", "", 0), # Network
     ("Wicd curses", "wicd-curses", "", 1),
     ("Xfce4-alsa-control", "xfce4-alsa-control", "", 0), # Sound
