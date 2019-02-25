@@ -28,6 +28,7 @@ __net__ = (
     ("Discord", "discord", "", 0),
     ("Skype", "skypeforlinux", "", 0),
     ("Zoom", "zoom", "", 0),
+    ("Zoom", "/home/paperjam/opt/zoom/zoom.sh", "", 1),
     ("Quassel IRC", "quassel", "", 0),
     ("HexChat IRC", "hexchat", "", 0))
 
@@ -47,17 +48,21 @@ __dev__ = (
     #("QtDesigner", "qtchooser", "-run-tool=designer", 0),
     ("Code Blocks", "codeblocks", "", 0),
     ("Glade", "glade", "", 0),
-    ("LiveCode", "/home/paperjam/opt/livecode/livecodecommunity-9.0.2.x86_64/livecodecommunity.x86_64", "", 0),
-    ("wxHexEditor", "wxHexEditor", "", 0), # Hex
-    ("Pg Admin3", "pgadmin3", "", 0),
     ("Mousepad", "mousepad", "", 0),
+    ("GEdit", "gedit", "", 0),
     ("Geany", "geany", "", 0),
     ("Blue Fish", "bluefish", "", 0),
     ("Tea", "tea", "", 0),
     ("Yudit", "yudit", "", 0),
     ("NEdit", "nedit", "", 0), # Motif
+    ("wxHexEditor", "wxHexEditor", "", 0), # Hex
     ("DrRacket", "drracket", "", 0), # lisp-scheme-racket
+    ("LiveCode", "/home/paperjam/opt/livecode/livecodecommunity-9.0.2.x86_64/livecodecommunity.x86_64", "", 0),
+    ("fpc Lazarus", "lazarus", "", 1),
+    ("Pharo", "pharo", "", 1),
     ("squirrelsql", "/home/paperjam/opt/squirrelsql/squirrel-sql.sh", "", 0), # SQL
+    ("pgadmin3", "pgadmin3", "", 0),
+    ("pgadmin4", "pgAdmin4", "", 0),
     ("mySQL workbench", "mysql-workbench", "", 0),
     ("sqLite Browser", "sqlitebrowser", "", 0),
     ("sqLite Studio", "sqlitestudio", "", 0),
@@ -150,6 +155,7 @@ __fs__ = (
     ("ViFm", "vifm", "", 1),
     ("Gentoo", "gentoo", "", 0),
     ("Xfe", "xfe", "", 0),
+    ("Double Commander", "doublecmd", "", 0),
     ("SpaceFM", "spacefm", "", 0),
     ("Thunar", "thunar", "", 0))
 
@@ -211,7 +217,8 @@ __utils__ = (
     ("PeaZip", "peazip", "", 0), # Compression
     ("Xarchiver", "xarchiver", "", 0),
     ("GNU Privacy Assistant", "gpa", "", 0), # PGP
-    ("bashpass.sh", "/home/paperjam/git/pass/bashpass/bashpass.sh", "tdm.db3", 1),
+    ("keepassxc", "keepassxc", "", 0),
+    ("bashpass.sh", "/home/paperjam/git/bashpass/bashpass.sh", "tdm.db3", 1),
     ("Foxit Reader", "foxitreader", "", 0), # PDF
     ("FBreader", "fbreader", "", 0),
     ("QPdf View", "qpdfview", "", 0),
