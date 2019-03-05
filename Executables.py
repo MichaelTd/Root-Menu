@@ -46,8 +46,9 @@ __dev__ = (
     ("QtCreator", "qtcreator.sh", "", 0),
     ("QtDesigner", "designer", "", 0),
     #("QtDesigner", "qtchooser", "-run-tool=designer", 0),
-    ("Code Blocks", "codeblocks", "", 0),
     ("Glade", "glade", "", 0),
+    ("Fltk", "fluid", "", 0),
+    ("Code Blocks", "codeblocks", "", 0),
     ("Mousepad", "mousepad", "", 0),
     ("GEdit", "gedit", "", 0),
     ("Geany", "geany", "", 0),
@@ -56,16 +57,17 @@ __dev__ = (
     ("Yudit", "yudit", "", 0),
     ("NEdit", "nedit", "", 0), # Motif
     ("wxHexEditor", "wxHexEditor", "", 0), # Hex
-    ("DrRacket", "drracket", "", 0), # lisp-scheme-racket
-    ("LiveCode", "/home/paperjam/opt/livecode/livecodecommunity-9.0.2.x86_64/livecodecommunity.x86_64", "", 0),
     ("fpc Lazarus", "lazarus", "", 1),
+    ("DrRacket", "drracket", "", 0), # lisp-scheme-racket
     ("Pharo", "pharo", "", 1),
+    ("LiveCode", "/home/paperjam/opt/livecode/livecodecommunity-9.0.2.x86_64/livecodecommunity.x86_64", "", 0),
     ("squirrelsql", "/home/paperjam/opt/squirrelsql/squirrel-sql.sh", "", 0), # SQL
     ("pgadmin3", "pgadmin3", "", 0),
     ("pgadmin4", "pgAdmin4", "", 0),
     ("mySQL workbench", "mysql-workbench", "", 0),
     ("sqLite Browser", "sqlitebrowser", "", 0),
     ("sqLite Studio", "sqlitestudio", "", 0),
+    ("Argo UML", "argouml.sh", "", 1),
     ("Scite", "scite", "", 0), # Python based
     ("Idle", "idle", "", 0),
     ("JuPyter", "jupyter", "notebook", 1),
@@ -87,9 +89,7 @@ __dev__ = (
     ("Komodo", "komodo", "", 0),
     ("Brackets", "brackets", "", 0),
     ("VSCode", "code", "", 0),
-    ("VSCode", "vscode", "", 0),
     ("LightTable", "light", "", 0),
-    ("LightTable", "lighttable", "", 0),
     ("Sublime Text", "sublime_text", "", 0),
     ("Atom", "atom", "", 0))
 
@@ -104,6 +104,8 @@ __media__ = (
     ("Abi Word", "abiword", "", 0),
     ("GNU/Octave", "octave", "", 1), # Sci Math
     ("GNU/Plot", "gnuplot", "", 1),
+    ("maxima", "maxima", "", 1),
+    ("wxMaxima", "wxmaxima", "", 0),
     ("Dia", "dia", "", 0),
     ("DjVuSmooth", "djvusmooth", "", 0), # DjVu files
     ("Scribus", "scribus", "", 0),
@@ -164,12 +166,10 @@ __terms__ = (
     ("CRT", "cool-retro-term", "", 0),
     ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
     ("URXvt", "urxvt", "-depth 32 -bg rgba:0000/0000/0000/aaaa", 0),
-    ("uXTerm", "uxterm", "", 0),
     ("XTerm", "xterm", "", 0),
     ("Hyper", "hyper", "", 0),
     ("QTerminal", "qterminal", "", 0),
-    ("Sakura", "sakura", "", 0),
-    ("XTerm", "xterm", "", 0))
+    ("Sakura", "sakura", "", 0))
 
 __shells__ = (
     ("bash", "bash", "", 1),
