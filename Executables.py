@@ -90,7 +90,8 @@ __dev__ = (
     ("Brackets", "brackets", "", 0),
     ("VSCode", "code", "", 0),
     ("LightTable", "light", "", 0),
-    ("Sublime Text", "sublime_text", "", 0),
+    ("Sublime Text", "sublime", "", 0),
+    ("VSCodium", "codium", "", 0),
     ("Atom", "atom", "", 0))
 
 __media__ = (
