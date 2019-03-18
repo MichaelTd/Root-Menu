@@ -103,7 +103,7 @@ __media__ = (
     ("Calcurse", "calcurse", "", 1),
     ("Spredsheet Calculator Improvised", "sc-im", "", 1),
     ("Abi Word", "abiword", "", 0),
-    ("GNU/Octave", "octave", "", 1), # Sci Math
+    ("GNU/Octave", "octave", "", 0), # Sci Math
     ("GNU/Plot", "gnuplot", "", 1),
     ("maxima", "maxima", "", 1),
     ("wxMaxima", "wxmaxima", "", 0),
