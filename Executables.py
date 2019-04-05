@@ -49,6 +49,7 @@ __dev__ = (
     ("Glade", "glade", "", 0),
     ("Fltk", "fluid", "", 0),
     ("Code Blocks", "codeblocks", "", 0),
+    ("Code Lite", "codelite", "", 0),
     ("Mousepad", "mousepad", "", 0),
     ("GEdit", "gedit", "", 0),
     ("Geany", "geany", "", 0),
@@ -108,6 +109,7 @@ __media__ = (
     ("maxima", "maxima", "", 1),
     ("wxMaxima", "wxmaxima", "", 0),
     ("Dia", "dia", "", 0),
+    ("Fade In", "fadein", "", 0), # Script
     ("DjVuSmooth", "djvusmooth", "", 0), # DjVu files
     ("Scribus", "scribus", "", 0),
     ("Inkscape", "inkscape", "", 0),
@@ -219,7 +221,7 @@ __utils__ = (
     ("Xarchiver", "xarchiver", "", 0),
     ("GNU Privacy Assistant", "gpa", "", 0), # PGP
     ("keepassxc", "keepassxc", "", 0),
-    ("bashpass.sh", "/home/paperjam/git/bashpass/bashpass.sh", "tdm.db3", 1),
+    ("bashpass.sh", "bp-launch.sh", "tdm.db3", 1),
     ("Foxit Reader", "foxitreader", "", 0), # PDF
     ("FBreader", "fbreader", "", 0),
     ("QPdf View", "qpdfview", "", 0),
