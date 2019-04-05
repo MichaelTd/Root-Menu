@@ -33,65 +33,33 @@ __net__ = (
     ("HexChat IRC", "hexchat", "", 0))
 
 __dev__ = (
-    #("Eclipse", "eclipse", "", 0), # Java Based
-    ("Neon", "neon", "", 0),
-    ("Photon", "photon", "", 0),
-    ("Netbeans 8.2", "netbeans", "", 0),
-    ("Netbeans 9.0", "/opt/netbeans-9.0/bin/netbeans", "", 0),
-    ("Netbeans 10.0", "/opt/netbeans-10.0/bin/netbeans", "", 0),
-    ("JDeveloper", "/home/paperjam/opt/Oracle/Middleware/Oracle_Home/jdeveloper/jdev/bin/jdev", "", 0),
-    ("InteliJ", "idea.sh", "", 0),
+    ("Eclipse", "eclipse", "", 0),
+    ("Netbeans", "netbeans", "", 0),
     ("KDevelop", "kdevelop", "", 0), # c/cpp based
     ("QtCreator", "qtcreator", "", 0),
-    ("QtCreator", "qtcreator.sh", "", 0),
     ("QtDesigner", "designer", "", 0),
-    #("QtDesigner", "qtchooser", "-run-tool=designer", 0),
     ("Glade", "glade", "", 0),
     ("Fltk", "fluid", "", 0),
     ("Code Blocks", "codeblocks", "", 0),
     ("Code Lite", "codelite", "", 0),
-    ("Mousepad", "mousepad", "", 0),
-    ("GEdit", "gedit", "", 0),
     ("Geany", "geany", "", 0),
-    ("Blue Fish", "bluefish", "", 0),
-    ("Tea", "tea", "", 0),
     ("Yudit", "yudit", "", 0),
     ("NEdit", "nedit", "", 0), # Motif
     ("wxHexEditor", "wxHexEditor", "", 0), # Hex
     ("fpc Lazarus", "lazarus", "", 1),
     ("DrRacket", "drracket", "", 0), # lisp-scheme-racket
     ("Pharo", "pharo", "", 1),
-    ("LiveCode", "/home/paperjam/opt/livecode/livecodecommunity-9.0.2.x86_64/livecodecommunity.x86_64", "", 0),
+    ("LiveCode", "livecodecommunity", "", 0),
     ("squirrelsql", "/home/paperjam/opt/squirrelsql/squirrel-sql.sh", "", 0), # SQL
-    ("pgadmin3", "pgadmin3", "", 0),
-    ("pgadmin4", "pgAdmin4", "", 0),
-    ("mySQL workbench", "mysql-workbench", "", 0),
-    ("sqLite Browser", "sqlitebrowser", "", 0),
-    ("sqLite Studio", "sqlitestudio", "", 0),
     ("Argo UML", "argouml.sh", "", 1),
     ("Scite", "scite", "", 0), # Python based
     ("Idle", "idle", "", 0),
     ("JuPyter", "jupyter", "notebook", 1),
     ("Anaconda3", "conda-env.sh", "", 1),
-    ("Cuda Text", "cudatext", "", 0),
-    ("Diakonos", "diakonos", "", 1), # CLI based
-    ("Micro", "micro", "", 1),
-    ("Kakoune", "kak", "", 1),
-    ("Vim", "vim", "", 1), # Traditional # Vim
     ("GVim", "gvim", "", 0),
     ("emacs", "emacs", "", 0), # Emacs
     ("emacsnox", "emacs", "-nw", 1),
     ("emacsclient", "emacsclient", "-c", 0),
-    ("emacsclientnox", "emacsclient", "-t", 1),
-    ("xemacs", "xemacs", "", 0),
-    ("ZED", "/home/paperjam/opt/zed/zed", "", 0), # JavaSctip Based
-    ("Slap", "slap", "", 1),
-    ("Just MarkDown", "justmd", "", 0),
-    ("Komodo", "komodo", "", 0),
-    ("Brackets", "brackets", "", 0),
-    ("VSCode", "code", "", 0),
-    ("LightTable", "light", "", 0),
-    ("Sublime Text", "sublime", "", 0),
     ("VSCodium", "codium", "", 0),
     ("Atom", "atom", "", 0))
 
