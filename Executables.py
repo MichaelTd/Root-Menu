@@ -189,7 +189,7 @@ __utils__ = (
     ("Xarchiver", "xarchiver", "", 0),
     ("GNU Privacy Assistant", "gpa", "", 0), # PGP
     ("keepassxc", "keepassxc", "", 0),
-    ("bashpass.sh", "bp-launch.sh", "tdm.db3", 1),
+    ("bashpass.sh", "bp-launch.sh", "tdm.db3", 0),
     ("Foxit Reader", "foxitreader", "", 0), # PDF
     ("FBreader", "fbreader", "", 0),
     ("QPdf View", "qpdfview", "", 0),
