@@ -210,6 +210,7 @@ __utils__ = (
 __config__ = (
     ("Compiz settings manager", "ccsm", "", 0), # Compiz
     ("Emerald themes manager", "emerald-theme-manager", "", 0),
+    ("xfce4-appearance-settings", "xfce4-appearance-settings", "", 0),
     ("Tint Wizard", "tintwizard", "", 0), # Tint
     ("Tint2 Config", "tint2conf", "", 0),
     ("OpenBox conf", "obconf", "", 0), # Openbox
