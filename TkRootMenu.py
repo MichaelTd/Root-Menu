@@ -64,7 +64,7 @@ class TkRootMenu(Tk):
 
         self.v.grid(row=1)
 
-	    #self.n.grid(row=2)
+        #self.n.grid(row=2)
 
         self.v.set(75)
         #self.n.set(19)

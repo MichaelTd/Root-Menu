@@ -1,7 +1,7 @@
 __sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass) sudo --login --askpass "
 __terminal__ = "terminology"
 __editor__ = "mxcl"
-__file_manager__ = "xfe"
+__file_manager__ = "gentoo"
 __browser__ = "firefox"
 
 __basic__ = (
@@ -115,11 +115,14 @@ __games__ = (
     ("ChessX", "chessx", "", 0),
     ("Xmahjongg","xmahjongg", "", 0),
     ("X Mah-jongg","xmj", "", 0),
-    ("Super Tux Kart", "supertuxkart", "", 0), # 3D
-    ("Quake 3", "ioq3", "", 1),
-    ("Quake 3 TA", "ioq3-ta", "", 1),
+    ("Super Tux Kart", "supertuxkart", "", 1), # 3D
+    ("torcs", "torcs", "", 1), #
+    ("Quake 3", "ioquake3", "", 1),
+    ("Quake 3 TA", "ioquake3-ta", "", 1),
+    ("NexUiz", "nexuiz", "", 1),
+    ("Xonotic", "xonotic", "", 1),
     ("Urban Terror", "Quake3-UrT.x86_64", "", 1),
-    ("Warsow", "warsow", "", 1))
+    ("warsow", "warsow", "", 1))
 
 __fs__ = (
     ("Midnight Commander", "mc", "-a", 1),
@@ -217,6 +220,7 @@ __config__ = (
     ("e16 Keyedit", "e16keyedit", "", 0), # e16
     ("e16 Menuedit", "e16menuedit2", "", 0),
     ("Qt Config", "qtconfig", "", 0), # Qt
+    ("Qt 5 Config", "qt5ct", "", 0), # Qt
     ("X Screen Saver", "xscreensaver-demo", "", 0), # XScreenSaver
     ("X Screen Saver lockscreen", "xscreensaver-command", "-lock", 0), # XScreenSaver lock
     ("Wicd gtk", "wicd-gtk", "", 0), # Network
