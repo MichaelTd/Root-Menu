@@ -133,9 +133,7 @@ __fs__ = (
     ("Xfe", "xfe", "", 0),
     ("Double Commander", "doublecmd", "", 0),
     ("SpaceFM", "spacefm", "", 0),
-    ("Thunar", "thunar", "", 0))
-
-__terms__ = (
+    ("Thunar", "thunar", "", 0),
     ("Terminology", "terminology", "", 0),
     ("CRT", "cool-retro-term", "", 0),
     ("Xfce4 Terminal", "xfce4-terminal", "--disable-server", 0),
@@ -143,14 +141,14 @@ __terms__ = (
     ("XTerm", "xterm", "", 0),
     ("Hyper", "hyper", "", 0),
     ("QTerminal", "qterminal", "", 0),
-    ("Sakura", "sakura", "", 0))
-
-__shells__ = (
+    ("Sakura", "sakura", "", 0),
     ("bash", "bash", "", 1),
     ("KornSH", "ksh", "", 1),
     ("Zsh", "zsh", "", 1),
     ("Csh", "csh", "", 1),
-    ("SH", "bash", "-c sh", 1),
+    ("SH", "sh", "", 1),
+    ("dash", "dash", "", 1),
+    ("yash", "yash", "", 1),
     ("Fish", "fish", "", 1))
 
 __admin__ = (
@@ -178,6 +176,7 @@ __admin__ = (
 __utils__ = (
     ("App Runner", "/home/paperjam/bin/runcmd.sh", "", 1), # App finders
     ("Xfce4 App Finder", "xfce4-appfinder", "--collapsed --disable-server", 0),
+    ("rofi", "rofi", "-show run", 0),
     ("Synapse", "synapse", "", 0),
     ("Xfce4 Screenshot", "xfce4-screenshooter", "", 0), # Image capture
     ("Screengrab", "screengrab", "", 0),

@@ -6,7 +6,7 @@
 import os, sys, shutil
 #from PIL import ImageTk, Image
 from tkinter import Tk, Button, Scale, Menu, HORIZONTAL, TRUE, FALSE, E, W, S, N
-from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic__, __net__, __dev__, __media__, __games__, __fs__, __shells__, __terms__, __admin__, __utils__, __config__, __help__, __pc_options__
+from Executables import __sudo_cmd__, __terminal__, __editor__, __file_manager__, __browser__, __basic__, __net__, __dev__, __media__, __games__, __fs__, __admin__, __utils__, __config__, __help__, __pc_options__
 
 ncnss = "0"
 
@@ -121,18 +121,6 @@ class TkRootMenu(Tk):
             if shutil.which(cmmnd) is not None:
                 toolsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
 
-        # Terms
-        termsmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __terms__:
-            if shutil.which(cmmnd) is not None:
-                termsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
-
-        # Shells
-        shellsmenu = Menu(menubar)
-        for lbl, cmmnd, cla, hlpr in __shells__:
-            if shutil.which(cmmnd) is not None:
-                shellsmenu.add_command(label=lbl, command=lambda param=cmmnd, arg=cla, hlp=hlpr: runCommand(param, arg, hlp))
-
         # Admin tools
         adminmenu = Menu(menubar)
         for lbl, cmmnd, cla, hlpr in __admin__:
@@ -173,8 +161,6 @@ class TkRootMenu(Tk):
             ("Mediums", mmmenu),
             ("Games", gammenu),
             ("File System", toolsmenu),
-            ("Terminals", termsmenu),
-            ("Shells", shellsmenu),
             ("Admin Tools", adminmenu),
             ("Utilities", utilmenu),
             ("Config", configmenu),
@@ -188,7 +174,7 @@ class TkRootMenu(Tk):
 
         appsmenu.add_separator()
 
-        appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("${HOME}/bin/xlock.sh||xscreensaver-command -lock"))
+        appsmenu.add_command(label="Lock Screen", command=lambda: runCommand("xscreensaver-command -lock"))
 
         self.master.config(menu=menubar)
 
