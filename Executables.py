@@ -1,4 +1,4 @@
-__sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass) sudo --login --askpass "
+__sudo_cmd__ = "SUDO_ASKPASS=$(which x11-ssh-askpass||which ssh-askpass-fullscreen) sudo --login --askpass "
 __terminal__ = "terminology"
 __editor__ = "mxcl"
 __file_manager__ = "gentoo"
