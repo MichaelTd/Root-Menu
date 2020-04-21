@@ -1,2 +1,7 @@
-__pycache__/*
-*.c
+*
+!.gitignore
+!Executables.py
+!LICENSE
+!README.md
+!TkRootMenu.py
+!assets/*
